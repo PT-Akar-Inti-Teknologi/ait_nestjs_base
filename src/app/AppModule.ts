@@ -5,7 +5,7 @@ import { Module, INestApplication, Logger } from '@nestjs/common';
 @Module({
   providers: [ConfigModule.forRoot().module],
 })
-export class App {
+export class AppFactory {
   private static logger: Logger = new Logger('main');
 
   private static providersToProvideImported() {
@@ -28,7 +28,7 @@ export class App {
   public static run(port: number | string = 3000) {
     this.providersToProvideImported();
 
-    NestFactory.create(App).then((app: INestApplication) => {
+    NestFactory.create(this).then((app: INestApplication) => {
       return app.listen(port, () => this.logger.log(`Running on ${port}`));
     });
   }
