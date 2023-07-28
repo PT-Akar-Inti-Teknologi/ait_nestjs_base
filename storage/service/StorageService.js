@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.StorageService = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
-const LocalStorageService_1 = require("src/storage/service/impl/LocalStorageService");
-const FirebaseStorageService_1 = require("src/storage/service/impl/FirebaseStorageService");
+const LocalStorageService_1 = require("./impl/LocalStorageService");
+const FirebaseStorageService_1 = require("./impl/FirebaseStorageService");
 let StorageService = exports.StorageService = class StorageService {
     constructor(configService) {
         this.storageImpl =
