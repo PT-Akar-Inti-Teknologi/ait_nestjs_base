@@ -6,7 +6,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "tsc && node -e 'const pkg=require(\"./package.json\");delete pkg.scripts;delete pkg.devDependencies;require(\"fs\").writeFileSync(\"./dist/package.json\", JSON.stringify(pkg))'",
+    "build": "nest build && node -e 'const pkg=require(\"./package.json\");delete pkg.scripts;delete pkg.devDependencies;require(\"fs\").writeFileSync(\"./dist/package.json\", JSON.stringify(pkg))'",
     "lint": "eslint \"{src,test}/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "test": "jest --coverage"
@@ -21,6 +21,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@nestjs/cli": "^9.0.0",
     "@types/jest": "29.5.1",
     "@types/node": "18.16.12",
     "@types/supertest": "^2.0.11",
