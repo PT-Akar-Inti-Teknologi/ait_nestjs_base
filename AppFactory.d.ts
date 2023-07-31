@@ -9,6 +9,16 @@ export interface ModuleMetadataOptions extends ModuleMetadata {
     port?: string | number;
 }
 /**
+ * Resolve import with inject providers to imports module
+ * @param metadata {ModuleMetadata}
+ */
+export declare function resolveImportProviders(metadata: ModuleMetadata): void;
+/**
+ * Get list of ModuleMetadata
+ * @param Clazz
+ */
+export declare function getModuleMetadata(Clazz: any): ModuleMetadata;
+/**
  * Main application bootstrap
  * Auto load ConfigModule in any imports Metadata
  *
