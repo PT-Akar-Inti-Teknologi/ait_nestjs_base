@@ -8,6 +8,12 @@ const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const uuid_1 = require("uuid");
 const common_1 = require("@nestjs/common");
+/**
+ * Local storage files
+ * Required define in .env
+ *        STORAGE_DRIVER=local
+ *        STORAGE_LOCAL_DIR=/tmp/loyalties
+ */
 class LocalStorageService {
     constructor(configService) {
         this.log = new common_1.Logger(LocalStorageService.name);
@@ -22,8 +28,11 @@ class LocalStorageService {
     }
     async uploadFile(file) {
         try {
+            // clean file name from file.path
             const cleanPath = file.path.replace(file.filename, '');
+            // create new key of file with clean path
             const key = path_1.default.join(cleanPath, `${(0, uuid_1.v4)()}-${file.filename}`);
+            // fixed file path in directory
             const filePath = path_1.default.resolve(path_1.default.join(this.BUCKET, key));
             LocalStorageService.ensureDir(path_1.default.dirname(filePath));
             fs_1.default.writeFileSync(filePath, file.buffer);

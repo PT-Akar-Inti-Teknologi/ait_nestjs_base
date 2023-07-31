@@ -9,6 +9,13 @@ const uuid_1 = require("uuid");
 const common_1 = require("@nestjs/common");
 const stream_1 = require("stream");
 const storage_1 = require("@google-cloud/storage");
+/**
+ * Firebase/Google cloud storage
+ * Required define in .env
+ *        STORAGE_DRIVER=firebase
+ *        STORAGE_FIREBASE_BUCKET=<firebase storage bucket name>
+ *        STORAGE_FIREBASE_KEY_FILE_PATH=<firebase-adminsdk-account.json>
+ */
 class FirebaseStorageService {
     constructor(configService) {
         this.log = new common_1.Logger(FirebaseStorageService.name);
@@ -19,7 +26,9 @@ class FirebaseStorageService {
     }
     async uploadFile(file) {
         try {
+            // clean file name from file.path
             const cleanPath = file.path.replace(file.filename, '');
+            // create new key of file with clean path
             const key = path_1.default.join(cleanPath, `${(0, uuid_1.v4)()}-${file.filename}`);
             const writable = this.bucket.file(key).createWriteStream();
             const stream = new stream_1.PassThrough();
