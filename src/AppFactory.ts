@@ -23,7 +23,7 @@ export interface ModuleMetadataOptions extends ModuleMetadata {
  * @param metadata {ModuleMetadataOptions}
  * @constructor
  */
-export function Application(metadata: ModuleMetadataOptions) {
+export function Application(metadata: ModuleMetadataOptions): ClassDecorator {
   const port = Number(metadata.port || 3000);
   delete metadata.port;
 
@@ -52,23 +52,27 @@ export function Application(metadata: ModuleMetadataOptions) {
 
     Module(metadata)(Clazz);
 
-    return NestFactory.create(Clazz).then(async (app) => {
-      const instance = app.get(Clazz);
+    const result: Promise<void> = NestFactory.create(Clazz).then(
+      async (app) => {
+        const instance = app.get(Clazz);
 
-      if (typeof instance.setApplicationContext === 'function') {
-        await instance.setApplicationContext(app);
-      }
-
-      await app.listen(port, () => {
-        if (
-          instance.hasOwnProperty('logger') &&
-          typeof instance.logger.log === 'function'
-        ) {
-          instance.logger.log(`Running on ${port}`);
+        if (typeof instance.setApplicationContext === 'function') {
+          await instance.setApplicationContext(app);
         }
-      });
 
-      return app;
-    });
+        await app.listen(port, () => {
+          if (
+            instance.hasOwnProperty('logger') &&
+            typeof instance.logger.log === 'function'
+          ) {
+            instance.logger.log(`Running on ${port}`);
+          }
+        });
+      },
+    );
+
+    if (process.env.JEST_WORKER_ID != undefined) {
+      return result as any;
+    }
   };
 }
