@@ -27,5 +27,6 @@ $ npm run format
 ## Test
 ```bash
 # unit, e2e and coverage tests
+# note => test is required .env file
 $ npm run test
 ```
