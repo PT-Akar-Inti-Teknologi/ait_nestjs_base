@@ -41,7 +41,7 @@ function Application(metadata) {
             Reflect.defineMetadata('imports', imports, targetImport);
         });
         (0, common_1.Module)(metadata)(Clazz);
-        return core_1.NestFactory.create(Clazz).then(async (app) => {
+        const result = core_1.NestFactory.create(Clazz).then(async (app) => {
             const instance = app.get(Clazz);
             if (typeof instance.setApplicationContext === 'function') {
                 await instance.setApplicationContext(app);
@@ -52,8 +52,10 @@ function Application(metadata) {
                     instance.logger.log(`Running on ${port}`);
                 }
             });
-            return app;
         });
+        if (process.env.JEST_WORKER_ID != undefined) {
+            return result;
+        }
     };
 }
 exports.Application = Application;

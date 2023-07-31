@@ -15,4 +15,4 @@ export interface ModuleMetadataOptions extends ModuleMetadata {
  * @param metadata {ModuleMetadataOptions}
  * @constructor
  */
-export declare function Application(metadata: ModuleMetadataOptions): (Clazz: any) => Promise<INestApplication>;
+export declare function Application(metadata: ModuleMetadataOptions): ClassDecorator;
