@@ -17,6 +17,44 @@ export interface ModuleMetadataOptions extends ModuleMetadata {
 }
 
 /**
+ * Resolve import with inject providers to imports module
+ * @param metadata {ModuleMetadata}
+ */
+export function resolveImportProviders(metadata: ModuleMetadata): void {
+  const appImports = metadata.imports || [];
+
+  const appProviders = metadata.providers || [];
+  appProviders.unshift(ConfigModule.forRoot().module);
+
+  appImports.forEach((target: any) => {
+    const imports = Reflect.getMetadata('imports', target) || [];
+
+    [...appProviders, ...appImports].forEach((module: any) => {
+      if (module !== target) {
+        imports.push(module);
+      }
+    });
+
+    Reflect.defineMetadata('imports', imports, target);
+  });
+}
+
+/**
+ * Get list of ModuleMetadata
+ * @param Clazz
+ */
+export function getModuleMetadata(Clazz: any): ModuleMetadata {
+  return ['imports', 'providers', 'controllers', 'exports'].reduce(
+    (meta: ModuleMetadata, key) => {
+      meta[key as keyof ModuleMetadata] = Reflect.getMetadata(key, Clazz);
+
+      return meta;
+    },
+    {},
+  );
+}
+
+/**
  * Main application bootstrap
  * Auto load ConfigModule in any imports Metadata
  *
@@ -28,29 +66,9 @@ export function Application(metadata: ModuleMetadataOptions): ClassDecorator {
   delete metadata.port;
 
   return function (Clazz: any) {
-    metadata.imports = metadata.imports || [];
-    metadata.providers = metadata.providers || [];
-
-    metadata.providers.unshift(ConfigModule.forRoot().module);
-
-    const dependencies = [
-      ...(metadata.providers as any),
-      ...(metadata.imports as any),
-    ];
-
-    metadata.imports.forEach((targetImport: any) => {
-      const imports = Reflect.getMetadata('imports', targetImport) || [];
-
-      dependencies.forEach((module: any) => {
-        if (module !== targetImport) {
-          imports.push(module);
-        }
-      });
-
-      Reflect.defineMetadata('imports', imports, targetImport);
-    });
-
     Module(metadata)(Clazz);
+
+    resolveImportProviders(getModuleMetadata(Clazz));
 
     const result: Promise<void> = NestFactory.create(Clazz).then(
       async (app) => {
