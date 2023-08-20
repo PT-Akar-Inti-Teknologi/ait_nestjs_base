@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { Readable } from 'stream';
-import { UploadRequest } from 'src/storage/dto/request/UploadRequest';
-import { UploadResponse } from 'src/storage/dto/response/UploadResponse';
+import { UploadRequest } from '../dto/request/UploadRequest';
+import { UploadResponse } from '../dto/response/UploadResponse';
 export interface IStorageService {
     uploadFile(uploadRequest: UploadRequest): Promise<UploadResponse>;
     getFile(key: string): Promise<Readable>;

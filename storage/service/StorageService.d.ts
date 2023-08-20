@@ -1,9 +1,9 @@
 /// <reference types="node" />
 import { Readable } from 'stream';
 import { ConfigService } from '@nestjs/config';
-import { IStorageService } from 'src/storage/service/IStorageService';
-import { UploadRequest } from 'src/storage/dto/request/UploadRequest';
-import { UploadResponse } from 'src/storage/dto/response/UploadResponse';
+import { IStorageService } from './IStorageService';
+import { UploadRequest } from '../dto/request/UploadRequest';
+import { UploadResponse } from '../dto/response/UploadResponse';
 export declare class StorageService implements IStorageService {
     private readonly storageImpl;
     constructor(configService: ConfigService);
