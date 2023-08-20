@@ -1,13 +1,10 @@
 import { INestApplication, Logger } from '@nestjs/common';
 import { ModuleMetadata } from '@nestjs/common/interfaces/modules/module-metadata.interface';
+import { ModuleMetadataOptions } from './interface/ModuleMetadataOptions';
 export declare class AppFactory {
     protected app: INestApplication;
     protected readonly logger: Logger;
     protected setApplicationContext(app: INestApplication): Promise<void>;
-}
-export interface ModuleMetadataOptions extends ModuleMetadata {
-    port?: string | number;
-    autoCreate?: boolean;
 }
 /**
  * Resolve import with inject providers to imports module
