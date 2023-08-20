@@ -5,9 +5,9 @@ import { Readable } from 'stream';
 import { Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
-import { UploadRequest } from 'src/storage/dto/request/UploadRequest';
-import { IStorageService } from 'src/storage/service/IStorageService';
-import { UploadResponse } from 'src/storage/dto/response/UploadResponse';
+import { IStorageService } from '../IStorageService';
+import { UploadRequest } from '../../dto/request/UploadRequest';
+import { UploadResponse } from '../../dto/response/UploadResponse';
 
 /**
  * Local storage files

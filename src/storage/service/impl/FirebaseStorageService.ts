@@ -5,9 +5,9 @@ import { Readable, PassThrough } from 'stream';
 import { ConfigService } from '@nestjs/config';
 import { Storage, Bucket } from '@google-cloud/storage';
 
-import { UploadRequest } from 'src/storage/dto/request/UploadRequest';
-import { IStorageService } from 'src/storage/service/IStorageService';
-import { UploadResponse } from 'src/storage/dto/response/UploadResponse';
+import { IStorageService } from '../IStorageService';
+import { UploadRequest } from '../../dto/request/UploadRequest';
+import { UploadResponse } from '../../dto/response/UploadResponse';
 
 /**
  * Firebase/Google cloud storage
