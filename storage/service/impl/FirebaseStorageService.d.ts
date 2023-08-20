@@ -2,8 +2,8 @@
 import { Readable } from 'stream';
 import { ConfigService } from '@nestjs/config';
 import { IStorageService } from '../IStorageService';
-import { UploadRequest } from '../../dto/request/UploadRequest';
-import { UploadResponse } from '../../dto/response/UploadResponse';
+import { UploadRequestDTO } from '../../dto/request/UploadRequestDTO';
+import { UploadResponseDTO } from '../../dto/response/UploadResponseDTO';
 /**
  * Firebase/Google cloud storage
  * Required define in .env
@@ -16,7 +16,7 @@ export declare class FirebaseStorageService implements IStorageService {
     private readonly log;
     private readonly expireDays;
     constructor(configService: ConfigService);
-    uploadFile(file: UploadRequest): Promise<UploadResponse>;
+    uploadFile(file: UploadRequestDTO): Promise<UploadResponseDTO>;
     getFile(key: string): Promise<Readable>;
     getFilesFromDir(prefix: string): Promise<string[]>;
     getSignedUrl(key: string): Promise<string>;

@@ -1,9 +1,9 @@
 /// <reference types="node" />
 import { Readable } from 'stream';
-import { UploadRequest } from '../dto/request/UploadRequest';
-import { UploadResponse } from '../dto/response/UploadResponse';
+import { UploadRequestDTO } from '../dto/request/UploadRequestDTO';
+import { UploadResponseDTO } from '../dto/response/UploadResponseDTO';
 export interface IStorageService {
-    uploadFile(uploadRequest: UploadRequest): Promise<UploadResponse>;
+    uploadFile(uploadRequest: UploadRequestDTO): Promise<UploadResponseDTO>;
     getFile(key: string): Promise<Readable>;
     getFilesFromDir(prefix: string): Promise<string[]>;
     getSignedUrl(key: string): Promise<string>;
