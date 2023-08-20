@@ -7,6 +7,7 @@ export declare class AppFactory {
 }
 export interface ModuleMetadataOptions extends ModuleMetadata {
     port?: string | number;
+    autoCreate?: boolean;
 }
 /**
  * Resolve import with inject providers to imports module
