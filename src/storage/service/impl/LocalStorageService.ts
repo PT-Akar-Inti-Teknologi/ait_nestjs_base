@@ -6,8 +6,8 @@ import { Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
 import { IStorageService } from '../IStorageService';
-import { UploadRequest } from '../../dto/request/UploadRequest';
-import { UploadResponse } from '../../dto/response/UploadResponse';
+import { UploadRequestDTO } from '../../dto/request/UploadRequestDTO';
+import { UploadResponseDTO } from '../../dto/response/UploadResponseDTO';
 
 /**
  * Local storage files
@@ -33,7 +33,7 @@ export class LocalStorageService implements IStorageService {
     }
   }
 
-  async uploadFile(file: UploadRequest): Promise<UploadResponse> {
+  async uploadFile(file: UploadRequestDTO): Promise<UploadResponseDTO> {
     try {
       // clean file name from file.path
       const cleanPath = file.path.replace(file.filename, '');

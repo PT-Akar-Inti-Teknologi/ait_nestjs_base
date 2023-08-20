@@ -6,8 +6,8 @@ import { ConfigService } from '@nestjs/config';
 import { Storage, Bucket } from '@google-cloud/storage';
 
 import { IStorageService } from '../IStorageService';
-import { UploadRequest } from '../../dto/request/UploadRequest';
-import { UploadResponse } from '../../dto/response/UploadResponse';
+import { UploadRequestDTO } from '../../dto/request/UploadRequestDTO';
+import { UploadResponseDTO } from '../../dto/response/UploadResponseDTO';
 
 /**
  * Firebase/Google cloud storage
@@ -27,7 +27,7 @@ export class FirebaseStorageService implements IStorageService {
     }).bucket(configService.get<string>('STORAGE_FIREBASE_BUCKET') as string);
   }
 
-  async uploadFile(file: UploadRequest): Promise<UploadResponse> {
+  async uploadFile(file: UploadRequestDTO): Promise<UploadResponseDTO> {
     try {
       // clean file name from file.path
       const cleanPath = file.path.replace(file.filename, '');

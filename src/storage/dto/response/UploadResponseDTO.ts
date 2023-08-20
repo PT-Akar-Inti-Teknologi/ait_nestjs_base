@@ -1,6 +1,6 @@
 import { Builder } from 'builder-pattern';
 
-export class UploadResponse {
+export class UploadResponseDTO {
   public tag: string;
   public key: string;
   public bucket: string;

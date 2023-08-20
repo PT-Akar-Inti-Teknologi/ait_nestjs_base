@@ -1,6 +1,6 @@
 import { Builder } from 'builder-pattern';
 
-export class UploadRequest {
+export class UploadRequestDTO {
   public buffer: Buffer;
   public path: string;
   public filename: string;
