@@ -8,7 +8,7 @@
   "scripts": {
     "build": "npm run lint && npm run format && npm run build:clean && nest build && npm run copy:info",
     "build:clean": "node -e 'import(\"globby\").then(({globby})=>globby([\"./dist\", \"!./git\"],{onlyFiles:false}).then(p=>import(\"rimraf\").then(r => Promise.all(p.map(i=>r.sync(i))))))'",
-    "copy:info": "node -e 'const pkg=require(\"./package.json\");delete pkg.scripts;delete pkg.devDependencies;require(\"fs\").writeFileSync(\"./dist/package.json\", JSON.stringify(pkg))'",
+    "copy:info": "node -e 'const pkg=require(\"./package.json\");delete pkg.scripts;delete pkg.devDependencies;pkg.main=\"Lib.js\";pkg.types=\"Lib.d.ts\";require(\"fs\").writeFileSync(\"./dist/package.json\", JSON.stringify(pkg))'",
     "lint": "eslint \"{src,test}/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "test": "rimraf coverage && jest --coverage"
@@ -67,7 +67,8 @@
       "**/*.(t|j)s",
       "!test/**/*.(t|j)s",
       "!**/dto/**/*.(t|j)s",
-      "!**/*Module.(t|j)s"
+      "!**/*Module.(t|j)s",
+      "!**/Lib.(t|j)s"
     ],
     "moduleFileExtensions": [
       "js",

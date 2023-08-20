@@ -1,8 +1,7 @@
 import { Readable } from 'stream';
 import { Test } from '@nestjs/testing';
 import { ConfigModule } from '@nestjs/config';
-import { StorageService } from 'src/storage/service/StorageService';
-import { UploadResponse } from 'src/storage/dto/response/UploadResponse';
+import { StorageService, UploadResponse } from 'src/Lib';
 
 describe('StorageService', () => {
   const testTimeout = 120000;

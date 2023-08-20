@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { Module, INestApplication, Logger } from '@nestjs/common';
 import { ModuleMetadata } from '@nestjs/common/interfaces/modules/module-metadata.interface';
 
+import { ModuleMetadataOptions } from './interface/ModuleMetadataOptions';
+
 export class AppFactory {
   protected app: INestApplication;
   protected readonly logger: Logger = new Logger('main');
@@ -10,11 +12,6 @@ export class AppFactory {
   protected async setApplicationContext(app: INestApplication) {
     this.app = app;
   }
-}
-
-export interface ModuleMetadataOptions extends ModuleMetadata {
-  port?: string | number;
-  autoCreate?: boolean;
 }
 
 /**
