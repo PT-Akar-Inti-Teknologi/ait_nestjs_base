@@ -14,6 +14,7 @@ export class AppFactory {
 
 export interface ModuleMetadataOptions extends ModuleMetadata {
   port?: string | number;
+  autoCreate?: boolean;
 }
 
 /**
@@ -65,29 +66,32 @@ export function Application(metadata: ModuleMetadataOptions): ClassDecorator {
   const port = Number(metadata.port || 3000);
   delete metadata.port;
 
+  const autoCreate = metadata.autoCreate != false;
+  delete metadata.autoCreate;
+
   return function (Clazz: any) {
     Module(metadata)(Clazz);
 
     resolveImportProviders(getModuleMetadata(Clazz));
 
-    const result: Promise<void> = NestFactory.create(Clazz).then(
-      async (app) => {
-        const instance = app.get(Clazz);
+    const result: Promise<void> = autoCreate
+      ? NestFactory.create(Clazz).then(async (app) => {
+          const instance = app.get(Clazz);
 
-        if (typeof instance.setApplicationContext === 'function') {
-          await instance.setApplicationContext(app);
-        }
-
-        await app.listen(port, () => {
-          if (
-            instance.hasOwnProperty('logger') &&
-            typeof instance.logger.log === 'function'
-          ) {
-            instance.logger.log(`Running on ${port}`);
+          if (typeof instance.setApplicationContext === 'function') {
+            await instance.setApplicationContext(app);
           }
-        });
-      },
-    );
+
+          await app.listen(port, () => {
+            if (
+              instance.hasOwnProperty('logger') &&
+              typeof instance.logger.log === 'function'
+            ) {
+              instance.logger.log(`Running on ${port}`);
+            }
+          });
+        })
+      : Promise.resolve();
 
     if (process.env.JEST_WORKER_ID != undefined) {
       return result as any;
