@@ -1,7 +1,7 @@
 import { Builder } from 'builder-pattern';
 
-import { ResponseDTO } from './ResponseDTO';
-import { PaginationDTO } from './PaginationDTO';
+import { ResponseDTO } from './response.dto';
+import { PaginationDTO } from './pagination.dto';
 
 export class ResponseSuccessCollectionDTO<E> extends ResponseDTO {
   public readonly response_output: {

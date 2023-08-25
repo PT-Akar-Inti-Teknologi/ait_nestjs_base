@@ -1,7 +1,7 @@
 import { DynamicModule, Module } from '@nestjs/common';
 
-import { MessageService } from './service/MessageService';
-import { ResponseService } from './service/ResponseService';
+import { MessageService } from './service/message.service';
+import { ResponseService } from './service/response.service';
 
 @Module({})
 export class ResponseModule {

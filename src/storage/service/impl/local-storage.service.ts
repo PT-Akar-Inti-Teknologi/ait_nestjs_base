@@ -5,9 +5,9 @@ import { Readable } from 'stream';
 import { Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
-import { IStorageService } from '../IStorageService';
-import { UploadRequestDTO } from '../../dto/request/UploadRequestDTO';
-import { UploadResponseDTO } from '../../dto/response/UploadResponseDTO';
+import { IstorageService } from '../istorage.service';
+import { UploadRequestDto } from '../../dto/request/upload-request.dto';
+import { UploadResponseDto } from '../../dto/response/upload-response.dto';
 
 /**
  * Local storage files
@@ -15,7 +15,7 @@ import { UploadResponseDTO } from '../../dto/response/UploadResponseDTO';
  *        STORAGE_DRIVER=local
  *        STORAGE_LOCAL_DIR=/tmp/loyalties
  */
-export class LocalStorageService implements IStorageService {
+export class LocalStorageService implements IstorageService {
   private readonly BUCKET: string;
   private readonly log = new Logger(LocalStorageService.name);
 
@@ -33,7 +33,7 @@ export class LocalStorageService implements IStorageService {
     }
   }
 
-  async uploadFile(file: UploadRequestDTO): Promise<UploadResponseDTO> {
+  async uploadFile(file: UploadRequestDto): Promise<UploadResponseDto> {
     try {
       // clean file name from file.path
       const cleanPath = file.path.replace(file.filename, '');

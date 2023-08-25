@@ -1,10 +1,10 @@
 import { Readable } from 'stream';
 
-import { UploadRequestDTO } from '../dto/request/UploadRequestDTO';
-import { UploadResponseDTO } from '../dto/response/UploadResponseDTO';
+import { UploadRequestDto } from '../dto/request/upload-request.dto';
+import { UploadResponseDto } from '../dto/response/upload-response.dto';
 
-export interface IStorageService {
-  uploadFile(uploadRequest: UploadRequestDTO): Promise<UploadResponseDTO>;
+export interface IstorageService {
+  uploadFile(uploadRequest: UploadRequestDto): Promise<UploadResponseDto>;
 
   getFile(key: string): Promise<Readable>;
 

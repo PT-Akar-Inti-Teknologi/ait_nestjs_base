@@ -1,7 +1,7 @@
 import { get } from 'lodash';
 import { Inject, Injectable } from '@nestjs/common';
 
-import { ErrorMessageDTO } from '../dto/response/ErrorMessageDTO';
+import { ErrorMessageDTO } from '../dto/response/error-message.dto';
 
 @Injectable()
 export class MessageService {

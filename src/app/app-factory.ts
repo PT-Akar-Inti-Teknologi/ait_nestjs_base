@@ -3,7 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { Module, INestApplication, Logger } from '@nestjs/common';
 import { ModuleMetadata } from '@nestjs/common/interfaces/modules/module-metadata.interface';
 
-import { ModuleMetadataOptions } from './interface/ModuleMetadataOptions';
+import { ModuleMetadataOptions } from './interface/module-metadata.options';
 
 export class AppFactory {
   protected app: INestApplication;
@@ -63,7 +63,7 @@ export function Application(metadata: ModuleMetadataOptions): ClassDecorator {
   const port = Number(metadata.port || 3000);
   delete metadata.port;
 
-  const autoCreate = metadata.autoCreate != false;
+  const autoCreate = metadata.autoCreate !== false;
   delete metadata.autoCreate;
 
   return function (Clazz: any) {

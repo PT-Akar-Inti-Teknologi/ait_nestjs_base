@@ -1,6 +1,6 @@
 import { ConfigHostModule } from '@nestjs/config/dist/config-host.module';
 
-import { AppFactory, Application } from 'src/Lib';
+import { AppFactory, Application } from 'src/lib';
 
 describe('AppFactory', () => {
   it('RUN', async () => {

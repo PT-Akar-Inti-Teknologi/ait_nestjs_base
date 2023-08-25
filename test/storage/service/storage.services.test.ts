@@ -1,7 +1,8 @@
 import { Readable } from 'stream';
 import { Test } from '@nestjs/testing';
 import { ConfigModule } from '@nestjs/config';
-import { StorageService, UploadResponseDTO } from 'src/Lib';
+
+import { StorageService, UploadResponseDto } from 'src/lib';
 
 describe('StorageService', () => {
   const testTimeout = 120000;
@@ -36,7 +37,7 @@ describe('StorageService', () => {
   }
 
   ['s3', 'firebase', 'local'].forEach((driver) => {
-    let storageResponse: UploadResponseDTO;
+    let storageResponse: UploadResponseDto;
 
     it(`Test Import ${driver} StorageServices should not "undefined"`, async () => {
       expect(await loadStorage(driver)).not.toBeUndefined();

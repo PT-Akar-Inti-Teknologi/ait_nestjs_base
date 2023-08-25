@@ -1,7 +1,7 @@
 import { Builder } from 'builder-pattern';
 
-import { ResponseDTO } from './ResponseDTO';
-import { ErrorMessageDTO } from './ErrorMessageDTO';
+import { ResponseDTO } from './response.dto';
+import { ErrorMessageDTO } from './error-message.dto';
 
 export class ResponseErrorDTO extends ResponseDTO {
   public readonly response_output: {

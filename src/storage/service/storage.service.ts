@@ -2,15 +2,15 @@ import { Readable } from 'stream';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
-import { IStorageService } from './IStorageService';
-import { UploadRequestDTO } from '../dto/request/UploadRequestDTO';
-import { UploadResponseDTO } from '../dto/response/UploadResponseDTO';
-import { LocalStorageService } from './impl/LocalStorageService';
-import { FirebaseStorageService } from './impl/FirebaseStorageService';
+import { IstorageService } from './istorage.service';
+import { UploadRequestDto } from '../dto/request/upload-request.dto';
+import { UploadResponseDto } from '../dto/response/upload-response.dto';
+import { LocalStorageService } from './impl/local-storage.service';
+import { FirebaseStorageService } from './impl/firebase-storage.service';
 
 @Injectable()
-export class StorageService implements IStorageService {
-  private readonly storageImpl: IStorageService;
+export class StorageService implements IstorageService {
+  private readonly storageImpl: IstorageService;
 
   constructor(configService: ConfigService) {
     this.storageImpl =
@@ -19,7 +19,7 @@ export class StorageService implements IStorageService {
         : new FirebaseStorageService(configService);
   }
 
-  uploadFile(uploadRequest: UploadRequestDTO): Promise<UploadResponseDTO> {
+  uploadFile(uploadRequest: UploadRequestDto): Promise<UploadResponseDto> {
     return this.storageImpl.uploadFile(uploadRequest);
   }
 

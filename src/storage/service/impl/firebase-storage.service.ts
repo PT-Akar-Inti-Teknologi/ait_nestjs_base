@@ -5,9 +5,9 @@ import { Readable, PassThrough } from 'stream';
 import { ConfigService } from '@nestjs/config';
 import { Storage, Bucket } from '@google-cloud/storage';
 
-import { IStorageService } from '../IStorageService';
-import { UploadRequestDTO } from '../../dto/request/UploadRequestDTO';
-import { UploadResponseDTO } from '../../dto/response/UploadResponseDTO';
+import { IstorageService } from '../istorage.service';
+import { UploadRequestDto } from '../../dto/request/upload-request.dto';
+import { UploadResponseDto } from '../../dto/response/upload-response.dto';
 
 /**
  * Firebase/Google cloud storage
@@ -16,7 +16,7 @@ import { UploadResponseDTO } from '../../dto/response/UploadResponseDTO';
  *        STORAGE_FIREBASE_BUCKET=<firebase storage bucket name>
  *        STORAGE_FIREBASE_KEY_FILE_PATH=<firebase-adminsdk-account.json>
  */
-export class FirebaseStorageService implements IStorageService {
+export class FirebaseStorageService implements IstorageService {
   private readonly bucket: Bucket;
   private readonly log = new Logger(FirebaseStorageService.name);
   private readonly expireDays = 7;
@@ -27,7 +27,7 @@ export class FirebaseStorageService implements IStorageService {
     }).bucket(configService.get<string>('STORAGE_FIREBASE_BUCKET') as string);
   }
 
-  async uploadFile(file: UploadRequestDTO): Promise<UploadResponseDTO> {
+  async uploadFile(file: UploadRequestDto): Promise<UploadResponseDto> {
     try {
       // clean file name from file.path
       const cleanPath = file.path.replace(file.filename, '');
