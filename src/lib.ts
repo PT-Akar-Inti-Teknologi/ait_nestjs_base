@@ -1,8 +1,12 @@
 export * from './app/interface/module-metadata.options';
-export * from './app/app-factory';
+export * from './app/app.factory';
 
 export * from './crud/dto/request/pagination-request.dto';
 export * from './crud/crud.module';
+
+export * from './database/helper/column_numberic_transformer';
+export * from './database/helper/generic_seeder';
+export * from './database/database.factory';
 
 export * from './hash/hash.constant';
 export * from './hash/hash.decorator';
