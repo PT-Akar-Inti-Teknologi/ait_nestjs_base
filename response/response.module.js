@@ -11,6 +11,12 @@ exports.ResponseModule = void 0;
 const common_1 = require("@nestjs/common");
 const message_service_1 = require("./service/message.service");
 const response_service_1 = require("./service/response.service");
+/**
+ * Required environment:
+ * - process.env.PROJECT_NAME
+ * - process.env.SERVICE_NAME
+ * - process.env.APP_LANGUAGE
+ */
 let ResponseModule = exports.ResponseModule = ResponseModule_1 = class ResponseModule {
     static withLanguages(languages, selectedLanguage) {
         this.languages = languages;
