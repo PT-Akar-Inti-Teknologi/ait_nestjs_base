@@ -3,6 +3,12 @@ import { DynamicModule, Module } from '@nestjs/common';
 import { MessageService } from './service/message.service';
 import { ResponseService } from './service/response.service';
 
+/**
+ * Required environment:
+ * - process.env.PROJECT_NAME
+ * - process.env.SERVICE_NAME
+ * - process.env.APP_LANGUAGE
+ */
 @Module({})
 export class ResponseModule {
   public static languages: Record<string, any> = {};
