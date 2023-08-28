@@ -33,6 +33,10 @@ export class LocalStorageService implements IstorageService {
     }
   }
 
+  getRootFolderName(): string {
+    return '';
+  }
+
   async uploadFile(file: UploadRequestDto): Promise<UploadResponseDto> {
     try {
       // clean file name from file.path

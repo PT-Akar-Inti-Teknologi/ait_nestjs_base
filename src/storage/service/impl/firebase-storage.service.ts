@@ -27,6 +27,10 @@ export class FirebaseStorageService implements IstorageService {
     }).bucket(configService.get<string>('STORAGE_FIREBASE_BUCKET') as string);
   }
 
+  getRootFolderName(): string {
+    return '';
+  }
+
   async uploadFile(file: UploadRequestDto): Promise<UploadResponseDto> {
     try {
       // clean file name from file.path
