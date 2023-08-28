@@ -1,14 +1,11 @@
 import { Builder } from 'builder-pattern';
 
 import { ResponseDTO } from './response.dto';
-import { PaginationDTO } from './pagination.dto';
+import { ListPaginationDTO } from './list-pagination.dto';
 
-export class ResponseSuccessCollectionDTO<E> extends ResponseDTO {
+export class ResponseSuccessCollectionDTO extends ResponseDTO {
   public readonly response_output: {
-    list: {
-      pagination: PaginationDTO;
-      content: E[];
-    };
+    list: ListPaginationDTO;
   };
 
   public static Builder() {

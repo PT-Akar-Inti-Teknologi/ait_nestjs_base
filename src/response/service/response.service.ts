@@ -3,6 +3,7 @@ import { BadRequestException, HttpStatus, Injectable } from '@nestjs/common';
 import { PaginationDTO } from '../dto/response/pagination.dto';
 import { ErrorMessageDTO } from '../dto/response/error-message.dto';
 import { ResponseErrorDTO } from '../dto/response/response-error.dto';
+import { ListPaginationDTO } from '../dto/response/list-pagination.dto';
 import { ResponseSuccessSingleDTO } from '../dto/response/response-success-single.dto';
 import { ResponseSuccessCollectionDTO } from '../dto/response/response-success-collection.dto';
 
@@ -36,22 +37,23 @@ export class ResponseService {
     content: any[],
     pagination?: PaginationDTO,
     message = 'Success',
-  ): ResponseSuccessCollectionDTO<any> {
+  ): ResponseSuccessCollectionDTO {
     return ResponseSuccessCollectionDTO.Builder()
       .response_schema({
         response_code: this.responseCode(HttpStatus.OK),
         response_message: message,
       })
       .response_output({
-        list: {
-          pagination:
+        list: ListPaginationDTO.Builder()
+          .pagination(
             pagination ??
-            PaginationDTO.Builder()
-              .size(content.length)
-              .total(content.length)
-              .build(),
-          content,
-        },
+              PaginationDTO.Builder()
+                .size(content.length)
+                .total(content.length)
+                .build(),
+          )
+          .content(content)
+          .build(),
       })
       .build();
   }

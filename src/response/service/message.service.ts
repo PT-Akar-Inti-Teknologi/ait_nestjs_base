@@ -1,17 +1,19 @@
 import { get } from 'lodash';
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 
+import { ResponseModule } from '../response.module';
 import { ErrorMessageDTO } from '../dto/response/error-message.dto';
 
 @Injectable()
 export class MessageService {
-  constructor(
-    @Inject('LANGUAGE_OPTIONS') private readonly languages: Record<string, any>,
-    @Inject('SELECTED_LANGUAGE') private readonly selectedLanguage: string,
-  ) {}
+  private static get language() {
+    return ResponseModule.languages[
+      (ResponseModule.selectedLanguage || process.env.APP_LANGUAGE) as string
+    ];
+  }
 
   public get(key: string): string {
-    const selectedMessage = get(this.languages[this.selectedLanguage], key, {
+    const selectedMessage = get(MessageService.language, key, {
       message: key,
     });
 
@@ -19,7 +21,7 @@ export class MessageService {
   }
 
   public getErrorMessage(field: string, key: string): ErrorMessageDTO {
-    const selectedMessage = get(this.languages[this.selectedLanguage], key, {
+    const selectedMessage = get(MessageService.language, key, {
       message: key,
       code: '',
     });

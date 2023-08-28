@@ -5,26 +5,24 @@ import { ResponseService } from './service/response.service';
 
 @Module({})
 export class ResponseModule {
+  public static languages: Record<string, any> = {};
+  public static selectedLanguage: string;
+
   public static withLanguages(
     languages: Record<string, any>,
-    selectedLanguage = 'id',
+    selectedLanguage?: string,
   ): DynamicModule {
-    return {
+    this.languages = languages;
+    this.selectedLanguage = selectedLanguage as any;
+
+    const module: DynamicModule = {
       global: true,
       module: ResponseModule,
-      providers: [
-        {
-          provide: 'LANGUAGE_OPTIONS',
-          useValue: languages,
-        },
-        {
-          provide: 'SELECTED_LANGUAGE',
-          useValue: selectedLanguage,
-        },
-        MessageService,
-        ResponseService,
-      ],
-      exports: [MessageService, ResponseService],
+      providers: [MessageService, ResponseService],
     };
+
+    module.exports = module.providers;
+
+    return module;
   }
 }
