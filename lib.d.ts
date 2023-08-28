@@ -19,3 +19,7 @@ export * from './storage/service/impl/local-storage.service';
 export * from './storage/service/istorage.service';
 export * from './storage/service/storage.service';
 export * from './storage/storage.module';
+export * from './validator/is-exists.validator';
+export * from './validator/is-unique.validator';
+export * from './validator/json.validator';
+export * from './validator/match.validator';

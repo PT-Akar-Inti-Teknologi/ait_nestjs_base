@@ -35,4 +35,8 @@ __exportStar(require("./storage/service/impl/local-storage.service"), exports);
 __exportStar(require("./storage/service/istorage.service"), exports);
 __exportStar(require("./storage/service/storage.service"), exports);
 __exportStar(require("./storage/storage.module"), exports);
+__exportStar(require("./validator/is-exists.validator"), exports);
+__exportStar(require("./validator/is-unique.validator"), exports);
+__exportStar(require("./validator/json.validator"), exports);
+__exportStar(require("./validator/match.validator"), exports);
 //# sourceMappingURL=lib.js.map
