@@ -14,12 +14,22 @@ const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const local_storage_service_1 = require("./impl/local-storage.service");
 const firebase_storage_service_1 = require("./impl/firebase-storage.service");
+const s3_storage_service_1 = require("./impl/s3-storage.service");
 let StorageService = exports.StorageService = class StorageService {
     constructor(configService) {
-        this.storageImpl =
-            configService.get('STORAGE_DRIVER') == 'local'
-                ? new local_storage_service_1.LocalStorageService(configService)
-                : new firebase_storage_service_1.FirebaseStorageService(configService);
+        const driver = configService.get('STORAGE_DRIVER');
+        if (driver == 'firebase') {
+            this.storageImpl = new firebase_storage_service_1.FirebaseStorageService(configService);
+        }
+        else if (driver == 's3') {
+            this.storageImpl = new s3_storage_service_1.S3StorageServices(configService);
+        }
+        else {
+            this.storageImpl = new local_storage_service_1.LocalStorageService(configService);
+        }
+    }
+    getRootFolderName() {
+        return this.storageImpl.getRootFolderName();
     }
     uploadFile(uploadRequest) {
         return this.storageImpl.uploadFile(uploadRequest);
@@ -30,8 +40,8 @@ let StorageService = exports.StorageService = class StorageService {
     getFilesFromDir(prefix) {
         return this.storageImpl.getFilesFromDir(prefix);
     }
-    getSignedUrl(key) {
-        return this.storageImpl.getSignedUrl(key);
+    getSignedUrl(key, cache) {
+        return this.storageImpl.getSignedUrl(key, cache);
     }
     deleteFile(key) {
         return this.storageImpl.deleteFile(key);

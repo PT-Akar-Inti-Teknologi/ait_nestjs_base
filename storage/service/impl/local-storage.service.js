@@ -26,6 +26,9 @@ class LocalStorageService {
             fs_1.default.mkdirSync(dir);
         }
     }
+    getRootFolderName() {
+        return '';
+    }
     async uploadFile(file) {
         try {
             // clean file name from file.path

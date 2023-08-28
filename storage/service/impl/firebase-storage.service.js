@@ -24,6 +24,9 @@ class FirebaseStorageService {
             keyFilename: configService.get('STORAGE_FIREBASE_KEY_FILE_PATH'),
         }).bucket(configService.get('STORAGE_FIREBASE_BUCKET'));
     }
+    getRootFolderName() {
+        return '';
+    }
     async uploadFile(file) {
         try {
             // clean file name from file.path

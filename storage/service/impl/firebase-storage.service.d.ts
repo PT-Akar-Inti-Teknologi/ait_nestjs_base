@@ -16,6 +16,7 @@ export declare class FirebaseStorageService implements IstorageService {
     private readonly log;
     private readonly expireDays;
     constructor(configService: ConfigService);
+    getRootFolderName(): string;
     uploadFile(file: UploadRequestDto): Promise<UploadResponseDto>;
     getFile(key: string): Promise<Readable>;
     getFilesFromDir(prefix: string): Promise<string[]>;

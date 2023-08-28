@@ -8,11 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StorageModule = void 0;
 const common_1 = require("@nestjs/common");
+const config_1 = require("@nestjs/config");
 const storage_service_1 = require("./service/storage.service");
 let StorageModule = exports.StorageModule = class StorageModule {
 };
 exports.StorageModule = StorageModule = __decorate([
     (0, common_1.Module)({
+        imports: [config_1.ConfigModule.forRoot()],
         providers: [storage_service_1.StorageService],
         exports: [storage_service_1.StorageService],
     })
