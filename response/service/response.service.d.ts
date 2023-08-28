@@ -6,7 +6,7 @@ import { ResponseSuccessCollectionDTO } from '../dto/response/response-success-c
 export declare class ResponseService {
     responseCode(statusCode: number): string;
     error(statusCode: number, messages: ErrorMessageDTO[], error: string): ResponseErrorDTO;
-    successCollection(content: any[], pagination?: PaginationDTO, message?: string): ResponseSuccessCollectionDTO<any>;
+    successCollection(content: any[], pagination?: PaginationDTO, message?: string): ResponseSuccessCollectionDTO;
     success(content: any, message?: string): ResponseSuccessSingleDTO;
     throwError(error: any): void;
 }

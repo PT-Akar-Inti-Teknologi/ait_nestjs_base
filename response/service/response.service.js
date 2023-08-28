@@ -11,6 +11,7 @@ const common_1 = require("@nestjs/common");
 const pagination_dto_1 = require("../dto/response/pagination.dto");
 const error_message_dto_1 = require("../dto/response/error-message.dto");
 const response_error_dto_1 = require("../dto/response/response-error.dto");
+const list_pagination_dto_1 = require("../dto/response/list-pagination.dto");
 const response_success_single_dto_1 = require("../dto/response/response-success-single.dto");
 const response_success_collection_dto_1 = require("../dto/response/response-success-collection.dto");
 let ResponseService = exports.ResponseService = class ResponseService {
@@ -38,13 +39,13 @@ let ResponseService = exports.ResponseService = class ResponseService {
             response_message: message,
         })
             .response_output({
-            list: {
-                pagination: pagination !== null && pagination !== void 0 ? pagination : pagination_dto_1.PaginationDTO.Builder()
-                    .size(content.length)
-                    .total(content.length)
-                    .build(),
-                content,
-            },
+            list: list_pagination_dto_1.ListPaginationDTO.Builder()
+                .pagination(pagination !== null && pagination !== void 0 ? pagination : pagination_dto_1.PaginationDTO.Builder()
+                .size(content.length)
+                .total(content.length)
+                .build())
+                .content(content)
+                .build(),
         })
             .build();
     }

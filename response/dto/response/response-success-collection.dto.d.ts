@@ -1,11 +1,8 @@
 import { ResponseDTO } from './response.dto';
-import { PaginationDTO } from './pagination.dto';
-export declare class ResponseSuccessCollectionDTO<E> extends ResponseDTO {
+import { ListPaginationDTO } from './list-pagination.dto';
+export declare class ResponseSuccessCollectionDTO extends ResponseDTO {
     readonly response_output: {
-        list: {
-            pagination: PaginationDTO;
-            content: E[];
-        };
+        list: ListPaginationDTO;
     };
-    static Builder(): import("builder-pattern").IBuilder<ResponseSuccessCollectionDTO<unknown>>;
+    static Builder(): import("builder-pattern").IBuilder<ResponseSuccessCollectionDTO>;
 }

@@ -12,26 +12,19 @@ const common_1 = require("@nestjs/common");
 const message_service_1 = require("./service/message.service");
 const response_service_1 = require("./service/response.service");
 let ResponseModule = exports.ResponseModule = ResponseModule_1 = class ResponseModule {
-    static withLanguages(languages, selectedLanguage = 'id') {
-        return {
+    static withLanguages(languages, selectedLanguage) {
+        this.languages = languages;
+        this.selectedLanguage = selectedLanguage;
+        const module = {
             global: true,
             module: ResponseModule_1,
-            providers: [
-                {
-                    provide: 'LANGUAGE_OPTIONS',
-                    useValue: languages,
-                },
-                {
-                    provide: 'SELECTED_LANGUAGE',
-                    useValue: selectedLanguage,
-                },
-                message_service_1.MessageService,
-                response_service_1.ResponseService,
-            ],
-            exports: [message_service_1.MessageService, response_service_1.ResponseService],
+            providers: [message_service_1.MessageService, response_service_1.ResponseService],
         };
+        module.exports = module.providers;
+        return module;
     }
 };
+ResponseModule.languages = {};
 exports.ResponseModule = ResponseModule = ResponseModule_1 = __decorate([
     (0, common_1.Module)({})
 ], ResponseModule);

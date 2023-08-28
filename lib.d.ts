@@ -3,6 +3,8 @@ export * from './app/app-factory';
 export * from './crud/dto/request/pagination-request.dto';
 export * from './crud/crud.module';
 export * from './response/dto/response/error-message.dto';
+export * from './response/dto/response/list-pagination.dto';
+export * from './response/dto/response/pagination.dto';
 export * from './response/dto/response/response.dto';
 export * from './response/dto/response/response-error.dto';
 export * from './response/dto/response/response-success-collection.dto';

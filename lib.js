@@ -19,6 +19,8 @@ __exportStar(require("./app/app-factory"), exports);
 __exportStar(require("./crud/dto/request/pagination-request.dto"), exports);
 __exportStar(require("./crud/crud.module"), exports);
 __exportStar(require("./response/dto/response/error-message.dto"), exports);
+__exportStar(require("./response/dto/response/list-pagination.dto"), exports);
+__exportStar(require("./response/dto/response/pagination.dto"), exports);
 __exportStar(require("./response/dto/response/response.dto"), exports);
 __exportStar(require("./response/dto/response/response-error.dto"), exports);
 __exportStar(require("./response/dto/response/response-success-collection.dto"), exports);
