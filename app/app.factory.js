@@ -78,4 +78,4 @@ function Application(metadata) {
     };
 }
 exports.Application = Application;
-//# sourceMappingURL=app-factory.js.map
+//# sourceMappingURL=app.factory.js.map
