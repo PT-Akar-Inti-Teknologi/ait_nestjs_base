@@ -18,6 +18,7 @@ __exportStar(require("./app/interface/module-metadata.options"), exports);
 __exportStar(require("./app/app.factory"), exports);
 __exportStar(require("./auth/guard/interface/user.interface"), exports);
 __exportStar(require("./auth/guard/jwt/jwt.guard"), exports);
+__exportStar(require("./auth/guard/jwt/jwt.strategy"), exports);
 __exportStar(require("./auth/guard/permission.decorator"), exports);
 __exportStar(require("./auth/guard/user-type.decorator"), exports);
 __exportStar(require("./auth/guard/user-type-and-level.decorator"), exports);

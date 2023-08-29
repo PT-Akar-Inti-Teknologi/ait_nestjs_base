@@ -2,6 +2,7 @@ export * from './app/interface/module-metadata.options';
 export * from './app/app.factory';
 export * from './auth/guard/interface/user.interface';
 export * from './auth/guard/jwt/jwt.guard';
+export * from './auth/guard/jwt/jwt.strategy';
 export * from './auth/guard/permission.decorator';
 export * from './auth/guard/user-type.decorator';
 export * from './auth/guard/user-type-and-level.decorator';

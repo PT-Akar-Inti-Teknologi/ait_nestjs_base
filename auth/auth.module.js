@@ -13,6 +13,7 @@ const jwt_1 = require("@nestjs/jwt");
 const config_1 = require("@nestjs/config");
 const message_service_1 = require("../response/service/message.service");
 const response_service_1 = require("../response/service/response.service");
+const jwt_strategy_1 = require("./guard/jwt/jwt.strategy");
 const hash_service_1 = require("../hash/hash.service");
 let AuthModule = exports.AuthModule = class AuthModule {
 };
@@ -40,6 +41,7 @@ exports.AuthModule = AuthModule = __decorate([
             hash_service_1.HashService,
             config_1.ConfigService,
             config_1.ConfigModule,
+            jwt_strategy_1.JwtStrategy,
         ],
     })
 ], AuthModule);
