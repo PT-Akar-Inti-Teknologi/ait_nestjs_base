@@ -4,6 +4,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MessageService } from '../response/service/message.service';
 import { ResponseService } from '../response/service/response.service';
+import { JwtStrategy } from './guard/jwt/jwt.strategy';
 import { HashService } from '../hash/hash.service';
 
 @Module({
@@ -29,6 +30,7 @@ import { HashService } from '../hash/hash.service';
     HashService,
     ConfigService,
     ConfigModule,
+    JwtStrategy,
   ],
 })
 export class AuthModule {}
