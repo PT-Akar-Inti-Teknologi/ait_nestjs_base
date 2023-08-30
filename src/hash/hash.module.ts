@@ -1,5 +1,5 @@
 import { Global, Module } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { HashService } from './hash.service';
 
@@ -13,6 +13,6 @@ import { HashService } from './hash.service';
     ConfigService,
   ],
   exports: [HashService],
-  imports: [],
+  imports: [ConfigModule.forRoot()],
 })
 export class HashModule {}

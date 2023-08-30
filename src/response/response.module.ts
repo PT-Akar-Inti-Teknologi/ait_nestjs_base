@@ -1,3 +1,4 @@
+import { ConfigModule } from '@nestjs/config';
 import { DynamicModule, Module } from '@nestjs/common';
 
 import { MessageService } from './service/message.service';
@@ -24,6 +25,7 @@ export class ResponseModule {
     const module: DynamicModule = {
       global: true,
       module: ResponseModule,
+      imports: [ConfigModule.forRoot()],
       providers: [MessageService, ResponseService],
     };
 
