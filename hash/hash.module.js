@@ -23,7 +23,7 @@ exports.HashModule = HashModule = __decorate([
             config_1.ConfigService,
         ],
         exports: [hash_service_1.HashService],
-        imports: [],
+        imports: [config_1.ConfigModule.forRoot()],
     })
 ], HashModule);
 //# sourceMappingURL=hash.module.js.map

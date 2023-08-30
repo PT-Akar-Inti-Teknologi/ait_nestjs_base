@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var ResponseModule_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ResponseModule = void 0;
+const config_1 = require("@nestjs/config");
 const common_1 = require("@nestjs/common");
 const message_service_1 = require("./service/message.service");
 const response_service_1 = require("./service/response.service");
@@ -24,6 +25,7 @@ let ResponseModule = exports.ResponseModule = ResponseModule_1 = class ResponseM
         const module = {
             global: true,
             module: ResponseModule_1,
+            imports: [config_1.ConfigModule.forRoot()],
             providers: [message_service_1.MessageService, response_service_1.ResponseService],
         };
         module.exports = module.providers;
