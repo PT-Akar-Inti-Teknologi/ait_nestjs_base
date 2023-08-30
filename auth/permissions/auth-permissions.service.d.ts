@@ -4,7 +4,7 @@ import { UpdatePermissionDTO } from './dto/update-permission.dto';
 import { SavePermissionDTO } from './dto/save-permission.dto';
 import { ResponseService } from '../../response/service/response.service';
 import { MessageService } from '../../response/service/message.service';
-import { PaginationRequestDTO } from '../../crud/dto/request/pagination-request.dto';
+import { PaginationRequestDTO } from '../../response/dto/request/pagination-request.dto';
 export declare class AuthPermissionsService {
     private readonly permissionRepository;
     private readonly messageService;
