@@ -1,6 +1,13 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+export * from './abstract/controller/controller.base';
+export * from './abstract/queue/queue.base';
+export * from './abstract/service/internal.constant';
+export * from './abstract/service/internal-service.base';
+export * from './abstract/service/service.base';
+export * from './abstract/subscriber/subscriber.base';
+
 export * from './app/interface/module-metadata.options';
 export * from './app/app.factory';
 
