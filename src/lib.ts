@@ -20,9 +20,6 @@ export * from './auth/auth.decorator';
 export * from './auth/auth.interface';
 export * from './auth/auth.module';
 
-export * from './crud/dto/request/pagination-request.dto';
-export * from './crud/crud.module';
-
 export * from './database/helper/column_numberic_transformer';
 export * from './database/helper/generic_seeder';
 export * from './database/database.factory';
@@ -32,6 +29,7 @@ export * from './hash/hash.decorator';
 export * from './hash/hash.module';
 export * from './hash/hash.service';
 
+export * from './response/dto/request/pagination-request.dto';
 export * from './response/dto/response/error-message.dto';
 export * from './response/dto/response/list-pagination.dto';
 export * from './response/dto/response/pagination.dto';
