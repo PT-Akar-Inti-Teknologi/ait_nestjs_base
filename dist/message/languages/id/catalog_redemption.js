@@ -1,0 +1,95 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    product_id: {
+        empty: {
+            code: 'PRODUCT_ID_EMPTY',
+            message: 'Product ID kosong.',
+        },
+        exist: {
+            code: 'PRODUCT_ID_EXIST',
+            message: 'Product ID sudah ada.',
+        },
+    },
+    period: {
+        expired: {
+            code: 'PERIOD_EXPIRED',
+            message: 'Periode redeem sudah kadaluarsa',
+        },
+        not_active: {
+            code: 'PERIOD_NOT_YET_ACTIVE',
+            message: 'Periode redeem belum aktif',
+        },
+    },
+    voucher: {
+        redeemed: {
+            code: 'VOUCHER_REDEEMED',
+            message: 'Voucher sudah di gunakan',
+        },
+        max_probabilities: {
+            code: 'MAX_PROBABILITIES',
+            message: 'Generate kode voucher gagal, silahkan coba lagi',
+        },
+        code_not_found: {
+            code: 'CODE_NOT_FOUND',
+            message: 'Code not found.',
+        },
+        already_used: {
+            code: 'ALREADY_USED',
+            message: 'Voucher sudah digunakan.',
+        },
+        invalid_store: {
+            code: 'STORE_INVALID',
+            message: 'Voucher tidak dapat digunakan di store ini',
+        },
+        store_required: {
+            code: 'STORE_REQUIRED',
+            message: 'Voucher butuh id store',
+        },
+    },
+    quota: {
+        max_limit: {
+            code: 'MAX_LIMIT',
+            message: 'Quota tidak tersedia',
+        },
+        less_than_redeemed: {
+            code: 'LESS_THAN_REDEEMED',
+            message: 'Quota tidak boleh kurang dari total voucher yang di redeem',
+        },
+    },
+    point: {
+        insufficient: {
+            code: 'INSUFFICIENT',
+            message: 'Poin tidak mencukupi',
+        },
+        exist: {
+            code: 'POINT_EXIST',
+            message: 'Point sudah ada.',
+        },
+    },
+    start_date: {
+        exist: {
+            code: 'START_DATE_EXIST',
+            message: 'Start Date sudah ada.',
+        },
+    },
+    end_date: {
+        exist: {
+            code: 'END_DATE_EXIST',
+            message: 'End Date sudah ada.',
+        },
+    },
+    type: {
+        exist: {
+            code: 'TYPE_EXIST',
+            message: 'Reward Type sudah ada.',
+        },
+    },
+    name: {
+        exist: {
+            code: 'NAME_EXIST',
+            message: 'Reward Name sudah ada.',
+        },
+    },
+};
+//# sourceMappingURL=catalog_redemption.js.map

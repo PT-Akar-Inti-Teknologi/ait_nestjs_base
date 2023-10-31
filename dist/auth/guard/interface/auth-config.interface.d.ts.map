@@ -1,0 +1,1 @@
+{"version":3,"file":"auth-config.interface.d.ts","sourceRoot":"","sources":["../../../../libs/auth/guard/interface/auth-config.interface.ts"],"names":[],"mappings":"AAAA,iCAAiC;AACjC,qBAAa,aAAa;IACxB,iCAAiC;IACjC,YAAY,EAAE,MAAM,CAAC;IACrB,wFAAwF;IACxF,iBAAiB,EAAE,MAAM,CAAC;IAC1B,kGAAkG;IAClG,wBAAwB,EAAE,MAAM,CAAC;CAClC"}

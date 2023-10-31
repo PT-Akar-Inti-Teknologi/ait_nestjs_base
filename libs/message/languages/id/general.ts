@@ -1,0 +1,181 @@
+export default {
+  create: {
+    success: {
+      code: 'INSERT_DATA_SUCCESS',
+      message: 'Data berhasil ditambahkan.',
+    },
+    fail: {
+      code: 'INSERT_DATA_FAIL',
+      message: 'Gagal menambahkan data.',
+    },
+  },
+  update: {
+    success: {
+      code: 'UPDATE_DATA_SUCCESS',
+      message: 'Data berhasil diperbarui.',
+    },
+    fail: {
+      code: 'UPDATE_DATA_FAIL',
+      message: 'Gagal memperbarui data.',
+    },
+  },
+  list: {
+    success: {
+      code: 'LIST_DATA_SUCCESS',
+      message: 'Data berhasil diambil.',
+    },
+    fail: {
+      code: 'LIST_DATA_FAIL',
+      message: 'Gagal mengambil data.',
+    },
+  },
+  delete: {
+    success: {
+      code: 'DELETE_DATA_SUCCESS',
+      message: 'Data berhasil dihapus.',
+    },
+    fail: {
+      code: 'DELETE_DATA_FAIL',
+      message: 'Gagal menghapus data.',
+    },
+  },
+  get: {
+    success: {
+      code: 'GET_DATA_SUCCESS',
+      message: 'Data berhasil diambil.',
+    },
+    fail: {
+      code: 'GET_DATA_FAIL',
+      message: 'Gagal mengambil data.',
+    },
+  },
+  general: {
+    success: {
+      code: 'SUCCESS',
+      message: 'Berhasil',
+    },
+    data_success: {
+      code: 'GET_DATA_SUCCESS',
+      message: 'Data berhasil diambil.',
+    },
+    fail: {
+      code: 'FAIL',
+      message: 'Gagal',
+    },
+    data_not_found: {
+      code: 'DATA_NOT_FOUND',
+      message: 'Data tidak ditemukan.',
+    },
+    id_not_found: {
+      code: 'ID_NOT_FOUND',
+      message: 'ID tidak ditemukan.',
+    },
+    value_exist: {
+      code: 'VALUE_EXIST',
+      message: 'Nilai sudah ada.',
+    },
+    name_exist: {
+      code: 'NAME_EXIST',
+      message: 'Nama sudah ada.',
+    },
+    phone_exist: {
+      code: 'PHONE_EXIST',
+      message: 'Nomor telepon sudah ada.',
+    },
+    email_exist: {
+      code: 'EMAIL_EXIST',
+      message: 'Email sudah ada.',
+    },
+    no_member_exist: {
+      code: 'NO_MEMBER_EXIST',
+      message: 'No Member sudah di pakai.',
+    },
+    title_exist: {
+      code: 'TITLE_EXIST',
+      message: 'Title sudah ada.',
+    },
+    period_exist: {
+      code: 'PERIOD_EXIST',
+      message: 'Period sudah ada.',
+    },
+    store_id_exist: {
+      code: 'STORE_EXIST',
+      message: 'Store sudah ada.',
+    },
+    tier_from_id_exist: {
+      code: 'TIER_FROM_EXIST',
+      message: 'From Tier sudah ada.',
+    },
+    tier_to_id_exist: {
+      code: 'TIER_TO_EXIST',
+      message: 'To Tier sudah ada.',
+    },
+    data_invalid: {
+      code: 'DATA_INVALID',
+      message: 'Data tidak valid.',
+    },
+    data_is_empty: {
+      code: 'DATA_IS_EMPTY',
+      message: 'Data tidak boleh kosong.',
+    },
+    data_not_allowed: {
+      code: 'DATA_NOT_ALLOWED',
+      message: 'Tidak dapat mengakses data ini.',
+    },
+    invalidUserAccess: {
+      code: 'UNAUTHORIZED USER',
+      message: 'Pengguna tidak memiliki akses.',
+    },
+    status_not_allowed: {
+      code: 'STATUS_NOT_ALLOWED',
+      message: 'Tidak dapat memperbarui data dengan status ini.',
+    },
+    image_not_modified: {
+      code: 'IMAGE_NOT_MODIFIED',
+      message: 'Gambar tidak diubah.',
+    },
+    invalid_date: {
+      code: 'INVALID_DATE',
+      message: 'Tanggal tidak valid.',
+    },
+    invalid_start_end_date: {
+      code: 'INVALID_START_END_DATE',
+      message: 'Tanggal mulai harus lebih awal dari tanggal akhir.',
+    },
+    invalid_greater_date: {
+      code: 'INVALID_GREATER_DATE',
+      message: 'Tanggal harus lebih besar dari tanggal saat ini.',
+    },
+    date_is_exist: {
+      code: 'INVALID_GREATER_DATE',
+      message:
+        'Tanggal mulai/jam sudah digunakan, silakan pilih tanggal/jam yang berbeda.',
+    },
+    date_overlap: {
+      code: 'OVERLAP_DATE',
+      message: 'Tanggal tidak boleh beririsan.',
+    },
+    date_period_invalid: {
+      code: 'INVALID_DATE_PERIOD',
+      message: 'Rentang tanggal harus valid.',
+    },
+    empty_photo: {
+      code: 'EMPTY_PHOTO',
+      message: 'Foto kosong.',
+    },
+    is_scheduled: {
+      code: 'IS_SCHEDULED',
+      message: 'Kegiatan sudah dijadwalkan.',
+    },
+    is_ongoing_or_past: {
+      code: 'IS_ONGOING_OR_PAST',
+      message: 'Kegiatan sedang berlangsung atau sudah berakhir.',
+    },
+  },
+  redis: {
+    create_queue_fail: {
+      code: 'CREATE_QUEUE_FAIL',
+      message: 'Tidak dapat membuat antrian',
+    },
+  },
+};
