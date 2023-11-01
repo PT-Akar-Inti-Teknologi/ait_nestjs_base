@@ -1,7 +1,7 @@
 import { get } from 'lodash';
 import { Injectable } from '@nestjs/common';
 import { MessageService } from '../message.service';
-import { AitMessageConfig } from '../interfaces';
+import { AitMessageConfig, AitMessageConfigLocal } from '../interfaces';
 import defaultLanguages from '../message.constant';
 
 @Injectable()
@@ -9,7 +9,8 @@ export class MessageLocalService extends MessageService {
   private translations: Record<string, any>;
   constructor(private config: AitMessageConfig) {
     super();
-    this.translations = config.translations ?? defaultLanguages;
+    const configLocal = config as AitMessageConfigLocal;
+    this.translations = configLocal.translations ?? defaultLanguages;
   }
 
   getRaw(key: string): Record<string, string> | string {

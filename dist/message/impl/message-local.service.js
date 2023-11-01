@@ -23,7 +23,8 @@ let MessageLocalService = class MessageLocalService extends message_service_1.Me
         var _a;
         super();
         this.config = config;
-        this.translations = (_a = config.translations) !== null && _a !== void 0 ? _a : message_constant_1.default;
+        const configLocal = config;
+        this.translations = (_a = configLocal.translations) !== null && _a !== void 0 ? _a : message_constant_1.default;
     }
     getRaw(key) {
         return (0, lodash_1.get)(this.translations[this.config.fallbackLanguage], key, {
