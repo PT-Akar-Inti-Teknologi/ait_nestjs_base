@@ -78,6 +78,7 @@ Add this module in your `app.module.ts` imports.
 ```ts
 AitMessageModule.register({
   useNestI18n: true,
+  /// see setup config in https://nestjs-i18n.com/quick-start
   fallbackLanguage: process.env.APP_LANGUAGE,
   loaderOptions: {
     path: path.join(__dirname, '/i18n/'),
@@ -87,9 +88,10 @@ AitMessageModule.register({
 }),
 ```
 
-Note:
+Note for this version:
 
-- for this version, you muse have translation json inside your src/i18n/
+- need to install `nestjs-i18n`
+- you muse have translation json inside your src/i18n/
 - also you must setup `nest-cli.json`, it should have this option
 
 ```ts
