@@ -12,6 +12,29 @@ yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0
 
 Register modules that were used by your project in app.module.ts, then available service will be available globally to be injected in any of Feature classes. See in available modules below to know how to register.
 
+## Generic Migration Guide from legacy Base folder
+
+- install dependencies
+- add modules to AppModules
+- follow usage notes of each module, especially about AitMessageModule and AitDatabaseModule
+- use vscode/IDE with regex search and replace, will use vscode syntax as guide.
+- delete Base folder
+- find: `'.*Base/(.*)'`, replace with `'@ait/nestjs-base'`
+- remove `MessageService` from module providers, by find and replace with these parameter:
+  1. MessageService imports:
+     - find: `import \{ MessageService \}.*;\n`
+     - replace: 
+     - files to include: `*module.ts`
+  2. MessageService with comma:
+     - find: `MessageService,`
+     - replace: 
+     - files to include: `*module.ts`
+  3. MessageService without comma:
+     - find: `MessageService`
+     - replace: 
+     - files to include: `*module.ts`
+- remote `ResponseService` from module providers, same as `MessageService`, just change the search parameters
+
 ## Available Modules
 
 ## AitAuthModule
