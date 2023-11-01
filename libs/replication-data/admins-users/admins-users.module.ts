@@ -6,7 +6,6 @@ import { HttpModule } from '@nestjs/axios';
 import { AdminsUserDocument } from './entities/user.entity';
 import { SuperAdminSeeder } from './seeders/superadmin.seeder';
 import { PermissionDocument } from '../permissions/entities/permission.entity';
-import { ResponseService } from '../../response/response.service';
 import { PermissionsModule } from '../permissions/permissions.module';
 
 @Module({
@@ -16,7 +15,7 @@ import { PermissionsModule } from '../permissions/permissions.module';
     PermissionsModule,
   ],
   controllers: [AdminsUsersController],
-  providers: [AdminsUsersService, SuperAdminSeeder, ResponseService],
+  providers: [AdminsUsersService, SuperAdminSeeder],
   exports: [AdminsUsersService, SuperAdminSeeder],
 })
 export class AdminsUsersModule {}

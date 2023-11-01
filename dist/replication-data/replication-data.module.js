@@ -11,7 +11,6 @@ exports.AitReplicationDataModule = void 0;
 const common_1 = require("@nestjs/common");
 const admins_users_module_1 = require("./admins-users/admins-users.module");
 const permissions_module_1 = require("./permissions/permissions.module");
-const response_service_1 = require("../response/response.service");
 const core_1 = require("@nestjs/core");
 let AitReplicationDataModule = AitReplicationDataModule_1 = class AitReplicationDataModule {
     static register(config) {
@@ -33,7 +32,7 @@ let AitReplicationDataModule = AitReplicationDataModule_1 = class AitReplication
                 ]),
             ],
             controllers: [],
-            providers: [response_service_1.ResponseService],
+            providers: [],
             exports: [],
         };
     }

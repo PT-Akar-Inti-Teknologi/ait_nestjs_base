@@ -15,7 +15,6 @@ const axios_1 = require("@nestjs/axios");
 const jwt_1 = require("@nestjs/jwt");
 const config_1 = require("@nestjs/config");
 const jwt_strategy_1 = require("./guard/jwt/jwt.strategy");
-const response_service_1 = require("../response/response.service");
 const auth_permissions_service_1 = require("../replication-data/permissions/auth-permissions.service");
 const permission_entity_1 = require("../replication-data/permissions/entities/permission.entity");
 const auth_config_interface_1 = require("./guard/interface/auth-config.interface");
@@ -41,7 +40,6 @@ let AitAuthModule = AitAuthModule_1 = class AitAuthModule {
                     useValue: config,
                 },
                 auth_service_1.AuthService,
-                response_service_1.ResponseService,
                 jwt_strategy_1.JwtStrategy,
                 config_1.ConfigService,
                 config_1.ConfigModule,
@@ -51,6 +49,7 @@ let AitAuthModule = AitAuthModule_1 = class AitAuthModule {
     }
 };
 AitAuthModule = AitAuthModule_1 = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({})
 ], AitAuthModule);
 exports.AitAuthModule = AitAuthModule;

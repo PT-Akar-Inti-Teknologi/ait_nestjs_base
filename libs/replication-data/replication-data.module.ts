@@ -1,7 +1,6 @@
 import { DynamicModule, Module } from '@nestjs/common';
 import { AdminsUsersModule } from './admins-users/admins-users.module';
 import { PermissionsModule } from './permissions/permissions.module';
-import { ResponseService } from '../response/response.service';
 import { ReplicationDataConfig } from './interface/replication-data-config.interface';
 import { RouterModule } from '@nestjs/core';
 
@@ -26,7 +25,7 @@ export class AitReplicationDataModule {
         ]),
       ],
       controllers: [],
-      providers: [ResponseService],
+      providers: [],
       exports: [],
     };
   }

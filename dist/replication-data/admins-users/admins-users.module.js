@@ -15,7 +15,6 @@ const axios_1 = require("@nestjs/axios");
 const user_entity_1 = require("./entities/user.entity");
 const superadmin_seeder_1 = require("./seeders/superadmin.seeder");
 const permission_entity_1 = require("../permissions/entities/permission.entity");
-const response_service_1 = require("../../response/response.service");
 const permissions_module_1 = require("../permissions/permissions.module");
 let AdminsUsersModule = class AdminsUsersModule {
 };
@@ -27,7 +26,7 @@ AdminsUsersModule = __decorate([
             permissions_module_1.PermissionsModule,
         ],
         controllers: [admins_users_controller_1.AdminsUsersController],
-        providers: [admins_users_service_1.AdminsUsersService, superadmin_seeder_1.SuperAdminSeeder, response_service_1.ResponseService],
+        providers: [admins_users_service_1.AdminsUsersService, superadmin_seeder_1.SuperAdminSeeder],
         exports: [admins_users_service_1.AdminsUsersService, superadmin_seeder_1.SuperAdminSeeder],
     })
 ], AdminsUsersModule);

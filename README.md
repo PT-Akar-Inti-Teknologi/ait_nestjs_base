@@ -9,7 +9,7 @@ Refer to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/tree/dev for 
 ## How to install
 
 ```
-yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0.0
+yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0.1
 ```
 
 ## How to Use
@@ -50,29 +50,10 @@ Wrapper for @nestjs/passport, with @nestjs/jwt strategy. Used for issuing JWT to
 Add this module in your `app.module.ts` imports.
 
 ```ts
-AitDatabaseModule.register({
-    /** does database entity need to be synchronized, prefer false on production, default true */
-    dbSync: process.env.DB_SYNC != 'false',
-    /** does database entity need to be reset each run, default false */
-    dbDropSchema: process.env.DB_DROP_SCHEMA == 'true',
-    /** does database need to be logged in console, default true */
-    dbLogging: process.env.DB_LOGGING != 'false',
-    /** does entities autoloaded when feature module use TypeOrmModule.forFeature, default to true */
-    dbAutoloadEntities: process.env.DB_AUTOLOAD_ENTITIES != 'false',
-    /** entities to be loaded when autoload_entities is not used */
-    dbEntities: ['dist/**/*.entity.ts', 'dist/**/**/*.entity.ts'],
-    /** database host */
-    dbHost: process.env.DB_HOST,
-    /** database port */
-    dbPort: Number(process.env.DB_PORT),
-    /** database username */
-    dbUsername: process.env.DB_USERNAME,
-    /** database password */
-    dbPassword: process.env.DB_PASSWORD,
-    /** database name */
-    dbName: process.env.DB_NAME,
-    /** database table name prefix */
-    dbTablePrefix: 'loyalties_',
+AitAuthModule.register({
+  jwtSecretKey: process.env.AUTH_JWTSECRETKEY,
+  jwtExpirationTime: process.env.AUTH_JWTEXPIRATIONTIME,
+  refreshJwtExpirationTime: process.env.AUTH_REFRESHJWTEXPIRATIONTIME,
 }),
 ```
 
