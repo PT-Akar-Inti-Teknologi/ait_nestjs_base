@@ -11,15 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthPermissionController = void 0;
 const common_1 = require("@nestjs/common");
 const auth_permissions_service_1 = require("./auth-permissions.service");
 const save_permission_dto_1 = require("./dto/save-permission.dto");
-const delete_permission_dto_1 = __importDefault(require("./dto/delete-permission.dto"));
+const delete_permission_dto_1 = require("./dto/delete-permission.dto");
 const response_service_1 = require("../../response/response.service");
 let AuthPermissionController = class AuthPermissionController {
     constructor(authPermissionsService, responseService) {
@@ -52,7 +49,7 @@ __decorate([
     (0, common_1.Delete)('/:role_id'),
     __param(0, (0, common_1.Param)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [delete_permission_dto_1.default]),
+    __metadata("design:paramtypes", [delete_permission_dto_1.DeletePermissionDTO]),
     __metadata("design:returntype", Promise)
 ], AuthPermissionController.prototype, "delete", null);
 AuthPermissionController = __decorate([

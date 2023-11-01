@@ -1,6 +1,6 @@
 import { AuthPermissionsService } from './auth-permissions.service';
 import { SavePermissionDTO } from './dto/save-permission.dto';
-import DeletePermissionDTO from './dto/delete-permission.dto';
+import { DeletePermissionDTO } from './dto/delete-permission.dto';
 import { ResponseService } from '../../response/response.service';
 import { ResponseSuccessSingleInterface } from '../../response/response.interface';
 export declare class AuthPermissionController {

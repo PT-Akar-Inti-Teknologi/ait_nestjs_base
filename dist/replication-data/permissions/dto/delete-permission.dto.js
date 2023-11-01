@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DeletePermissionDTO = void 0;
 const i18n_class_validator_1 = require("../../../i18n-class-validator");
 class DeletePermissionDTO {
 }
@@ -17,5 +18,5 @@ __decorate([
     (0, i18n_class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], DeletePermissionDTO.prototype, "role_id", void 0);
-exports.default = DeletePermissionDTO;
+exports.DeletePermissionDTO = DeletePermissionDTO;
 //# sourceMappingURL=delete-permission.dto.js.map

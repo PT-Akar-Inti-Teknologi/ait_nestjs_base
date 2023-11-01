@@ -3,7 +3,7 @@ import { AuthPermissionsService } from './auth-permissions.service';
 import { PermissionDocument } from './entities/permission.entity';
 import { SavePermissionDTO } from './dto/save-permission.dto';
 import { DeleteResult } from 'typeorm';
-import DeletePermissionDTO from './dto/delete-permission.dto';
+import { DeletePermissionDTO } from './dto/delete-permission.dto';
 import { ResponseService } from '../../response/response.service';
 import { ResponseSuccessSingleInterface } from '../../response/response.interface';
 
