@@ -2,7 +2,11 @@
 
 This library contains common utilities that can be used to kickstart nestjs projects
 
-### How to install
+## 0.x Version
+
+Refer to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/tree/dev for old version docs.
+
+## How to install
 
 ```
 yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0.0
