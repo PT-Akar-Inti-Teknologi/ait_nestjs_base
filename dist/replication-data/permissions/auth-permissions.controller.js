@@ -18,7 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthPermissionController = void 0;
 const common_1 = require("@nestjs/common");
 const auth_permissions_service_1 = require("./auth-permissions.service");
-const save_permission_dto_1 = __importDefault(require("./dto/save-permission.dto"));
+const save_permission_dto_1 = require("./dto/save-permission.dto");
 const delete_permission_dto_1 = __importDefault(require("./dto/delete-permission.dto"));
 const response_service_1 = require("../../response/response.service");
 let AuthPermissionController = class AuthPermissionController {
@@ -45,7 +45,7 @@ __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [save_permission_dto_1.default]),
+    __metadata("design:paramtypes", [save_permission_dto_1.SavePermissionDTO]),
     __metadata("design:returntype", Promise)
 ], AuthPermissionController.prototype, "save", null);
 __decorate([

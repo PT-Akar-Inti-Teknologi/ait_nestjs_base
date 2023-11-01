@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Logger, Param, Post } from '@nestjs/common';
 import { AuthPermissionsService } from './auth-permissions.service';
 import { PermissionDocument } from './entities/permission.entity';
-import SavePermissionDTO from './dto/save-permission.dto';
+import { SavePermissionDTO } from './dto/save-permission.dto';
 import { DeleteResult } from 'typeorm';
 import DeletePermissionDTO from './dto/delete-permission.dto';
 import { ResponseService } from '../../response/response.service';

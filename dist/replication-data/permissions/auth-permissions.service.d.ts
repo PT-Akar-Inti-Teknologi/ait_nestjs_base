@@ -1,7 +1,7 @@
 import { Repository, UpdateResult } from 'typeorm';
 import { PermissionDocument } from './entities/permission.entity';
 import { UpdatePermissionDTO } from './dto/update-permission.dto';
-import SavePermissionDTO from './dto/save-permission.dto';
+import { SavePermissionDTO } from './dto/save-permission.dto';
 import { MessageService } from '../../message/message.service';
 import { ResponseService } from '../../response/response.service';
 import { MainPagingDTO } from '../../common/dto/main-paging.dto';

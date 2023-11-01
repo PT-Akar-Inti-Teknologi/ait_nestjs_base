@@ -6,7 +6,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { BaseService } from '../../abstract-base/service/service.base';
 import { ResponseService } from '../../response/response.service';
 import { MessageService } from '../../message/message.service';
-import SavePermissionDTO from '../permissions/dto/save-permission.dto';
+import { SavePermissionDTO } from '../permissions/dto/save-permission.dto';
 import { AuthPermissionsService } from '../permissions/auth-permissions.service';
 
 @Injectable()

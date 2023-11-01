@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SavePermissionDTO = void 0;
 const i18n_class_validator_1 = require("../../../i18n-class-validator");
 class SavePermissionDTO {
 }
@@ -22,5 +23,5 @@ __decorate([
     (0, i18n_class_validator_1.IsArray)(),
     __metadata("design:type", Array)
 ], SavePermissionDTO.prototype, "permissions", void 0);
-exports.default = SavePermissionDTO;
+exports.SavePermissionDTO = SavePermissionDTO;
 //# sourceMappingURL=save-permission.dto.js.map

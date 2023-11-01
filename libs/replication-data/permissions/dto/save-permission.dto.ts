@@ -1,6 +1,6 @@
 import { IsArray, IsNotEmpty, IsString } from '../../../i18n-class-validator';
 
-export default class SavePermissionDTO {
+export class SavePermissionDTO {
   @IsNotEmpty()
   @IsString()
   role_id: string;
