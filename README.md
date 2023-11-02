@@ -244,3 +244,23 @@ AitReplicationDataModule.register({
 
 - you can use it's entity (User/Permission) anywhere in your app.
 - you can expose it so the real AdminService can broadcast the data to your microservice
+
+## AitHashModule
+
+Module that provides service with ability to create and compare hashes based on bcrypt.
+
+### Setup AitHashModule
+
+Add this module in your `app.module.ts` imports.
+
+```ts
+AitHashModule.register({
+  saltLength: Number(process.env.HASH_PASSWORDSALTLENGTH),
+}),
+```
+
+### Usage AitHashModule
+
+- inject `HashService` in your feature service. this will be available globally once AitResponseModule setup in app.module.ts.
+- use `generateHashPassword` to generate hash
+- use `bcryptComparePassword` to compare password with hash
