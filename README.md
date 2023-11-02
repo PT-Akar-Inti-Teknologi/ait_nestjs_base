@@ -9,7 +9,7 @@ Refer to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/tree/dev for 
 ## How to install
 
 ```
-yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0.6
+yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0.7
 ```
 
 ## How to Use
@@ -229,6 +229,8 @@ AitStorageModule.register({
 ## AitReplicationDataModule
 
 Module that provide admin user and permission replication functionality to current microservice. It will define 2 controller that can be accessed using `${apiPrefix}/auth-permissions` and `${apiPrefix}/admins/users`
+
+Note: this module is separated, and can be imported using @ait/nestjs-base/replication
 
 ### Setup AitReplicationDataModule
 

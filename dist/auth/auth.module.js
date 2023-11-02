@@ -10,20 +10,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AitAuthModule = void 0;
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
-const typeorm_1 = require("@nestjs/typeorm");
 const axios_1 = require("@nestjs/axios");
 const jwt_1 = require("@nestjs/jwt");
-const config_1 = require("@nestjs/config");
-const jwt_strategy_1 = require("./guard/jwt/jwt.strategy");
-const auth_permissions_service_1 = require("../replication-data/permissions/auth-permissions.service");
-const permission_entity_1 = require("../replication-data/permissions/entities/permission.entity");
 const auth_config_interface_1 = require("./guard/interface/auth-config.interface");
 let AitAuthModule = AitAuthModule_1 = class AitAuthModule {
     static register(config) {
         return {
             module: AitAuthModule_1,
             imports: [
-                typeorm_1.TypeOrmModule.forFeature([permission_entity_1.PermissionDocument]),
                 axios_1.HttpModule,
                 jwt_1.JwtModule.register({
                     secret: config.jwtSecretKey,
@@ -40,10 +34,6 @@ let AitAuthModule = AitAuthModule_1 = class AitAuthModule {
                     useValue: config,
                 },
                 auth_service_1.AuthService,
-                jwt_strategy_1.JwtStrategy,
-                config_1.ConfigService,
-                config_1.ConfigModule,
-                auth_permissions_service_1.AuthPermissionsService,
             ],
         };
     }

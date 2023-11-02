@@ -17,7 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./interface/auth-config.interface"), exports);
 __exportStar(require("./interface/user.interface"), exports);
 __exportStar(require("./jwt/jwt.guard"), exports);
-__exportStar(require("./jwt/jwt.strategy"), exports);
 __exportStar(require("./permission.decorator"), exports);
 __exportStar(require("./user-type-and-level.decorator"), exports);
 __exportStar(require("./user-type.decorator"), exports);

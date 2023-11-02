@@ -1,11 +1,20 @@
 {
   "name": "@ait/nestjs-base",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "author": "AIT",
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./replication": "./dist/replication-data/index.js"
+  },
+  "typesVersions": {
+    "*": {
+      "replication": ["dist/replication-data/index.d.ts"]
+    }
+  },
   "scripts": {
     "build": "rimraf dist/* && tsc --project tsconfig.build.json",
     "prepublish": "npm run build",

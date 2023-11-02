@@ -21,7 +21,6 @@ __exportStar(require("./database"), exports);
 __exportStar(require("./hash"), exports);
 __exportStar(require("./i18n-class-validator"), exports);
 __exportStar(require("./message"), exports);
-__exportStar(require("./replication-data"), exports);
 __exportStar(require("./response"), exports);
 __exportStar(require("./storage"), exports);
 __exportStar(require("./utils"), exports);
