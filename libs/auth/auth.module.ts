@@ -27,6 +27,7 @@ export class AitAuthModule {
           useValue: config,
         },
         AuthService,
+        config.jwtStrategy,
       ],
     };
   }

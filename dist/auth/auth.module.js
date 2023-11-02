@@ -34,6 +34,7 @@ let AitAuthModule = AitAuthModule_1 = class AitAuthModule {
                     useValue: config,
                 },
                 auth_service_1.AuthService,
+                config.jwtStrategy,
             ],
         };
     }

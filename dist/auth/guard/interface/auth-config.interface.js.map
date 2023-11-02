@@ -1,1 +1,1 @@
-{"version":3,"file":"auth-config.interface.js","sourceRoot":"","sources":["../../../../libs/auth/guard/interface/auth-config.interface.ts"],"names":[],"mappings":";;;AAAA,iCAAiC;AACjC,MAAa,aAAa;CAOzB;AAPD,sCAOC"}
+{"version":3,"file":"auth-config.interface.js","sourceRoot":"","sources":["../../../../libs/auth/guard/interface/auth-config.interface.ts"],"names":[],"mappings":";;;AACA,iCAAiC;AACjC,MAAa,aAAa;CAUzB;AAVD,sCAUC"}
