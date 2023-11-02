@@ -12,6 +12,8 @@ Refer to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/tree/dev for 
 yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0.8
 ```
 
+For modules that need user replication data module, please see to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data
+
 ## How to Use
 
 Register modules that were used by your project in app.module.ts, then available service will be available globally to be injected in any of Feature classes. See in available modules below to know how to register.
@@ -38,6 +40,7 @@ Register modules that were used by your project in app.module.ts, then available
      - replace: 
      - files to include: `*module.ts`
 - remote `ResponseService` from module providers, same as `MessageService`, just change the search parameters
+- for `AdminsUserDocument` and `AdminsUsersService`, Permission/Replication please update import path to [@ait/nestjs-replication-data](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data)
 
 ## Available Modules
 
