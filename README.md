@@ -9,7 +9,7 @@ Refer to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/tree/dev for 
 ## How to install
 
 ```
-yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0.7
+yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0.8
 ```
 
 ## How to Use
@@ -225,27 +225,6 @@ AitStorageModule.register({
 
 - inject `StorageServices` in your feature service. this will be available globally once AitResponseModule setup in app.module.ts.
 - use `uploadFile` function to upload file, with parameters `buffer`, `filename`, `path`
-
-## AitReplicationDataModule
-
-Module that provide admin user and permission replication functionality to current microservice. It will define 2 controller that can be accessed using `${apiPrefix}/auth-permissions` and `${apiPrefix}/admins/users`
-
-Note: this module is separated, and can be imported using @ait/nestjs-base/replication
-
-### Setup AitReplicationDataModule
-
-Add [AitDatabaseModule](#aitdatabasemodule) (must fill dbTablePrefix) and this module in your `app.module.ts` imports. this module is semi coupled with [AitDatabaseModule](#aitdatabasemodule), except you can initialize TypeORM default connection with table prefix, that's also acceptable
-
-```ts
-AitReplicationDataModule.register({
-  apiPrefix: 'api/v1/internal/loyalties',
-}),
-```
-
-### Usage AitReplicationDataModule
-
-- you can use it's entity (User/Permission) anywhere in your app.
-- you can expose it so the real AdminService can broadcast the data to your microservice
 
 ## AitHashModule
 

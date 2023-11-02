@@ -1,1 +1,0 @@
-{"version":3,"file":"replication-data.module.d.ts","sourceRoot":"","sources":["../../libs/replication-data/replication-data.module.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAU,MAAM,gBAAgB,CAAC;AAGvD,OAAO,EAAE,qBAAqB,EAAE,MAAM,+CAA+C,CAAC;AAGtF,qBACa,wBAAwB;IACnC,MAAM,CAAC,QAAQ,CAAC,MAAM,EAAE,qBAAqB,GAAG,aAAa;CAuB9D"}
