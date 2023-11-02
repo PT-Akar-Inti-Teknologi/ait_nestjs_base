@@ -57,6 +57,8 @@ AitAuthModule.register({
   jwtSecretKey: process.env.AUTH_JWTSECRETKEY,
   jwtExpirationTime: process.env.AUTH_JWTEXPIRATIONTIME,
   refreshJwtExpirationTime: process.env.AUTH_REFRESHJWTEXPIRATIONTIME,
+  /** use [@ait/nestjs-replication-data](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data) or other strategy you want */
+  jwtStrategy: JwtStrategy,
 }),
 ```
 
