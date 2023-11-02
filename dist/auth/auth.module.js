@@ -15,6 +15,18 @@ const jwt_1 = require("@nestjs/jwt");
 const auth_config_interface_1 = require("./guard/interface/auth-config.interface");
 let AitAuthModule = AitAuthModule_1 = class AitAuthModule {
     static register(config) {
+        const providers = [];
+        const imports = [];
+        const exports = [];
+        if (config.jwtStrategy) {
+            providers.push(config.jwtStrategy.strategy);
+            if (config.jwtStrategy.providers)
+                providers.push(...config.jwtStrategy.providers);
+            if (config.jwtStrategy.imports)
+                imports.push(...config.jwtStrategy.imports);
+            if (config.jwtStrategy.exports)
+                exports.push(...config.jwtStrategy.exports);
+        }
         return {
             module: AitAuthModule_1,
             imports: [
@@ -25,16 +37,17 @@ let AitAuthModule = AitAuthModule_1 = class AitAuthModule {
                         expiresIn: config.jwtExpirationTime,
                     },
                 }),
+                ...imports,
             ],
             controllers: [],
-            exports: [auth_service_1.AuthService],
+            exports: [auth_service_1.AuthService, ...exports],
             providers: [
                 {
                     provide: auth_config_interface_1.AitAuthConfig,
                     useValue: config,
                 },
                 auth_service_1.AuthService,
-                config.jwtStrategy,
+                ...providers,
             ],
         };
     }

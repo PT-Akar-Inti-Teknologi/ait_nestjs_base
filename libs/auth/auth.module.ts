@@ -8,6 +8,18 @@ import { AitAuthConfig } from './guard/interface/auth-config.interface';
 @Module({})
 export class AitAuthModule {
   static register(config: AitAuthConfig): DynamicModule {
+    const providers = [];
+    const imports = [];
+    const exports = [];
+    if (config.jwtStrategy) {
+      providers.push(config.jwtStrategy.strategy);
+      if (config.jwtStrategy.providers)
+        providers.push(...config.jwtStrategy.providers);
+      if (config.jwtStrategy.imports)
+        imports.push(...config.jwtStrategy.imports);
+      if (config.jwtStrategy.exports)
+        exports.push(...config.jwtStrategy.exports);
+    }
     return {
       module: AitAuthModule,
       imports: [
@@ -18,16 +30,17 @@ export class AitAuthModule {
             expiresIn: config.jwtExpirationTime,
           },
         }),
+        ...imports,
       ],
       controllers: [],
-      exports: [AuthService],
+      exports: [AuthService, ...exports],
       providers: [
         {
           provide: AitAuthConfig,
           useValue: config,
         },
         AuthService,
-        config.jwtStrategy,
+        ...providers,
       ],
     };
   }

@@ -9,7 +9,7 @@ Refer to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/tree/dev for 
 ## How to install
 
 ```
-yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0.9
+yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0.10
 ```
 
 For modules that need user replication data module, please see to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data
@@ -58,7 +58,10 @@ AitAuthModule.register({
   jwtExpirationTime: process.env.AUTH_JWTEXPIRATIONTIME,
   refreshJwtExpirationTime: process.env.AUTH_REFRESHJWTEXPIRATIONTIME,
   /** use [@ait/nestjs-replication-data](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data) or other strategy you want */
-  jwtStrategy: JwtStrategy,
+  jwtStrategy: {
+    strategy: JwtStrategy,
+    providers: [AuthPermissionsService],
+  },
 }),
 ```
 
