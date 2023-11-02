@@ -60,6 +60,7 @@ AitAuthModule.register({
   /** use [@ait/nestjs-replication-data](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data) or other strategy you want */
   jwtStrategy: {
     strategy: JwtStrategy,
+    imports: [TypeOrmModule.forFeature([PermissionDocument])],
     providers: [AuthPermissionsService],
   },
 }),
