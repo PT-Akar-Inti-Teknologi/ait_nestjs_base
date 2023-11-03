@@ -14,6 +14,8 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseController = void 0;
 const common_1 = require("@nestjs/common");
+const main_paging_dto_1 = require("../../common/dto/main-paging.dto");
+const class_transformer_1 = require("class-transformer");
 /**
  * Base class for providing CRUD (Create, Read, Update, Delete) operations over HTTP (GET, POST, PUT, DELETE).
  * @template CreateDTO - The DTO used to create an entity
@@ -21,11 +23,12 @@ const common_1 = require("@nestjs/common");
  * @template EntityDocument - The entity document type
  */
 class BaseController {
-    constructor(baseService, baseResponseService, baseMessageService, className) {
+    constructor(baseService, baseResponseService, baseMessageService, className, pagingClass = main_paging_dto_1.MainPagingDTO) {
         this.baseService = baseService;
         this.baseResponseService = baseResponseService;
         this.baseMessageService = baseMessageService;
         this.className = className;
+        this.pagingClass = pagingClass;
         this.logger = new common_1.Logger(className);
     }
     /**
@@ -34,6 +37,9 @@ class BaseController {
      * @returns - The HTTP response containing the list of entities and pagination details
      */
     async findAll(mainPagingDTO) {
+        if (!(mainPagingDTO instanceof main_paging_dto_1.MainPagingDTO)) {
+            mainPagingDTO = (0, class_transformer_1.plainToClass)(this.pagingClass, mainPagingDTO);
+        }
         return this.baseFindAll(mainPagingDTO);
     }
     /**

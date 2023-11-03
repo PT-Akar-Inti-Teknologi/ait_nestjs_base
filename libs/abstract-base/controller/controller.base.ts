@@ -18,6 +18,7 @@ import {
   ResponseSuccessSingleInterface,
 } from '../../response/response.interface';
 import { IUser } from '../../auth/guard/interface/user.interface';
+import { ClassConstructor, plainToClass } from 'class-transformer';
 
 /**
  * Base class for providing CRUD (Create, Read, Update, Delete) operations over HTTP (GET, POST, PUT, DELETE).
@@ -43,6 +44,7 @@ export abstract class BaseController<
     private readonly baseResponseService: ResponseService,
     private readonly baseMessageService: MessageService,
     private readonly className: string,
+    protected readonly pagingClass: ClassConstructor<any> = MainPagingDTO,
   ) {
     this.logger = new Logger(className);
   }
@@ -56,6 +58,9 @@ export abstract class BaseController<
   async findAll(
     @Query() mainPagingDTO: PagingDTO,
   ): Promise<ResponseSuccessPaginationInterface> {
+    if (!(mainPagingDTO instanceof MainPagingDTO)) {
+      mainPagingDTO = plainToClass(this.pagingClass, mainPagingDTO as any);
+    }
     return this.baseFindAll(mainPagingDTO);
   }
 

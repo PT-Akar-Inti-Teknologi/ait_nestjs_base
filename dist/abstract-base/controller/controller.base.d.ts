@@ -4,6 +4,7 @@ import { ResponseService } from '../../response/response.service';
 import { MainPagingDTO } from '../../common/dto/main-paging.dto';
 import { ResponseSuccessPaginationInterface, ResponseSuccessSingleInterface } from '../../response/response.interface';
 import { IUser } from '../../auth/guard/interface/user.interface';
+import { ClassConstructor } from 'class-transformer';
 /**
  * Base class for providing CRUD (Create, Read, Update, Delete) operations over HTTP (GET, POST, PUT, DELETE).
  * @template CreateDTO - The DTO used to create an entity
@@ -15,8 +16,9 @@ export declare abstract class BaseController<CreateDTO, UpdateDTO, EntityDocumen
     private readonly baseResponseService;
     private readonly baseMessageService;
     private readonly className;
+    protected readonly pagingClass: ClassConstructor<any>;
     readonly logger: any;
-    protected constructor(baseService: BaseService<CreateDTO, UpdateDTO, EntityDocument, PagingDTO>, baseResponseService: ResponseService, baseMessageService: MessageService, className: string);
+    protected constructor(baseService: BaseService<CreateDTO, UpdateDTO, EntityDocument, PagingDTO>, baseResponseService: ResponseService, baseMessageService: MessageService, className: string, pagingClass?: ClassConstructor<any>);
     /**
      * GET endpoint to find all entities. This method can be overridden in child classes.
      * @param mainPagingDTO - The DTO containing pagination data
