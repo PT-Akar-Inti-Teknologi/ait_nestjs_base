@@ -152,6 +152,10 @@ class BaseService {
         if (comparator.toUpperCase() == 'IN') {
             operation = `${field} ${comparator} (:...${key})`;
         }
+        else if (comparator.toUpperCase() == 'NULL') {
+            queryBuilder.orWhere(`${field} IS NULL`);
+            return;
+        }
         else if (comparator.toUpperCase() == 'NOT NULL') {
             queryBuilder.orWhere(`${field} IS ${mainPagingDTO[key] ? 'NOT NULL' : 'NULL'}`);
             return;
@@ -233,6 +237,9 @@ class BaseService {
      */
     async baseFindDetailAll(mainPagingDTO, relations) {
         const query = await this.baseFindDetailAllQuery(mainPagingDTO, relations);
+        return this.baseGetManyAndCount(mainPagingDTO, query);
+    }
+    async baseGetManyAndCount(mainPagingDTO, query) {
         try {
             const result = await query.getManyAndCount();
             const pagination = {
@@ -305,7 +312,7 @@ class BaseService {
      * and "pagination". The "content" property is an array of EntityDocument objects, while the
      * "pagination" property is an object with three properties: "page", "total", and "size".
      */
-    async baseFindDetailAllQuery(mainPagingDTO, relations) {
+    baseFindDetailAllQuery(mainPagingDTO, relations) {
         try {
             const query = this.repository.createQueryBuilder(this.tableAlias);
             this.baseAddJoinQuery(query, relations);

@@ -6,6 +6,7 @@ import {
   Repository,
   FindOptionsWhere,
   EntityTarget,
+  In,
 } from 'typeorm';
 import {
   BadRequestException,
@@ -277,6 +278,21 @@ export abstract class InternalServiceBase<
     const repository = this.dataSource.getRepository(target);
     return repository.findOne({
       where: { id } as any,
+      relations: [],
+    });
+  }
+
+  /**
+   * The function findByIds takes in a target entity and an array of ids, and returns a promise that
+   * resolves to an array of entities with matching ids.
+   * @param target {Object | Function} of {E}
+   * @param ids {string[]}
+   * @protected
+   */
+  public findByIds<D>(target: EntityTarget<D>, ids: string[]): Promise<D[]> {
+    const repository = this.dataSource.getRepository(target);
+    return repository.find({
+      where: { id: In(ids) } as any,
       relations: [],
     });
   }

@@ -185,6 +185,20 @@ let InternalServiceBase = class InternalServiceBase {
         });
     }
     /**
+     * The function findByIds takes in a target entity and an array of ids, and returns a promise that
+     * resolves to an array of entities with matching ids.
+     * @param target {Object | Function} of {E}
+     * @param ids {string[]}
+     * @protected
+     */
+    findByIds(target, ids) {
+        const repository = this.dataSource.getRepository(target);
+        return repository.find({
+            where: { id: (0, typeorm_1.In)(ids) },
+            relations: [],
+        });
+    }
+    /**
      * Fetch an entity from the database and validate its existence
      * @param target {Object | Function} of {E}
      * @param fieldName - name of field to be checked, just in case it's error

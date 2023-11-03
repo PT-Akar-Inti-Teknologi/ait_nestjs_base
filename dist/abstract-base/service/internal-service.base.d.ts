@@ -91,6 +91,14 @@ export declare abstract class InternalServiceBase<BaseEntityInternal extends {
      */
     findShallow<D>(target: EntityTarget<D>, id: string): Promise<D>;
     /**
+     * The function findByIds takes in a target entity and an array of ids, and returns a promise that
+     * resolves to an array of entities with matching ids.
+     * @param target {Object | Function} of {E}
+     * @param ids {string[]}
+     * @protected
+     */
+    findByIds<D>(target: EntityTarget<D>, ids: string[]): Promise<D[]>;
+    /**
      * Fetch an entity from the database and validate its existence
      * @param target {Object | Function} of {E}
      * @param fieldName - name of field to be checked, just in case it's error

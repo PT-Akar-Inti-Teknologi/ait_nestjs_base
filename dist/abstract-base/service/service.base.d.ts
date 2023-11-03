@@ -2,11 +2,11 @@ import { ResponseService } from '../../response/response.service';
 import { DeleteResult, Repository, SelectQueryBuilder, WhereExpressionBuilder } from 'typeorm';
 import { MessageService } from '../../message/message.service';
 import { MainPagingDTO } from '../../common/dto/main-paging.dto';
-import { ListPaginationInterface } from '../../response/response.interface';
+import { ListPaginationInterface, PaginationInterface } from '../../response/response.interface';
 /** Query AND/OR filter */
 export type BaseFilterLogicalOperator = 'AND' | 'OR';
 /** Comparator enum for filter */
-export type BaseFilterComparator = '=' | '<' | '<=' | '>' | '>=' | 'IN' | 'NOT NULL';
+export type BaseFilterComparator = '=' | '<' | '<=' | '>' | '>=' | 'IN' | 'NOT NULL' | 'NULL';
 /** Represent a single where query */
 export interface BaseFilterInterfaceSingle<PagingDTO> {
     logical_operator?: BaseFilterLogicalOperator;
@@ -126,6 +126,10 @@ export declare class BaseService<CreateDTO, UpdateDTO, EntityDocument, PagingDTO
      * "pagination" property is an object with three properties: "page", "total", and "size".
      */
     baseFindDetailAll(mainPagingDTO: PagingDTO, relations?: string[]): Promise<ListPaginationInterface<EntityDocument>>;
+    baseGetManyAndCount(mainPagingDTO: PagingDTO, query: SelectQueryBuilder<EntityDocument>): Promise<{
+        content: EntityDocument[];
+        pagination: PaginationInterface;
+    }>;
     /**
      * use `this.searchByFields` to add search query if `mainPagingDTO.search` exists
      * @param queryBuilder - query builder
@@ -147,7 +151,7 @@ export declare class BaseService<CreateDTO, UpdateDTO, EntityDocument, PagingDTO
      * and "pagination". The "content" property is an array of EntityDocument objects, while the
      * "pagination" property is an object with three properties: "page", "total", and "size".
      */
-    baseFindDetailAllQuery(mainPagingDTO: PagingDTO, relations?: string[]): Promise<SelectQueryBuilder<EntityDocument>>;
+    baseFindDetailAllQuery(mainPagingDTO: PagingDTO, relations?: string[]): SelectQueryBuilder<EntityDocument>;
     /**
      * Fetch an entity from the database and validate its existence
      * @param id - The id of the entity to be fetched
