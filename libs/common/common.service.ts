@@ -3,10 +3,14 @@ import { AxiosResponse } from 'axios';
 import { catchError, map } from 'rxjs/operators';
 import { lastValueFrom, of } from 'rxjs';
 import { HttpService } from '@nestjs/axios';
+import { ResponseService } from '../response/response.service';
 
 @Injectable()
 export class CommonService {
-  constructor(private httpService: HttpService) {}
+  constructor(
+    private httpService: HttpService,
+    private responseService: ResponseService,
+  ) {}
 
   async postHttp(
     url: string,
@@ -75,6 +79,67 @@ export class CommonService {
         this.constructor.name,
       );
       return error.response?.res ?? error;
+    }
+  }
+
+  async broadcastUpdate(
+    body: Record<string, any>,
+    sufixUrl: string,
+    prefixUrl = 'api/v1/internal',
+  ): Promise<void> {
+    try {
+      Logger.log(
+        `Broadcast Update ${sufixUrl} ====`,
+        '',
+        this.constructor.name,
+      );
+      console.log(body);
+      for (const key in process.env) {
+        if (key.startsWith('BASEURL_') && key.endsWith('_SERVICE')) {
+          let serviceName = key.replace('BASEURL_', '');
+          serviceName = serviceName.replace('_SERVICE', '').toLocaleLowerCase();
+          const url = `${process.env[key]}/${prefixUrl}/${serviceName}/${sufixUrl}`;
+          try {
+            this.postHttp(url, body);
+            Logger.log(url, '', this.constructor.name);
+          } catch (error) {
+            Logger.error(error, '', this.constructor.name);
+          }
+        }
+      }
+    } catch (error) {
+      Logger.error(error, '', this.constructor.name);
+      this.responseService.throwError(error);
+    }
+  }
+
+  async broadcastDelete(
+    id: string,
+    sufixUrl: string,
+    prefixUrl = 'api/v1/internal',
+  ): Promise<void> {
+    try {
+      Logger.log(
+        `Broadcast Delete ${sufixUrl} ====`,
+        '',
+        this.constructor.name,
+      );
+      for (const key in process.env) {
+        if (key.startsWith('BASEURL_') && key.endsWith('_SERVICE')) {
+          let serviceName = key.replace('BASEURL_', '');
+          serviceName = serviceName.replace('_SERVICE', '').toLocaleLowerCase();
+          const url = `${process.env[key]}/${prefixUrl}/${serviceName}/${sufixUrl}/${id}`;
+          try {
+            this.deleteHttp(url);
+            Logger.log(url, '', this.constructor.name);
+          } catch (error) {
+            Logger.error(error, '', this.constructor.name);
+          }
+        }
+      }
+    } catch (error) {
+      Logger.error(error, '', this.constructor.name);
+      this.responseService.throwError(error);
     }
   }
 }

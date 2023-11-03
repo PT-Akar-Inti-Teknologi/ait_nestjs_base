@@ -14,9 +14,11 @@ const common_1 = require("@nestjs/common");
 const operators_1 = require("rxjs/operators");
 const rxjs_1 = require("rxjs");
 const axios_1 = require("@nestjs/axios");
+const response_service_1 = require("../response/response.service");
 let CommonService = class CommonService {
-    constructor(httpService) {
+    constructor(httpService, responseService) {
         this.httpService = httpService;
+        this.responseService = responseService;
     }
     async postHttp(url, body, headers) {
         const post_response = this.httpService
@@ -75,10 +77,58 @@ let CommonService = class CommonService {
             return (_b = (_a = error.response) === null || _a === void 0 ? void 0 : _a.res) !== null && _b !== void 0 ? _b : error;
         }
     }
+    async broadcastUpdate(body, sufixUrl, prefixUrl = 'api/v1/internal') {
+        try {
+            common_1.Logger.log(`Broadcast Update ${sufixUrl} ====`, '', this.constructor.name);
+            console.log(body);
+            for (const key in process.env) {
+                if (key.startsWith('BASEURL_') && key.endsWith('_SERVICE')) {
+                    let serviceName = key.replace('BASEURL_', '');
+                    serviceName = serviceName.replace('_SERVICE', '').toLocaleLowerCase();
+                    const url = `${process.env[key]}/${prefixUrl}/${serviceName}/${sufixUrl}`;
+                    try {
+                        this.postHttp(url, body);
+                        common_1.Logger.log(url, '', this.constructor.name);
+                    }
+                    catch (error) {
+                        common_1.Logger.error(error, '', this.constructor.name);
+                    }
+                }
+            }
+        }
+        catch (error) {
+            common_1.Logger.error(error, '', this.constructor.name);
+            this.responseService.throwError(error);
+        }
+    }
+    async broadcastDelete(id, sufixUrl, prefixUrl = 'api/v1/internal') {
+        try {
+            common_1.Logger.log(`Broadcast Delete ${sufixUrl} ====`, '', this.constructor.name);
+            for (const key in process.env) {
+                if (key.startsWith('BASEURL_') && key.endsWith('_SERVICE')) {
+                    let serviceName = key.replace('BASEURL_', '');
+                    serviceName = serviceName.replace('_SERVICE', '').toLocaleLowerCase();
+                    const url = `${process.env[key]}/${prefixUrl}/${serviceName}/${sufixUrl}/${id}`;
+                    try {
+                        this.deleteHttp(url);
+                        common_1.Logger.log(url, '', this.constructor.name);
+                    }
+                    catch (error) {
+                        common_1.Logger.error(error, '', this.constructor.name);
+                    }
+                }
+            }
+        }
+        catch (error) {
+            common_1.Logger.error(error, '', this.constructor.name);
+            this.responseService.throwError(error);
+        }
+    }
 };
 CommonService = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [axios_1.HttpService])
+    __metadata("design:paramtypes", [axios_1.HttpService,
+        response_service_1.ResponseService])
 ], CommonService);
 exports.CommonService = CommonService;
 //# sourceMappingURL=common.service.js.map
