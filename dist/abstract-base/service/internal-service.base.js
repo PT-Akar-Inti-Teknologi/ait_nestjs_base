@@ -45,7 +45,7 @@ let InternalServiceBase = class InternalServiceBase {
      */
     repositoryOf(entityName) {
         var _a;
-        const entity = (_a = (0, typeorm_1.getMetadataArgsStorage)().tables.find((t) => t.name === `${this.tablePrefix}_${entityName.toLowerCase()}`)) === null || _a === void 0 ? void 0 : _a.target;
+        const entity = (_a = (0, typeorm_1.getMetadataArgsStorage)().tables.find((t) => t.name === entityName.toLowerCase())) === null || _a === void 0 ? void 0 : _a.target;
         if (!entity) {
             throw new common_1.BadRequestException(this.responseService.error(common_1.HttpStatus.BAD_REQUEST, [
                 this.messageService.getErrorMessage('entity name', 'general.general.data_invalid'),

@@ -60,7 +60,7 @@ export abstract class InternalServiceBase<
     entityName: EntityName,
   ): Repository<Partial<BaseEntityInternal>> {
     const entity = getMetadataArgsStorage().tables.find(
-      (t) => t.name === `${this.tablePrefix}_${entityName.toLowerCase()}`,
+      (t) => t.name === entityName.toLowerCase(),
     )?.target;
 
     if (!entity) {
