@@ -1,6 +1,6 @@
 {
   "name": "@ait/nestjs-base",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "",
   "author": "AIT",
   "license": "UNLICENSED",
@@ -36,7 +36,7 @@
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.14",
     "typeorm-naming-strategies": "^4.1.0",
-    "nestjs-i18n": "^10.3.6",
+    "nestjs-i18n": "^10.3.7",
     "bull": "^4.10.4",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.1",

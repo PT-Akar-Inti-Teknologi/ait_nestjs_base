@@ -21,7 +21,7 @@ export declare abstract class InternalServiceBase<BaseEntityInternal extends {
      * @param moduleRef {Object} {@link ModuleRef}
      */
     constructor(responseService: ResponseService, messageService: MessageService, dataSource: DataSource, moduleRef: ModuleRef);
-    protected abstract tablePrefix: string;
+    protected abstract tablePrefix?: string;
     /**
      * Dynamic repository by entity name
      *

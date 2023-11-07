@@ -48,7 +48,7 @@ export abstract class InternalServiceBase<
       .useGlobalInterceptors(new ClassSerializerInterceptor(new Reflector()));
   }
 
-  protected abstract tablePrefix: string;
+  protected abstract tablePrefix?: string;
 
   /**
    * Dynamic repository by entity name
@@ -60,7 +60,11 @@ export abstract class InternalServiceBase<
     entityName: EntityName,
   ): Repository<Partial<BaseEntityInternal>> {
     const entity = getMetadataArgsStorage().tables.find(
-      (t) => t.name === entityName.toLowerCase(),
+      (t) =>
+        t.name ===
+        `${
+          this.tablePrefix ? `${this.tablePrefix}_` : ''
+        }${entityName.toLowerCase()}`,
     )?.target;
 
     if (!entity) {
