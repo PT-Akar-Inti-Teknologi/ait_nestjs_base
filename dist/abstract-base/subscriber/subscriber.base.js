@@ -7,6 +7,7 @@ var EventType;
     EventType["INSERT"] = "beforeInsert";
     EventType["UPDATE"] = "beforeUpdate";
     EventType["DELETE"] = "beforeRemove";
+    EventType["SOFT_DELETE"] = "beforeSoftRemove";
 })(EventType = exports.EventType || (exports.EventType = {}));
 class BaseSubscriber {
     constructor(dataSource, responseService, messageService) {

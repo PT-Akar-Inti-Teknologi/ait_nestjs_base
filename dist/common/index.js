@@ -17,5 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./common.module"), exports);
 __exportStar(require("./common.service"), exports);
 __exportStar(require("./dto/main-paging.dto"), exports);
+__exportStar(require("./dto/i18n-main-paging.dto"), exports);
 __exportStar(require("./validators"), exports);
 //# sourceMappingURL=index.js.map

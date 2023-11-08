@@ -1,7 +1,7 @@
 import { Type } from 'class-transformer';
-import { IsIn, IsInt, IsOptional, IsString } from 'class-validator';
+import { IsIn, IsInt, IsOptional, IsString } from '../../i18n-class-validator';
 
-export class MainPagingDTO {
+export class I18nMainPagingDTO {
   @IsOptional()
   @IsInt()
   @Type(() => Number)

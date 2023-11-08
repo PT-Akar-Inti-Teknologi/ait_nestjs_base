@@ -14,6 +14,7 @@ export enum EventType {
   INSERT = 'beforeInsert',
   UPDATE = 'beforeUpdate',
   DELETE = 'beforeRemove',
+  SOFT_DELETE = 'beforeSoftRemove',
 }
 
 export interface Event<E> {

@@ -9,10 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MainPagingDTO = void 0;
+exports.I18nMainPagingDTO = void 0;
 const class_transformer_1 = require("class-transformer");
-const class_validator_1 = require("class-validator");
-class MainPagingDTO {
+const i18n_class_validator_1 = require("../../i18n-class-validator");
+class I18nMainPagingDTO {
     constructor() {
         this.page = 0;
         this.size = 10;
@@ -20,32 +20,32 @@ class MainPagingDTO {
     }
 }
 __decorate([
-    (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsInt)(),
+    (0, i18n_class_validator_1.IsOptional)(),
+    (0, i18n_class_validator_1.IsInt)(),
     (0, class_transformer_1.Type)(() => Number),
     __metadata("design:type", Object)
-], MainPagingDTO.prototype, "page", void 0);
+], I18nMainPagingDTO.prototype, "page", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsInt)(),
+    (0, i18n_class_validator_1.IsOptional)(),
+    (0, i18n_class_validator_1.IsInt)(),
     (0, class_transformer_1.Type)(() => Number),
     __metadata("design:type", Object)
-], MainPagingDTO.prototype, "size", void 0);
+], I18nMainPagingDTO.prototype, "size", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsString)(),
+    (0, i18n_class_validator_1.IsOptional)(),
+    (0, i18n_class_validator_1.IsString)(),
     __metadata("design:type", Object)
-], MainPagingDTO.prototype, "search", void 0);
+], I18nMainPagingDTO.prototype, "search", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsString)(),
+    (0, i18n_class_validator_1.IsOptional)(),
+    (0, i18n_class_validator_1.IsString)(),
     __metadata("design:type", String)
-], MainPagingDTO.prototype, "sort", void 0);
+], I18nMainPagingDTO.prototype, "sort", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsIn)(['ASC', 'DESC']),
+    (0, i18n_class_validator_1.IsOptional)(),
+    (0, i18n_class_validator_1.IsString)(),
+    (0, i18n_class_validator_1.IsIn)(['ASC', 'DESC']),
     __metadata("design:type", String)
-], MainPagingDTO.prototype, "order", void 0);
-exports.MainPagingDTO = MainPagingDTO;
-//# sourceMappingURL=main-paging.dto.js.map
+], I18nMainPagingDTO.prototype, "order", void 0);
+exports.I18nMainPagingDTO = I18nMainPagingDTO;
+//# sourceMappingURL=i18n-main-paging.dto.js.map

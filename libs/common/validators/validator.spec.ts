@@ -126,7 +126,7 @@ describe('Custom Validator Test Case', () => {
     class CreateUserDTO {
       @IsInt()
       @IsNotEmpty()
-      @IsExists('id', repo, {
+      @IsExists('id', repo, undefined, {
         message: `Role is not exists`,
       })
       role_id: number;

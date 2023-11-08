@@ -5,7 +5,8 @@ import { ResponseSuccessSingleInterface } from '../../response/response.interfac
 export declare enum EventType {
     INSERT = "beforeInsert",
     UPDATE = "beforeUpdate",
-    DELETE = "beforeRemove"
+    DELETE = "beforeRemove",
+    SOFT_DELETE = "beforeSoftRemove"
 }
 export interface Event<E> {
     type: EventType;
