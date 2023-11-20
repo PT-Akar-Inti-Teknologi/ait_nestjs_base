@@ -7,12 +7,34 @@ This library contains common utilities that can be used to kickstart nestjs proj
 Refer to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/tree/dev for old version docs.
 
 ## How to install
+Starting from 1.0.16 and above, we will delete dist directory and use private jetbrains space repository for further development, for earlier version we will keep it here.
+
+For modules that need user replication data module, please see to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data
+
+### 1.0.0 - 1.0.16
 
 ```
 yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0.16
 ```
 
-For modules that need user replication data module, please see to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data
+### Authenticate Jetbrains Space
+
+1. Ask AIT Team Devops to invite you to AIT jetbrains space. if already have access, skip to point no 3
+2. Go to your email, find the invitation either in inbox or spam, click it. Proceed to register
+3. Click your profile icon, then tap preferences. Click on authentication, personal tokens.
+4. Click new personal token
+5. Click add context, choose Project, akarinti
+6. Find Package Repositories, make sure "Read package repositories" is active, then save
+7. click create, copy the token, save it somewhere safe.
+8. run `npm set //npm.pkg.jetbrains.space/akarinti/p/main/npm/:_authToken=<YOURTOKENHERE>`, replace `<YOURTOKENHERE>` with the token provided in no. 7
+9. run `npm set "@ait:registry=https://npm.pkg.jetbrains.space/akarinti/p/main/npm/"`
+
+### Add to package.json
+Make sure you have run [Authenticate Jetbrains Space](#authenticate-jetbrains-space), then run this command:
+
+```
+yarn add @ait/nestjs-base
+```
 
 ## How to Use
 

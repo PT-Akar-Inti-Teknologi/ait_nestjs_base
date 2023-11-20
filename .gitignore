@@ -36,3 +36,5 @@ lerna-debug.log*
 *.local.json
 *.local.ts
 *.local.js
+
+/dist
