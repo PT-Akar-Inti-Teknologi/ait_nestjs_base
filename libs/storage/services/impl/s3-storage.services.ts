@@ -221,12 +221,6 @@ export class S3StorageServices implements IStorageRepository {
   }
 
   private generateS3Dir(pathDir: string, filename: string): string {
-    const normalizePath = node_path.normalize(pathDir);
-    const path = node_path.format({
-      dir: normalizePath,
-      name: filename,
-    });
-
-    return path;
+    return pathDir.replace(/^\/|\/$/g, '') + '/' + filename;
   }
 }
