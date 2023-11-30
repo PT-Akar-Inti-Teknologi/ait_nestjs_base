@@ -84,16 +84,16 @@ export abstract class BaseSubscriber<E extends ObjectLiteral>
     }
   }
 
-  afterTransactionCommit(event: TransactionCommitEvent): void | Promise<any> {
-    this.publisher(event, 'afterTransactionCommit');
+  afterTransactionCommit(event: TransactionCommitEvent): Promise<any> {
+    return this.publisher(event, 'afterTransactionCommit');
   }
 
-  afterSoftRemove(event: TransactionCommitEvent): void | Promise<any> {
-    this.publisher(event, 'afterSoftRemove');
+  afterSoftRemove(event: TransactionCommitEvent): Promise<any> {
+    return this.publisher(event, 'afterSoftRemove');
   }
 
-  afterRemove(event: TransactionCommitEvent): void | Promise<any> {
-    this.publisher(event, 'afterRemove');
+  afterRemove(event: TransactionCommitEvent): Promise<any> {
+    return this.publisher(event, 'afterRemove');
   }
 
   /**
