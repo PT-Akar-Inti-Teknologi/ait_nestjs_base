@@ -170,8 +170,12 @@ export class BaseService<
    */
   public async baseDelete(id: string): Promise<DeleteResult> {
     try {
-      await this.getAndValidateById(id);
-      return this.repository.softDelete(id);
+      const entity = await this.getAndValidateById(id);
+      await this.repository.softRemove(entity);
+      return {
+        raw: [],
+        affected: 1,
+      };
     } catch (error: any) {
       this.logger.error(error.message);
       this.baseResponseService.throwError(error);
