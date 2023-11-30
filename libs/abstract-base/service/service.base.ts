@@ -173,9 +173,10 @@ export class BaseService<
       const entity = await this.getAndValidateById(id);
       await this.repository.softRemove(entity);
       return {
+        generatedMaps: [],
         raw: [],
         affected: 1,
-      };
+      } as any;
     } catch (error: any) {
       this.logger.error(error.message);
       this.baseResponseService.throwError(error);
