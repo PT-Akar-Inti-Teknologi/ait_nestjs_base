@@ -14,8 +14,6 @@ import { ResponseSuccessSingleInterface } from '../../response/response.interfac
 export enum EventType {
   INSERT = 'INSERT',
   UPDATE = 'UPDATE',
-  REMOVE = 'REMOVE',
-  SOFT_REMOVE = 'SOFT_REMOVE',
   DELETE = 'DELETE',
   SOFT_DELETE = 'SOFT_DELETE',
 }
@@ -30,8 +28,6 @@ const defaultSubscriberEvents = [
 const baseSubscriberEventExecutor = {
   [EventType.INSERT]: 'afterTransactionCommit',
   [EventType.UPDATE]: 'afterTransactionCommit',
-  [EventType.REMOVE]: 'afterTransactionCommit',
-  [EventType.SOFT_REMOVE]: 'afterTransactionCommit',
   [EventType.DELETE]: 'afterRemove',
   [EventType.SOFT_DELETE]: 'afterSoftRemove',
 };
@@ -39,8 +35,6 @@ const baseSubscriberEventExecutor = {
 const baseSubscriberEventListener = {
   [EventType.INSERT]: 'beforeInsert',
   [EventType.UPDATE]: 'beforeUpdate',
-  [EventType.REMOVE]: 'beforeRemove',
-  [EventType.SOFT_REMOVE]: 'beforeSoftRemove',
   [EventType.DELETE]: 'beforeRemove',
   [EventType.SOFT_DELETE]: 'beforeSoftRemove',
 };
