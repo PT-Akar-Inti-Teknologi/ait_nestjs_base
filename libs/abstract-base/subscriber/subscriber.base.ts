@@ -4,49 +4,23 @@ import {
   EntitySubscriberInterface,
   EntityTarget,
   ObjectLiteral,
-  TransactionCommitEvent,
 } from 'typeorm';
 
 import { MessageService } from '../../message/message.service';
 import { ResponseService } from '../../response/response.service';
 import { ResponseSuccessSingleInterface } from '../../response/response.interface';
 
-export enum EventType {
-  INSERT = 'INSERT',
-  UPDATE = 'UPDATE',
-  DELETE = 'DELETE',
-  SOFT_DELETE = 'SOFT_DELETE',
+export enum BaseSubscriberEventType {
+  INSERT = 'beforeInsert',
+  UPDATE = 'beforeUpdate',
+  DELETE = 'beforeRemove',
+  SOFT_DELETE = 'beforeSoftRemove',
 }
-
-const defaultSubscriberEvents = [
-  EventType.INSERT,
-  EventType.UPDATE,
-  EventType.DELETE,
-  EventType.SOFT_DELETE,
-];
-
-const baseSubscriberEventExecutor = {
-  [EventType.INSERT]: 'afterTransactionCommit',
-  [EventType.UPDATE]: 'afterTransactionCommit',
-  [EventType.DELETE]: 'afterRemove',
-  [EventType.SOFT_DELETE]: 'afterSoftRemove',
-};
-
-const baseSubscriberEventListener = {
-  [EventType.INSERT]: 'beforeInsert',
-  [EventType.UPDATE]: 'beforeUpdate',
-  [EventType.DELETE]: 'beforeRemove',
-  [EventType.SOFT_DELETE]: 'beforeSoftRemove',
-};
 
 export interface Event<E> {
-  type: EventType;
+  type: BaseSubscriberEventType;
   before: E;
   after: E;
-}
-
-export interface BaseSubscriberOptions {
-  supportedTypes?: EventType[];
 }
 
 export abstract class BaseSubscriber<E extends ObjectLiteral>
@@ -56,38 +30,10 @@ export abstract class BaseSubscriber<E extends ObjectLiteral>
     protected readonly dataSource: DataSource,
     protected readonly responseService: ResponseService,
     protected readonly messageService: MessageService,
-    protected readonly options: BaseSubscriberOptions = {},
   ) {
-    this.options.supportedTypes =
-      this.options.supportedTypes || defaultSubscriberEvents;
     dataSource.subscribers.push(this);
 
-    this.proxy();
-  }
-
-  async publisher(e: any, executorName: string) {
-    if (
-      typeof e.queryRunner.postAction === 'object' &&
-      e.queryRunner.postAction.type &&
-      baseSubscriberEventExecutor[e.queryRunner.postAction.type] ==
-        executorName &&
-      e.queryRunner.postAction.target == this.listenTo() &&
-      typeof e.queryRunner.postAction.action === 'function'
-    ) {
-      await this.onCommit(await e.queryRunner.postAction.action());
-    }
-  }
-
-  afterTransactionCommit(event: TransactionCommitEvent): Promise<any> {
-    return this.publisher(event, 'afterTransactionCommit');
-  }
-
-  afterSoftRemove(event: TransactionCommitEvent): Promise<any> {
-    return this.publisher(event, 'afterSoftRemove');
-  }
-
-  afterRemove(event: TransactionCommitEvent): Promise<any> {
-    return this.publisher(event, 'afterRemove');
+    this.proxy('afterTransactionCommit', 'onCommit');
   }
 
   /**
@@ -97,27 +43,40 @@ export abstract class BaseSubscriber<E extends ObjectLiteral>
    * @param subscriber {string}
    * @private {void}
    */
-  private proxy() {
-    this.options.supportedTypes.forEach((type) => {
-      this[baseSubscriberEventListener[type]] = async (e: any) => {
+  private proxy(publisher: string, subscriber: string) {
+    this[publisher] = async (e: any) => {
+      if (
+        typeof e.queryRunner[subscriber] === 'object' &&
+        e.queryRunner[subscriber].target == this.listenTo() &&
+        typeof e.queryRunner[subscriber][subscriber] === 'function' &&
+        typeof this[subscriber] === 'function'
+      ) {
+        await this[subscriber](await e.queryRunner[subscriber][subscriber]());
+      }
+    };
+
+    Object.keys(BaseSubscriberEventType).forEach((type) => {
+      this[BaseSubscriberEventType[type]] = async (e: any) => {
         const event = {
-          type,
+          type: BaseSubscriberEventType[type],
           before: null,
           after: null,
         };
 
-        const entityId = e.databaseEntity?.id ?? e.entity?.id;
-        if (entityId) {
-          event.before = await this.findDetail<E>(this.listenTo(), entityId);
+        if (e.databaseEntity) {
+          event.before = await this.findDetail<E>(
+            this.listenTo(),
+            e.databaseEntity.id,
+          );
         }
 
-        e.queryRunner.postAction = {
-          type,
+        e.queryRunner[subscriber] = {
           target: this.listenTo(),
-          action: async () => {
-            event.after = e.entity?.id
-              ? await this.findDetail<E>(this.listenTo(), e.entity.id)
-              : null;
+          [subscriber]: async () => {
+            event.after = await this.findDetail<E>(
+              this.listenTo(),
+              e.entity.id,
+            );
 
             return event;
           },
