@@ -313,7 +313,42 @@ AitCommonModule.register({
 
 postHttp, getHttp, deleteHttp is HttpService call wrapper.
 
-#### Broadcast Consumer
+#### Broadcast Consumer (Manual Handling)
+
+inject CommonService to your controller, implements OnModuleInit, call commonService.listenBroadcasts and map it to your controller function. Example:
+
+```ts
+@Controller(BASE_PATH)
+export class InternalController implements OnModuleInit {
+  constructor(
+    private readonly service: InternalService,
+    private readonly commonService: CommonService,
+  ) {}
+
+  onModuleInit() {
+    this.commonService.listenBroadcasts(
+      Object.values(EntityName),
+      'update',
+      (entityName, data) => this.add(data),
+    );
+    this.commonService.listenBroadcasts(
+      Object.values(EntityName),
+      'delete',
+      (entityName, data) => this.delete(data.id),
+    );
+  }
+
+  add(data) {
+    ...
+  }
+
+  delete(id) {
+    ...
+  }
+}
+```
+
+#### Broadcast Consumer (Auto Handling)
 
 for http broadcast consumer, just use InternalControllerBase to extend your InternalController. for example:
 
@@ -334,7 +369,7 @@ export class InternalController extends InternalControllerBase<
 ```
 
 Explanation:
-this will automatically setup internal CRUD endpoints, also adding capabilities to listen message broker version of broadcast listener (if used)
+this will automatically setup internal CRUD endpoints, also adding capabilities to listen message broker version of broadcast listener (if used). EntityName is an enum containing which entity name you want to handle.
 
 ### Broadcast Publisher
 
