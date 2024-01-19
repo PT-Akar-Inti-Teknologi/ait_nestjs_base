@@ -348,7 +348,7 @@ export class InternalController implements OnModuleInit {
 }
 ```
 
-if you want to use HTTP version, add and delete function must be the same spec as InternalControllerBase. but the need of /:entityName can be hardcoded in controller path if the controller just handle 1 entity.
+if you want to use HTTP version, add and delete function must be the same path structure as InternalControllerBase. but the need of /:entityName can be hardcoded in controller path if the controller just handle 1 entity.
 
 multiple entity controller:
 
