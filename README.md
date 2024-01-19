@@ -7,6 +7,7 @@ This library contains common utilities that can be used to kickstart nestjs proj
 Refer to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/tree/dev for old version docs.
 
 ## How to install
+
 Starting from 1.0.16 and above, we will delete dist directory and use private jetbrains space repository for further development, for earlier version we will keep it here.
 
 For modules that need user replication data module, please see to https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data
@@ -30,6 +31,7 @@ yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0
 9. run `npm set "@ait:registry=https://npm.pkg.jetbrains.space/akarinti/p/main/npm/"`
 
 ### Add to package.json
+
 Make sure you have run [Authenticate Jetbrains Space](#authenticate-jetbrains-space), then run this command:
 
 ```
@@ -51,15 +53,15 @@ Register modules that were used by your project in app.module.ts, then available
 - remove `MessageService` from module providers, by find and replace with these parameter:
   1. MessageService imports:
      - find: `import \{ MessageService \}.*;\n`
-     - replace: 
+     - replace:
      - files to include: `*module.ts`
   2. MessageService with comma:
      - find: `MessageService,`
-     - replace: 
+     - replace:
      - files to include: `*module.ts`
   3. MessageService without comma:
      - find: `MessageService`
-     - replace: 
+     - replace:
      - files to include: `*module.ts`
 - remote `ResponseService` from module providers, same as `MessageService`, just change the search parameters
 - for `AdminsUserDocument` and `AdminsUsersService`, Permission/Replication please update import path to [@ait/nestjs-replication-data](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data)
@@ -276,3 +278,92 @@ AitHashModule.register({
 - inject `HashService` in your feature service. this will be available globally once AitResponseModule setup in app.module.ts.
 - use `generateHashPassword` to generate hash
 - use `bcryptComparePassword` to compare password with hash
+
+## AitCommonModule
+
+provide common http call implementation and broadcast data/message to another microservice. Previously known as CommonModule.
+
+### Setup AitCommonModule
+
+Add this module in your `app.module.ts` imports.
+
+for Http broadcast engine:
+
+```ts
+AitCommonModule.register({
+  broadcastType: 'http',
+}),
+```
+
+for Kafka broadcast engine:
+
+```ts
+AitCommonModule.register({
+  broadcastType: 'kafka',
+  kafka: {
+    brokers: [process.env.KAFKA_HOST],
+    serviceName: process.env.PROJECT_NAME + '_' + process.env.SERVICE_NAME,
+  },
+}),
+```
+
+### Usage
+
+#### Http call
+
+postHttp, getHttp, deleteHttp is HttpService call wrapper.
+
+#### Broadcast Consumer
+
+for http broadcast consumer, just use InternalControllerBase to extend your InternalController. for example:
+
+```ts
+@Controller(BASE_PATH)
+export class InternalController extends InternalControllerBase<
+  BaseEntityInternal,
+  EntityName,
+  InternalService
+> {
+  constructor(
+    private readonly service: InternalService,
+    private readonly commonService: CommonService,
+  ) {
+    super(service, commonService, EntityName);
+  }
+}
+```
+
+Explanation:
+this will automatically setup internal CRUD endpoints, also adding capabilities to listen message broker version of broadcast listener (if used)
+
+### Broadcast Publisher
+
+To use as broadcast publisher, you can inject CommonService and use the method broadcastUpdate/broadcastDelete
+
+Example:
+
+```ts
+this.commonService.broadcastUpdate(member, 'members');
+```
+
+Extras (Optional):
+you can also setup concurrency number by using setupBroadcasts in OnModuleInit, but the drawback is there is no guarantee that the message will be processed synchronously in order the message are being sent
+
+example:
+
+```ts
+@Injectable()
+export class MembersService
+  extends BaseService<CreateMemberDTO, UpdateMemberDTO, MemberDocument>
+  implements OnModuleInit
+{
+  constructor(
+    private readonly commonService: CommonService,
+    ...
+  ) {
+  onModuleInit() {
+    this.commonService.setupBroadcasts(['members'], 10);
+  }
+  ...
+}
+```
