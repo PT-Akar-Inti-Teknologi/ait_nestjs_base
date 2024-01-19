@@ -77,7 +77,7 @@ export class KafkaCommonService
       );
       console.log(body);
 
-      this.producer.send({
+      await this.producer.send({
         topic: commonEventTopic(entityName, 'update'),
         messages: [
           {
@@ -99,7 +99,7 @@ export class KafkaCommonService
         this.constructor.name,
       );
 
-      this.producer.send({
+      await this.producer.send({
         topic: commonEventTopic(entityName, 'delete'),
         messages: [
           {
