@@ -1,7 +1,7 @@
 import { Body, Delete, OnModuleInit, Param, Post, Put } from '@nestjs/common';
 import { InternalServiceBase } from '../service/internal-service.base';
-import { CommonService } from 'libs/common';
-import { ResponseSuccessSingleInterface } from 'libs/response';
+import { CommonService } from '../../common';
+import { ResponseSuccessSingleInterface } from '../../response';
 
 /**
  * Internal api to sync replication data
@@ -17,9 +17,9 @@ export abstract class InternalControllerBase<
 > implements OnModuleInit
 {
   constructor(
-    private readonly service: T,
-    private readonly commonService: CommonService,
-    private readonly entityNames: object,
+    protected readonly service: T,
+    protected readonly commonService: CommonService,
+    protected readonly entityNames: object,
   ) {}
 
   onModuleInit() {

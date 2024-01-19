@@ -19,7 +19,7 @@ import {
 } from 'kafkajs';
 import { AitCommonConfigKafka } from '../interfaces/common-config.interface';
 import { AitCommonBroadcastListener } from '../interfaces';
-import { ResponseService } from 'libs/response';
+import { ResponseService } from '../../response';
 import { CommonService } from '../common.service';
 
 @Injectable()

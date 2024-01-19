@@ -4,7 +4,7 @@ import { catchError, map } from 'rxjs/operators';
 import { lastValueFrom, of } from 'rxjs';
 import { HttpService } from '@nestjs/axios';
 import { AitCommonBroadcastListener } from './interfaces';
-import { ResponseService } from 'libs/response';
+import { ResponseService } from '../response';
 
 @Injectable()
 export class CommonService {
