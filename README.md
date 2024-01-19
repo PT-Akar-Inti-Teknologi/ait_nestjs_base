@@ -381,6 +381,8 @@ Example:
 this.commonService.broadcastUpdate(member, 'members');
 ```
 
+Limitations: entity name should not contains dot (.)
+
 Extras (Optional):
 you can also setup concurrency number by using setupBroadcasts in OnModuleInit, but the drawback is there is no guarantee that the message will be processed synchronously in order the message are being sent
 
