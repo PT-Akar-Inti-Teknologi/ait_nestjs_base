@@ -348,6 +348,46 @@ export class InternalController implements OnModuleInit {
 }
 ```
 
+if you want to use HTTP version, add and delete function must be the same spec as InternalControllerBase. but the need of /:entityName can be hardcoded in controller path if the controller just handle 1 entity.
+
+multiple entity controller:
+
+```ts
+@Post('/:entityName')
+public async add(
+  @Param('entityName') entityName: EntityName,
+  @Body() param: Partial<BaseEntityInternal>,
+): Promise<ResponseSuccessSingleInterface> {
+  ...
+}
+
+@Delete('/:entityName/:id')
+public async delete(
+  @Param('entityName') entityName: EntityName,
+  @Param('id') id: string,
+): Promise<ResponseSuccessSingleInterface> {
+  ...
+}
+```
+
+single entity controller:
+
+```ts
+@Post()
+public async add(
+  @Body() param: Partial<BaseEntityInternal>,
+): Promise<ResponseSuccessSingleInterface> {
+  ...
+}
+
+@Delete(':id')
+public async delete(
+  @Param('id') id: string,
+): Promise<ResponseSuccessSingleInterface> {
+  ...
+}
+```
+
 #### Broadcast Consumer (Auto Handling)
 
 for http broadcast consumer, just use InternalControllerBase to extend your InternalController. for example:
