@@ -50,3 +50,14 @@ export class AitCommonModule {
     };
   }
 }
+
+/**
+ * @deprecated Use AitCommonModule() instead
+ */
+@Global()
+@Module({
+  imports: [HttpModule],
+  providers: [CommonService],
+  exports: [CommonService],
+})
+export class CommonModule {}
