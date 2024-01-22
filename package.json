@@ -1,6 +1,6 @@
 {
   "name": "@ait/nestjs-base",
-  "version": "1.0.23",
+  "version": "1.1.0",
   "description": "",
   "author": "AIT",
   "license": "UNLICENSED",
@@ -38,6 +38,7 @@
     "bull": "^4.10.4",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.1",
+    "kafkajs": "^2.2.4",
     "nestjs-i18n": "^10.3.7",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
