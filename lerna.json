@@ -10,6 +10,9 @@
     },
     "publish": {
       "includeDependents": false
+    },
+    "watch": {
+      "ignore": "dist/**"
     }
   }
 }

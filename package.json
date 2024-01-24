@@ -3,12 +3,16 @@
   "name": "ait_nestjs_base",
   "version": "1.0.0",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ],
   "main": "index.js",
   "license": "MIT",
   "dependencies": {},
-  "scripts": {},
+  "scripts": {
+    "bootstrap": "lerna run build",
+    "watch": "lerna watch -- lerna run build --scope=\\$LERNA_PACKAGE_NAME --include-dependents"
+  },
   "devDependencies": {
     "lerna": "^8.0.2"
   }
