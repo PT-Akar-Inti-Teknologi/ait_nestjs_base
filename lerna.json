@@ -5,7 +5,11 @@
   "npmClient": "yarn",
   "command": {
     "version": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "includeDependents": false
+    },
+    "publish": {
+      "includeDependents": false
     }
   }
 }
