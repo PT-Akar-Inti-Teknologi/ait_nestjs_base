@@ -9,6 +9,14 @@ Click on the link to open documentation of each package.
 1. [AIT Nestjs Base](/packages/nestjs-base/README.md)
 2. [AIT Nestjs Replication Data](/packages/nestjs-replication-data/README.md)
 
+### Commit Rule
+Every commit should use this rule: https://www.conventionalcommits.org/en/v1.0.0-beta.4/
+This will affect CHANGELOG.md for each package when publishing and version increment.
+
+- "BREAKING CHANGES" will increase major version
+- "feat" will increase minor version
+- "fix" will increase patch version
+
 ### How to develop
 1. clone this repo
 2. `yarn install`
@@ -30,6 +38,14 @@ This is useful for use case like, when you need to develop in a package and must
 1. open terminal in root directory
 2. run `yarn watch`
 3. let it be opened as long as you're still working on this repo
+
+### How to publish package update
+1. make sure you are on main branch
+2. make sure no pending/broken features
+3. make sure you have write access to jetbrains space
+4. run `yarn lerna publish`
+5. all of package changes should be commited (and pushed) as a new commit and there are version tags
+6. packages new version should already be published
 
 ### Coming soon
 - Example directory, that will be used to host example nestjs for showcase and testing purpose
