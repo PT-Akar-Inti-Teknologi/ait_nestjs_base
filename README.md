@@ -47,5 +47,8 @@ This is useful for use case like, when you need to develop in a package and must
 5. all of package changes should be commited (and pushed) as a new commit and there are version tags
 6. packages new version should already be published
 
-### Coming soon
-- Example directory, that will be used to host example nestjs for showcase and testing purpose
+### Example Projects
+You can try to start nestjs service to deep dive analyzing the implementation of these plugins.
+
+- Core: most of the function will be used here
+- Listener: side effect testing of Core service, such as listen user and member data changes for replication
