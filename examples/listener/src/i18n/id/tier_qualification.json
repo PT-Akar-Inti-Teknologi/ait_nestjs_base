@@ -1,0 +1,8 @@
+{
+  "minimal_spending": {
+    "sequential": {
+      "code": "MINIMAL_SPENDING_SEQUENTIAL",
+      "message": "Minimal Spending harus urut."
+    }
+  }
+}
