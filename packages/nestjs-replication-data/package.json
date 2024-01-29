@@ -1,6 +1,6 @@
 {
   "name": "@ait/nestjs-replication-data",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "author": "AIT",
   "license": "UNLICENSED",
@@ -33,7 +33,7 @@
     "typeorm": "^0.3.14"
   },
   "devDependencies": {
-    "@ait/nestjs-base": "^2.0.0",
+    "@ait/nestjs-base": "^2.0.1",
     "@nestjs/cli": "^9.0.0",
     "@nestjs/core": "^9.4.0",
     "@nestjs/schematics": "^9.0.0",
