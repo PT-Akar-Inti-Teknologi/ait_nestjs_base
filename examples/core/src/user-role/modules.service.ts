@@ -13,8 +13,8 @@ export class ModulesService extends BaseService<
   constructor(
     @InjectRepository(ModulePermissionsDocument)
     public repository: Repository<ModulePermissionsDocument>,
-    private readonly responseService: ResponseService,
-    private readonly messageService: MessageService,
+    protected readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
   ) {
     super(repository, responseService, messageService, ModulesService.name);
     this.tableAlias = 'user_roles';

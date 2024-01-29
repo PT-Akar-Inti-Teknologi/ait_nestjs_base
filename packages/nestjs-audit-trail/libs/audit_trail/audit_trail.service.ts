@@ -20,8 +20,8 @@ export class AuditTrailService extends MongoBaseService<
   constructor(
     @InjectModel(AuditTrail.name)
     private auditTrailRepository: Model<AuditTrailDocument>,
-    private readonly responseService: ResponseService,
-    private readonly messageService: MessageService,
+    protected readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
     private readonly config: AitAuditTrailConfig,
   ) {
     super(

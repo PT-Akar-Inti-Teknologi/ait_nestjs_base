@@ -35,8 +35,8 @@ export class UserRolesController extends BaseController<
   constructor(
     private readonly userRolesService: UserRolesService,
     private readonly modulesService: ModulesService,
-    private readonly messageService: MessageService,
-    private readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
+    protected readonly responseService: ResponseService,
   ) {
     super(
       userRolesService,
