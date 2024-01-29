@@ -287,7 +287,7 @@ export class BaseService<
    * and "pagination". The "content" property is an array of EntityDocument objects, while the
    * "pagination" property is an object with three properties: "page", "total", and "size".
    */
-  async baseFindDetailAll(
+  async findDetailAll(
     mainPagingDTO: PagingDTO,
     relations?: string[],
   ): Promise<ListPaginationInterface<EntityDocument>> {
