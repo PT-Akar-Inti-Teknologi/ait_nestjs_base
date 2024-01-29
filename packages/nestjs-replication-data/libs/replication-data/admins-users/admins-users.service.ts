@@ -19,8 +19,8 @@ export class AdminsUsersService extends BaseService<
     @InjectRepository(AdminsUserDocument)
     private readonly adminUserRepository: Repository<AdminsUserDocument>,
     private readonly authPermissionService: AuthPermissionsService,
-    private readonly responseService: ResponseService,
-    private readonly messageService: MessageService,
+    protected readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
   ) {
     super(
       adminUserRepository,
@@ -44,7 +44,7 @@ export class AdminsUsersService extends BaseService<
     if (savePermission) {
       await this.authPermissionService.save(savePermission);
     }
-    return this.baseSave(createDTO);
+    return super.save(createDTO);
   }
 
   async getAndValidateByIds(ids: string[]): Promise<AdminsUserDocument[]> {

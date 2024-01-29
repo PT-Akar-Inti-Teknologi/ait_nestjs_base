@@ -135,10 +135,10 @@ export class MongoBaseService<
 
   protected constructor(
     // public repository: Repository<T>,
-    private repository: Model<T>,
-    private readonly baseResponseService: ResponseService,
-    private readonly baseMessageService: MessageService,
-    private readonly className: string,
+    protected repository: Model<T>,
+    protected readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
+    protected readonly className: string,
   ) {
     this.logger = new Logger(`${className}.${MongoBaseService.name}`);
   }
@@ -154,7 +154,7 @@ export class MongoBaseService<
       return this.repository.create(entitySave as T);
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -178,7 +178,7 @@ export class MongoBaseService<
       });
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -197,7 +197,7 @@ export class MongoBaseService<
       );
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -207,7 +207,7 @@ export class MongoBaseService<
    * @param filterQuery - The `filterQuery` parameter is an object of type  `BaseFilterGroup<PagingDTO>`. It represents a group of filter conditions that need to be applied to a query. The `BaseFilterGroup` type has the following structure:
    * @returns the "where" object, which contains the filter conditions based on the provided "mainPagingDTO" and "filterQuery".
    */
-  baseFilterAllQuery(
+  filterAllQuery(
     mainPagingDTO: PagingDTO,
     filterQuery: BaseFilterGroup<PagingDTO>,
   ) {
@@ -217,7 +217,7 @@ export class MongoBaseService<
     for (const condition of filterQuery.conditions) {
       let queryWhere;
       if (condition['logical_operator']) {
-        queryWhere = this.baseFilterAllQuery(
+        queryWhere = this.filterAllQuery(
           mainPagingDTO,
           condition as BaseFilterGroup<PagingDTO>,
         );
@@ -225,7 +225,7 @@ export class MongoBaseService<
           continue;
         }
       } else {
-        queryWhere = this.baseFilterQuery(
+        queryWhere = this.filterQuery(
           mainPagingDTO,
           condition as BaseFilterInterfaceSingle<PagingDTO>,
         );
@@ -251,7 +251,7 @@ export class MongoBaseService<
    * @returns the result of the `convertFilterToOperator` function if the condition
    * `!convertFilterToOperator(field, comparator, mainPagingDTO[key])` is truthy. Otherwise, it returns the result of the `convertFilterToOperator` function if the condition `mainPagingDTO[key]` is truthy.
    */
-  baseFilterQuery(
+  filterQuery(
     mainPagingDTO: PagingDTO,
     filterQuery: BaseFilterInterfaceSingle<PagingDTO>,
   ) {
@@ -269,16 +269,13 @@ export class MongoBaseService<
    * @param {PagingDTO} mainPagingDTO - PagingDTO object that contains information about pagination, sorting, and searching.
    * @returns an object with two properties: "where" and "sort".
    */
-  baseFindAllQuery(mainPagingDTO: PagingDTO): { where: any; sort: any } {
+  findAllQuery(mainPagingDTO: PagingDTO): { where: any; sort: any } {
     try {
       const where = {
         $and: [],
       };
 
-      const filter = this.baseFilterAllQuery(
-        mainPagingDTO,
-        this.filterByFields,
-      );
+      const filter = this.filterAllQuery(mainPagingDTO, this.filterByFields);
       if (filter) {
         where['$and'].push(filter);
       }
@@ -310,7 +307,7 @@ export class MongoBaseService<
       return { where, sort };
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -353,7 +350,7 @@ export class MongoBaseService<
       return roomListCount;
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -364,7 +361,7 @@ export class MongoBaseService<
    */
   async findAll(mainPagingDTO: PagingDTO): Promise<ListPaginationInterface<T>> {
     try {
-      const { where, sort } = this.baseFindAllQuery(mainPagingDTO);
+      const { where, sort } = this.findAllQuery(mainPagingDTO);
 
       const roomListCount = await this.exec(
         where,
@@ -383,7 +380,7 @@ export class MongoBaseService<
       };
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -396,10 +393,10 @@ export class MongoBaseService<
     try {
       if (!mongoose.Types.ObjectId.isValid(id)) {
         throw new BadRequestException(
-          this.baseResponseService.error(
+          this.responseService.error(
             HttpStatus.BAD_REQUEST,
             [
-              this.baseMessageService.getErrorMessage(
+              this.messageService.getErrorMessage(
                 `${this.tableAlias}_id`,
                 'general.general.data_invalid',
               ),
@@ -413,10 +410,10 @@ export class MongoBaseService<
         .exec();
       if (!recordT) {
         throw new BadRequestException(
-          this.baseResponseService.error(
+          this.responseService.error(
             HttpStatus.BAD_REQUEST,
             [
-              this.baseMessageService.getErrorMessage(
+              this.messageService.getErrorMessage(
                 `${this.tableAlias}_id`,
                 'general.general.id_not_found',
               ),
@@ -428,7 +425,7 @@ export class MongoBaseService<
       return recordT;
     } catch (error: any) {
       Logger.error(error.message, '', this.constructor.name);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 }

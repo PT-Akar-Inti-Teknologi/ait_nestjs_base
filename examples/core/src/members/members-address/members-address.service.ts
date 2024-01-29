@@ -17,8 +17,8 @@ export class MembersAddressService extends BaseService<
   constructor(
     @InjectRepository(MemberAddressDocument)
     public memberAddressRepository: Repository<MemberAddressDocument>,
-    private readonly responseService: ResponseService,
-    private readonly messageService: MessageService,
+    protected readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
   ) {
     super(
       memberAddressRepository,

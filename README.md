@@ -13,7 +13,7 @@ Click on the link to open documentation of each package.
 Every commit should use this rule: https://www.conventionalcommits.org/en/v1.0.0-beta.4/
 This will affect CHANGELOG.md for each package when publishing and version increment.
 
-- "BREAKING CHANGES" will increase major version
+- "BREAKING CHANGE" will increase major version
 - "feat" will increase minor version
 - "fix" will increase patch version
 
