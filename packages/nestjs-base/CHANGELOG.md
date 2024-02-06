@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@2.0.1...@ait/nestjs-base@2.0.2) (2024-02-06)
+
+
+### Bug Fixes
+
+* change "service" from BaseController to be protected ([04f8e74](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/04f8e744ab602bf8da663e303fce2ef1bf765871))
+
+
+
+
+
 ## [2.0.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@2.0.0...@ait/nestjs-base@2.0.1) (2024-01-29)
 
 
