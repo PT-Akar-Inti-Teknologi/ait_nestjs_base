@@ -45,16 +45,11 @@ export class MembersController extends BaseController<
   MemberDocument
 > {
   constructor(
-    private readonly membersService: MembersService,
+    protected readonly service: MembersService,
     protected readonly responseService: ResponseService,
     protected readonly messageService: MessageService,
   ) {
-    super(
-      membersService,
-      responseService,
-      messageService,
-      MembersController.name,
-    );
+    super(service, responseService, messageService, MembersController.name);
   }
 
   private imagePath = '/upload/members/';
@@ -65,11 +60,41 @@ export class MembersController extends BaseController<
   async findAll(
     @Query() getMemberDTO: GetMemberDTO,
   ): Promise<ResponseSuccessPaginationInterface> {
-    const result = await this.membersService.findAll(getMemberDTO);
+    const result = await this.service.findAll(getMemberDTO);
     return this.responseService.successCollection(
       result.content,
       result.pagination,
     );
+  }
+
+  @Get('/export/csv')
+  async exportCsv(@Res() res: Response) {
+    try {
+      res.set({
+        'Content-Type': 'text/csv',
+        'Content-Disposition': `attachment; filename=members.csv`,
+      });
+      this.service.getAllMemberListCsv().pipe(res);
+    } catch (e) {
+      res.set({
+        'Content-Type': 'application/json',
+        'Content-Disposition': null,
+      });
+      throw e;
+    }
+  }
+
+  @Get('/export/xlsx')
+  async exportExceljs(@Res() res: Response) {
+    try {
+      res.set({
+        'Content-Type': 'text/xlsx',
+        'Content-Disposition': `attachment; filename=members.xlsx`,
+      });
+      await this.service.getAllMemberListXlsx(res);
+    } catch (e) {
+      throw e;
+    }
   }
 
   @Get('/my-profile')
@@ -129,7 +154,7 @@ export class MembersController extends BaseController<
     @UploadedFile() file: Express.Multer.File,
   ): Promise<ResponseSuccessSingleInterface> {
     try {
-      const image = await this.membersService.saveImage(randomUUID(), file);
+      const image = await this.service.saveImage(randomUUID(), file);
 
       return this.responseService.success(image);
     } catch (error) {
