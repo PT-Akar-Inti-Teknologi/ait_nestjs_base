@@ -35,7 +35,7 @@ export abstract class BaseController<
   public readonly logger;
 
   protected constructor(
-    private readonly service: BaseService<
+    protected readonly service: BaseService<
       CreateDTO,
       UpdateDTO,
       EntityDocument,
