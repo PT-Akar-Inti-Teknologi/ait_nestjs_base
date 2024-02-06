@@ -93,6 +93,10 @@ export class MembersController extends BaseController<
       });
       await this.service.getAllMemberListXlsx(res);
     } catch (e) {
+      res.set({
+        'Content-Type': 'application/json',
+        'Content-Disposition': null,
+      });
       throw e;
     }
   }
