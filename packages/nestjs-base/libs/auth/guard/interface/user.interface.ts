@@ -17,4 +17,5 @@ export interface IUser {
   role_id: string;
   level: ILevel;
   permissions: string[];
+  organization_id?: string;
 }
