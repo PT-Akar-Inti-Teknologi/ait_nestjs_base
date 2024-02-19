@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@2.0.2...@ait/nestjs-base@2.1.0) (2024-02-19)
+
+
+### Features
+
+* **base:** add organization_id in IUser ([1c421e3](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/1c421e34774568ac73235abb1108229ebc042ba7))
+
+
+
+
+
 ## [2.0.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@2.0.1...@ait/nestjs-base@2.0.2) (2024-02-06)
 
 
