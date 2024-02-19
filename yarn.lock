@@ -20,6 +20,79 @@
     reflect-metadata "^0.1.13"
     rxjs "^7.2.0"
 
+"@ait/nestjs-audit-trail@^1.0.7":
+  version "1.0.7"
+  resolved "https://npm.pkg.jetbrains.space/akarinti/p/main/npm/@ait/nestjs-audit-trail/-/nestjs-audit-trail-1.0.7.tgz#5a24d43a08b3a8a72ff534c8a2ab06d3b84d1966"
+  integrity sha512-yH008EQt2GvZtENQSbfkFX4rj/tHozPoogqDDeTRbmZQEBm/TLVgtzjb4y5f+Zu2Nwl7xPUHrYGNZISjgpeG/Q==
+  dependencies:
+    "@ait/nestjs-base" "^1.0.16"
+    "@nestjs/axios" "^2.0.0"
+    "@nestjs/common" "^9.4.0"
+    "@nestjs/config" "^2.3.1"
+    "@nestjs/jwt" "^10.0.3"
+    "@nestjs/mapped-types" "^1.2.2"
+    "@nestjs/mongoose" "^10.0.1"
+    "@nestjs/passport" "^9.0.3"
+    "@nestjs/typeorm" "^9.0.1"
+    axios "^1.3.6"
+    bcryptjs "^2.4.3"
+    bull "^4.10.4"
+    class-transformer "^0.5.1"
+    class-validator "^0.13.1"
+    mongoose "^7.6.0"
+    nestjs-i18n "^10.3.7"
+    passport "^0.4.1"
+    passport-jwt "^4.0.0"
+    reflect-metadata "^0.1.13"
+    rxjs "^7.2.0"
+    typeorm "^0.3.14"
+    typeorm-naming-strategies "^4.1.0"
+
+"@ait/nestjs-base@^1.0.16", "@ait/nestjs-base@^1.1.0":
+  version "1.1.0"
+  resolved "https://npm.pkg.jetbrains.space/akarinti/p/main/npm/@ait/nestjs-base/-/nestjs-base-1.1.0.tgz#fcfbdb6df93b7e6b6a236e732b7a1593781bf23b"
+  integrity sha512-V0/lCdAByl8svqz/9mAJvO0Hzjp4KfUpj2VuN0EzW06quHvC1hkQec4/UAKaKBGA0avFTMB+M4xdupIbzXiiUw==
+  dependencies:
+    "@aws-sdk/client-s3" "^3.353.0"
+    "@aws-sdk/s3-request-presigner" "^3.353.0"
+    "@codebrew/nestjs-storage" "^0.1.4"
+    "@google-cloud/storage" "6.12.0"
+    "@nestjs/axios" "^2.0.0"
+    "@nestjs/common" "^9.4.0"
+    "@nestjs/config" "^2.3.1"
+    "@nestjs/jwt" "^10.0.3"
+    "@nestjs/mapped-types" "^1.2.2"
+    "@nestjs/passport" "^9.0.3"
+    "@nestjs/typeorm" "^9.0.1"
+    axios "^1.3.6"
+    bcryptjs "^2.4.3"
+    bull "^4.10.4"
+    class-transformer "^0.5.1"
+    class-validator "^0.13.1"
+    kafkajs "^2.2.4"
+    nestjs-i18n "^10.3.7"
+    passport "^0.4.1"
+    passport-jwt "^4.0.0"
+    reflect-metadata "^0.1.13"
+    rxjs "^7.2.0"
+    typeorm "^0.3.14"
+    typeorm-naming-strategies "^4.1.0"
+
+"@ait/nestjs-replication-data@^1.1.0":
+  version "1.1.0"
+  resolved "https://npm.pkg.jetbrains.space/akarinti/p/main/npm/@ait/nestjs-replication-data/-/nestjs-replication-data-1.1.0.tgz#b9878b66d2129898c14921ce5be0f3c7cdab7e05"
+  integrity sha512-PJ7oXAZIhxaWZXGwNJXmbMwGxS6L8xDLrIh9Wuvo7ztonZs9ZNqnKY/6XndbUhzHOdjnCXeQt3KzEagjYUCq4Q==
+  dependencies:
+    "@nestjs/axios" "^2.0.0"
+    "@nestjs/common" "^9.4.0"
+    "@nestjs/mapped-types" "^1.2.2"
+    "@nestjs/typeorm" "^9.0.1"
+    axios "^1.3.6"
+    class-validator "^0.13.1"
+    reflect-metadata "^0.1.13"
+    rxjs "^7.2.0"
+    typeorm "^0.3.14"
+
 "@alexy4744/nestjs-nats-jetstream-transporter@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@alexy4744/nestjs-nats-jetstream-transporter/-/nestjs-nats-jetstream-transporter-1.0.2.tgz#0d3748d3a6c8ef3371851f11c3ec1f044c43d582"
@@ -6144,7 +6217,7 @@ events@^3.2.0:
   resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
   integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
 
-exceljs@^4.3.0:
+exceljs@^4.3.0, exceljs@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/exceljs/-/exceljs-4.4.0.tgz#cfb1cb8dcc82c760a9fc9faa9e52dadab66b0156"
   integrity sha512-XctvKaEMaj1Ii9oDOqbW/6e1gXknSY4g/aLCDicOXqBE4M0nRWkUu0PTp++UPNzoFY12BNHMfs/VadKIS6llvg==

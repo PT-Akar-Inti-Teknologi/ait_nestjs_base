@@ -19,6 +19,8 @@ import { MemberAddressDocument } from './entities/member-address.entity';
 import { MembersAddressService } from './members-address/members-address.service';
 import { GetMemberDTO } from './dto/member.dto';
 import { removeAllFieldPassword } from '../utils/general.utils';
+import { Readable, Stream } from 'stream';
+import Exceljs from 'exceljs';
 
 @Injectable()
 export class MembersService extends BaseService<
@@ -245,6 +247,82 @@ export class MembersService extends BaseService<
       Logger.error(error.message);
       this.responseService.throwError(error);
     }
+  }
+
+  public getAllMemberListCsv(): Readable {
+    const chunkSize = 10;
+    let page = 0;
+    const repository = this.repository;
+    let isReading = false;
+    const readableStream = new Readable({
+      read() {
+        if (!isReading) {
+          isReading = true;
+          new Promise<void>(async (r) => {
+            // Push header only once at the beginning
+            if (page === 0) {
+              this.push('Nama,Email\n');
+            }
+
+            const members = await repository.find({
+              take: chunkSize,
+              skip: page * chunkSize,
+            });
+
+            if (members.length === 0) {
+              this.push(null); // Signal end of stream
+              return;
+            }
+
+            this.push(members.map((m) => `"${m.name}","${m.email}\n`).join(''));
+
+            // Increment page for subsequent queries
+            page++;
+
+            // await new Promise((r) => setTimeout(r, 4000));
+
+            r();
+            isReading = false;
+          });
+        }
+      },
+    });
+
+    return readableStream;
+  }
+
+  public async getAllMemberListXlsx(stream: Stream): Promise<any> {
+    const chunkSize = 10;
+    let page = 0;
+    const workbook = new Exceljs.stream.xlsx.WorkbookWriter({
+      stream: stream,
+      useStyles: true,
+      useSharedStrings: true,
+    });
+    workbook.creator = 'AIT NestJS Base';
+
+    // create sheet audit
+    const sheet = workbook.addWorksheet('List Members', {
+      properties: { defaultColWidth: 20 },
+    });
+    while (true) {
+      const members = await this.repository.find({
+        skip: chunkSize * page,
+        take: chunkSize,
+      });
+
+      if (members.length == 0) {
+        sheet.commit();
+        break;
+      }
+
+      page++;
+
+      // await new Promise((r) => setTimeout(r, 4000));
+
+      members.forEach((row) => sheet.addRow([row.name, row.email]).commit());
+    }
+    workbook.commit();
   }
 
   public async baseDelete(id: string): Promise<DeleteResult> {
