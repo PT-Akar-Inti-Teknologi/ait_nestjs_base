@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.1...@ait/nestjs-replication-data@3.0.2) (2024-07-19)
+
+
+### Bug Fixes
+
+* update outdated lib: @nestjs/axios,  @nestjs/config, @nestjs/mapped-types, class-validator, passport, reflect-metadata ([0ee5af1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/0ee5af12d2ac685ade243b7a0a7a69c8fade4f99))
+
+
+
+
+
 ## [3.0.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.0...@ait/nestjs-replication-data@3.0.1) (2024-07-19)
 
 
