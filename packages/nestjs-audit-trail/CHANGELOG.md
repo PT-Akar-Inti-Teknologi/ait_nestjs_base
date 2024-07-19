@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-audit-trail@3.0.0...@ait/nestjs-audit-trail@3.0.1) (2024-07-19)
+
+
+### Bug Fixes
+
+* update typeorm version ([b3f034b](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/b3f034ba979b1f178e1a53eb9f87feff44a0c6ee))
+
+
+
+
+
 # [3.0.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-audit-trail@2.0.3...@ait/nestjs-audit-trail@3.0.0) (2024-07-19)
 
 
