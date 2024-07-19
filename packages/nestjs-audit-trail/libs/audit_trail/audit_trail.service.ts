@@ -67,7 +67,7 @@ export class AuditTrailService extends MongoBaseService<
     return super.save(cloneDTO);
   }
 
-  public removeIgnoredArrayFields(fields: []) {
+  public removeIgnoredArrayFields(fields: any[]) {
     for (const value of fields) {
       if (Array.isArray(value)) {
         this.removeIgnoredArrayFields(value);
