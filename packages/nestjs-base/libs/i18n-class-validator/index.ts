@@ -184,7 +184,7 @@ export function NotContains(
   );
 }
 export function IsAlpha(
-  locale?: string,
+  locale?: validator.AlphaLocale,
   validationOptions?: classValidator.ValidationOptions,
 ) {
   return classValidator.IsAlpha(
@@ -193,7 +193,7 @@ export function IsAlpha(
   );
 }
 export function IsAlphanumeric(
-  locale?: string,
+  locale?: validator.AlphaLocale,
   validationOptions?: classValidator.ValidationOptions,
 ) {
   return classValidator.IsAlphanumeric(
@@ -202,9 +202,11 @@ export function IsAlphanumeric(
   );
 }
 export function IsDecimal(
+  options?: validator.IsDecimalOptions,
   validationOptions?: classValidator.ValidationOptions,
 ) {
   return classValidator.IsDecimal(
+    options,
     mergeI18nOptions('IS_DECIMAL', validationOptions),
   );
 }
@@ -213,8 +215,12 @@ export function IsAscii(validationOptions?: classValidator.ValidationOptions) {
     mergeI18nOptions('IS_ASCII', validationOptions),
   );
 }
-export function IsBase64(validationOptions?: classValidator.ValidationOptions) {
+export function IsBase64(
+  options?: validator.IsBase64Options,
+  validationOptions?: classValidator.ValidationOptions,
+) {
   return classValidator.IsBase64(
+    options,
     mergeI18nOptions('IS_BASE64', validationOptions),
   );
 }
@@ -237,19 +243,31 @@ export function IsCreditCard(
   );
 }
 export function IsCurrency(
+  options?: validator.IsCurrencyOptions,
   validationOptions?: classValidator.ValidationOptions,
 ) {
   return classValidator.IsCurrency(
+    options,
     mergeI18nOptions('IS_CURRENCY', validationOptions),
   );
 }
-export function IsEmail(validationOptions?: classValidator.ValidationOptions) {
+export function IsEmail(
+  options?: validator.IsEmailOptions,
+  validationOptions?: classValidator.ValidationOptions,
+) {
   return classValidator.IsEmail(
+    options,
     mergeI18nOptions('IS_EMAIL', validationOptions),
   );
 }
-export function IsFQDN(validationOptions?: classValidator.ValidationOptions) {
-  return classValidator.IsFQDN(mergeI18nOptions('IS_FQDN', validationOptions));
+export function IsFQDN(
+  options?: validator.IsFQDNOptions,
+  validationOptions?: classValidator.ValidationOptions,
+) {
+  return classValidator.IsFQDN(
+    options,
+    mergeI18nOptions('IS_FQDN', validationOptions),
+  );
 }
 export function IsFullWidth(
   validationOptions?: classValidator.ValidationOptions,
@@ -318,9 +336,11 @@ export function IsISIN(validationOptions?: classValidator.ValidationOptions) {
   return classValidator.IsISIN(mergeI18nOptions('IS_ISIN', validationOptions));
 }
 export function IsISO8601(
+  options?: validator.IsISO8601Options,
   validationOptions?: classValidator.ValidationOptions,
 ) {
   return classValidator.IsISO8601(
+    options,
     mergeI18nOptions('IS_ISO8601', validationOptions),
   );
 }
@@ -338,9 +358,13 @@ export function IsLowercase(
   );
 }
 export function IsMobilePhone(
+  locale?: validator.MobilePhoneLocale,
+  options?: validator.IsMobilePhoneOptions,
   validationOptions?: classValidator.ValidationOptions,
 ) {
   return classValidator.IsMobilePhone(
+    locale,
+    options,
     mergeI18nOptions('IS_MOBILE_PHONE', validationOptions),
   );
 }
@@ -379,11 +403,17 @@ export function IsSurrogatePair(
     mergeI18nOptions('IS_SURROGATE_PAIR', validationOptions),
   );
 }
-export function IsUrl(validationOptions?: classValidator.ValidationOptions) {
-  return classValidator.IsUrl(mergeI18nOptions('IS_URL', validationOptions));
+export function IsUrl(
+  options?: validator.IsURLOptions,
+  validationOptions?: classValidator.ValidationOptions,
+) {
+  return classValidator.IsUrl(
+    options,
+    mergeI18nOptions('IS_URL', validationOptions),
+  );
 }
 export function IsUUID(
-  version?: classValidator.UUIDVersion,
+  version?: validator.UUIDVersion,
   validationOptions?: classValidator.ValidationOptions,
 ) {
   return classValidator.IsUUID(
@@ -468,13 +498,21 @@ export function IsHash(
     mergeI18nOptions('IS_HASH', validationOptions),
   );
 }
-export function IsISSN(validationOptions?: classValidator.ValidationOptions) {
-  return classValidator.IsISSN(mergeI18nOptions('IS_ISSN', validationOptions));
+export function IsISSN(
+  options?: validator.IsISSNOptions,
+  validationOptions?: classValidator.ValidationOptions,
+) {
+  return classValidator.IsISSN(
+    options,
+    mergeI18nOptions('IS_ISSN', validationOptions),
+  );
 }
 export function IsDateString(
+  options?: validator.IsISO8601Options,
   validationOptions?: classValidator.ValidationOptions,
 ) {
   return classValidator.IsDateString(
+    options,
     mergeI18nOptions('IS_DATE_STRING', validationOptions),
   );
 }
@@ -486,9 +524,11 @@ export function IsBooleanString(
   );
 }
 export function IsNumberString(
+  options?: validator.IsNumericOptions,
   validationOptions?: classValidator.ValidationOptions,
 ) {
   return classValidator.IsNumberString(
+    options,
     mergeI18nOptions('IS_NUMBER_STRING', validationOptions),
   );
 }
@@ -531,9 +571,11 @@ export function IsIBAN(validationOptions?: classValidator.ValidationOptions) {
   return classValidator.IsIBAN(mergeI18nOptions('IS_IBAN', validationOptions));
 }
 export function IsIdentityCard(
+  locale?: validator.IdentityCardLocale,
   validationOptions?: classValidator.ValidationOptions,
 ) {
   return classValidator.IsIdentityCard(
+    locale,
     mergeI18nOptions('IS_IDENTITY_CARD', validationOptions),
   );
 }
@@ -574,9 +616,11 @@ export function IsPassportNumber(
   );
 }
 export function IsPostalCode(
+  locale?: validator.PostalCodeLocale,
   validationOptions?: classValidator.ValidationOptions,
 ) {
   return classValidator.IsPostalCode(
+    locale,
     mergeI18nOptions('IS_POSTAL_CODE', validationOptions),
   );
 }
