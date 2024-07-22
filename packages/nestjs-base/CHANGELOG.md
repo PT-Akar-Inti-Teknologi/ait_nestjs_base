@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.4](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.3...@ait/nestjs-base@3.0.4) (2024-07-22)
+
+
+### Bug Fixes
+
+* IUser generate token ([13c399b](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/13c399b9d8340d65296f059946e62903acc32f61))
+
+
+
+
+
 ## [3.0.3](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.2...@ait/nestjs-base@3.0.3) (2024-07-22)
 
 
