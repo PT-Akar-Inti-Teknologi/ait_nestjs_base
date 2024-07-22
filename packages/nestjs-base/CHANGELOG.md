@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.6](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.5...@ait/nestjs-base@3.0.6) (2024-07-22)
+
+
+### Bug Fixes
+
+* use injection to config AuthJwtGuard ([c020582](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/c020582ea71f2d85e4b5b2ce89cddc76cb07a8a4))
+
+
+
+
+
 ## [3.0.5](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.4...@ait/nestjs-base@3.0.5) (2024-07-22)
 
 
