@@ -3,12 +3,16 @@ import {
   createParamDecorator,
   ExecutionContext,
   applyDecorators,
+  SetMetadata,
 } from '@nestjs/common';
 import { IApplyDecorator } from '../response/response.interface';
-import { IUser } from './guard/interface/user.interface';
+import { IUser, IUserType } from './guard/interface/user.interface';
 import { JwtGuard } from './guard/jwt/jwt.guard';
 
-export function AuthJwtGuard(): IApplyDecorator {
+export function AuthJwtGuard(
+  superadminType = IUserType.Superadmin,
+): IApplyDecorator {
+  SetMetadata('superadmin_type', superadminType);
   return applyDecorators(UseGuards(JwtGuard));
 }
 

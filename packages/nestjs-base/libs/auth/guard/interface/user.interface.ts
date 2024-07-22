@@ -11,11 +11,14 @@ export enum ILevel {
   Store = 'store',
 }
 
-export interface IUser {
+export interface IUser<
+  UserType extends string = IUserType,
+  Level extends String = ILevel,
+> {
   id: string;
-  user_type: IUserType;
+  user_type: UserType;
   role_id: string;
-  level: ILevel;
+  level: Level;
   permissions: string[];
   organization_id?: string;
 }

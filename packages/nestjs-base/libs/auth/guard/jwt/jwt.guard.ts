@@ -26,8 +26,12 @@ export class JwtGuard extends AuthGuard('jwt') {
 
   private user_type_and_levels: string[];
   private permission: string;
+  private superadminType: string;
 
   canActivate(context: ExecutionContext) {
+    this.superadminType =
+      this.reflector.get<string>('superadmin_type', context.getHandler()) ??
+      IUserType.Superadmin;
     this.user_type_and_levels =
       this.reflector.get<string[]>(
         'user_type_and_levels',
@@ -76,7 +80,7 @@ export class JwtGuard extends AuthGuard('jwt') {
         ),
       );
     }
-    if (loggedInUser.user_type == IUserType.Superadmin) {
+    if (loggedInUser.user_type == this.superadminType) {
       console.log(
         '=================================SUPERADMIN=================================\n',
         new Date(Date.now()).toLocaleString(),
