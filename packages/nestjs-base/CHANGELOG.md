@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.3](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.2...@ait/nestjs-base@3.0.3) (2024-07-22)
+
+
+### Bug Fixes
+
+* enable dynamic user interface IUserType ([565feac](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/565feac35ffe7b7522609efbb58f1f5429e05862))
+
+
+
+
+
 ## [3.0.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.1...@ait/nestjs-base@3.0.2) (2024-07-19)
 
 
