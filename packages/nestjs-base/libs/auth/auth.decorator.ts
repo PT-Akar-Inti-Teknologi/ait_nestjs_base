@@ -10,7 +10,7 @@ import { IUser, IUserType } from './guard/interface/user.interface';
 import { JwtGuard } from './guard/jwt/jwt.guard';
 
 export function AuthJwtGuard(
-  superadminType = IUserType.Superadmin,
+  superadminType: string = IUserType.Superadmin,
 ): IApplyDecorator {
   SetMetadata('superadmin_type', superadminType);
   return applyDecorators(UseGuards(JwtGuard));
