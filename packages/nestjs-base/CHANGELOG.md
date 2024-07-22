@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.7](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.6...@ait/nestjs-base@3.0.7) (2024-07-22)
+
+
+### Bug Fixes
+
+* export AitAuthConfig as global export ([c4c6521](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/c4c65218e1dd88efbe7ef2e26c1ed325f3b86030))
+
+
+
+
+
 ## [3.0.6](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.5...@ait/nestjs-base@3.0.6) (2024-07-22)
 
 
