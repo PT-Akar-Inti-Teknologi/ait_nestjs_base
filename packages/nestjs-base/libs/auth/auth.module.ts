@@ -37,7 +37,7 @@ export class AitAuthModule {
         ...imports,
       ],
       controllers: [],
-      exports: [AuthService, ...exports],
+      exports: [AuthService, AitAuthConfig, ...exports],
       providers: [
         {
           provide: AitAuthConfig,
