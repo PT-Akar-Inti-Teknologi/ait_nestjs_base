@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.5](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.4...@ait/nestjs-base@3.0.5) (2024-07-22)
+
+
+### Bug Fixes
+
+* superadmin type AuthJwtGuard ([152d6ab](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/152d6abf5fd82f53acee35495a4d457641d95739))
+
+
+
+
+
 ## [3.0.4](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.3...@ait/nestjs-base@3.0.4) (2024-07-22)
 
 
