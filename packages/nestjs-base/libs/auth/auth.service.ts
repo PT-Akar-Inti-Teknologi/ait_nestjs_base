@@ -111,7 +111,7 @@ export class AuthService {
   }
 
   async generateToken(
-    user: IUser,
+    user: IUser<string>,
   ): Promise<{ token: string; refreshtoken: string }> {
     const dailytoken: string = await this.createAccessToken(user);
     if (!dailytoken) {
