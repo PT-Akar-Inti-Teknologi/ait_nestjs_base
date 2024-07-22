@@ -87,6 +87,8 @@ AitAuthModule.register({
     imports: [TypeOrmModule.forFeature([PermissionDocument])],
     providers: [AuthPermissionsService],
   },
+  /** optional, default to IUserType.Superadmin when not filled */
+  superadmin_role: IUserType.Superadmin
 }),
 ```
 

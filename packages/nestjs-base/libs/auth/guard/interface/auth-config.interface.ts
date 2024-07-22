@@ -35,4 +35,6 @@ export class AitAuthConfig {
     /** additional providers */
     providers: Provider[];
   };
+  /** superadmin role */
+  superadmin_role?: string;
 }

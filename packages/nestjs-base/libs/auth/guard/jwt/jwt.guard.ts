@@ -9,10 +9,11 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { IUser, IUserType } from '../interface/user.interface';
+import { IUser } from '../interface/user.interface';
 import { TokenExpiredError } from 'jsonwebtoken';
 import { ResponseService } from '../../../response/response.service';
 import { MessageService } from '../../../message/message.service';
+import { AitAuthConfig } from '../interface/auth-config.interface';
 
 @Injectable()
 export class JwtGuard extends AuthGuard('jwt') {
@@ -20,6 +21,7 @@ export class JwtGuard extends AuthGuard('jwt') {
     private readonly responseService: ResponseService,
     private readonly messageService: MessageService,
     private reflector: Reflector,
+    private readonly config: AitAuthConfig,
   ) {
     super();
   }
@@ -29,9 +31,7 @@ export class JwtGuard extends AuthGuard('jwt') {
   private superadminType: string;
 
   canActivate(context: ExecutionContext) {
-    this.superadminType =
-      this.reflector.get<string>('superadmin_type', context.getHandler()) ??
-      IUserType.Superadmin;
+    this.superadminType = this.config.superadmin_role;
     this.user_type_and_levels =
       this.reflector.get<string[]>(
         'user_type_and_levels',

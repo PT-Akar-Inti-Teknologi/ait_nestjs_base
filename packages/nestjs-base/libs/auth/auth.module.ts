@@ -3,6 +3,7 @@ import { AuthService } from './auth.service';
 import { HttpModule } from '@nestjs/axios';
 import { JwtModule } from '@nestjs/jwt';
 import { AitAuthConfig } from './guard/interface/auth-config.interface';
+import { IUserType } from './guard';
 
 @Global()
 @Module({})
@@ -19,6 +20,9 @@ export class AitAuthModule {
         imports.push(...config.jwtStrategy.imports);
       if (config.jwtStrategy.exports)
         exports.push(...config.jwtStrategy.exports);
+    }
+    if (!config.superadmin_role) {
+      config.superadmin_role = IUserType.Superadmin;
     }
     return {
       module: AitAuthModule,
