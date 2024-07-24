@@ -75,9 +75,8 @@ export abstract class BaseController<
    */
   @Get('/:id')
   async show(@Param('id') id: string): Promise<ResponseSuccessSingleInterface> {
-    const result: EntityDocument = await this.service.getDetailAndValidateById(
-      id,
-    );
+    const result: EntityDocument =
+      await this.service.getDetailAndValidateById(id);
     return this.responseService.success(
       result,
       this.messageService.get('general.get.success'),
@@ -92,6 +91,7 @@ export abstract class BaseController<
   @Post()
   async save(
     @Body() createDTO: CreateDTO,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     user?: IUser,
   ): Promise<ResponseSuccessSingleInterface> {
     const result: EntityDocument = await this.service.save(createDTO);
@@ -111,6 +111,7 @@ export abstract class BaseController<
   async update(
     @Param('id') id: string,
     @Body() updateDTO: UpdateDTO,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     user?: IUser,
   ): Promise<ResponseSuccessSingleInterface> {
     const result: EntityDocument = await this.service.update(updateDTO, id);

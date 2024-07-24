@@ -294,6 +294,8 @@ for Http broadcast engine:
 ```ts
 AitCommonModule.register({
   broadcastType: 'http',
+  /** automatically log created_by_id, updated_by_id, deleted_by_id for entities that implements AitBaseEntity, default false */
+  autologUser: false, 
 }),
 ```
 
@@ -306,10 +308,50 @@ AitCommonModule.register({
     brokers: [process.env.KAFKA_HOST],
     serviceName: process.env.PROJECT_NAME + '_' + process.env.SERVICE_NAME,
   },
+  /** automatically log created_by_id, updated_by_id, deleted_by_id for entities that implements AitBaseEntity, default false */
+  autologUser: false,
 }),
 ```
 
 ### Usage
+
+#### RequestContext Interceptor
+add AitRequestContextInterceptor as global interceptor in main.ts
+```ts
+app.useGlobalInterceptors(
+  // app.get(AuditTrailInterceptor),
+  // ...
+  app.get(AitRequestContextInterceptor),
+);
+```
+
+you can use it by calling `AitRequestContext.currentContext?.context` or `AitRequestContext.currentUser`
+
+#### Auto Log created_by_id, updated_by_id, deleted_by_id
+
+- extend entity using AitBaseEntity
+```ts
+@Entity({ name: 'users' })
+export class UserDocument extends AitBaseEntity {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+}
+```
+- add AitRequestContextInterceptor as global interceptor in main.ts
+```ts
+app.useGlobalInterceptors(
+  // app.get(AuditTrailInterceptor),
+  // ...
+  app.get(AitRequestContextInterceptor),
+);
+```
+- set autologUser when registering AitCommonModule to true
+```ts
+AitCommonModule.register({
+  ...
+  autologUser: true,
+}),
+```
 
 #### Http call
 

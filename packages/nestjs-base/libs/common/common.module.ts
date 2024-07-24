@@ -3,23 +3,30 @@ import {
   DynamicModule,
   ForwardReference,
   Global,
+  MiddlewareConsumer,
   Module,
   Provider,
   Type,
 } from '@nestjs/common';
-import { CommonService } from './common.service';
-import { AitCommonConfig, AitCommonConfigKafka } from './interfaces';
 import { Kafka } from 'kafkajs';
+import { CommonService } from './common.service';
+import { AitRequestContextInterceptor } from './interceptors';
+import { AitCommonConfig, AitCommonConfigKafka } from './interfaces';
 import { KafkaCommonService } from './services/kafka-common.service';
+import { AitAutoLogSubscriber } from './subscribers/auto-log.subscriber';
 
 @Global()
 @Module({})
 export class AitCommonModule {
+  configure(consumer: MiddlewareConsumer): any {
+    consumer.apply(AitRequestContextInterceptor).forRoutes('*');
+  }
+
   static register(config: AitCommonConfig): DynamicModule {
     const imports: Array<
       Type<any> | DynamicModule | Promise<DynamicModule> | ForwardReference
     > = [HttpModule];
-    const providers: Provider[] = [];
+    const providers: Provider[] = [AitRequestContextInterceptor];
 
     if (config.broadcastType == 'kafka') {
       providers.push({
@@ -40,6 +47,10 @@ export class AitCommonModule {
       });
     } else {
       providers.push(CommonService);
+    }
+
+    if (config.autologUser) {
+      providers.push(AitAutoLogSubscriber);
     }
 
     return {

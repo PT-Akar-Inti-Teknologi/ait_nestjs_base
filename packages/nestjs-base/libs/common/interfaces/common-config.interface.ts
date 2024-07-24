@@ -5,14 +5,20 @@ import {
   ProducerConfig,
 } from 'kafkajs';
 
+interface AitCommonConfigBase {
+  /** automatically log created_by_id, updated_by_id, deleted_by_id for entities that implements AitBaseEntity, default false */
+  autologUser?: boolean;
+}
+
 /** config for AIT CommonService */
 export type AitCommonConfig = AitCommonConfigHttp | AitCommonConfigKafka;
 
-export class AitCommonConfigHttp {
+export class AitCommonConfigHttp implements AitCommonConfigBase {
   broadcastType: 'http';
+  autologUser?: boolean;
 }
 
-export class AitCommonConfigKafka {
+export class AitCommonConfigKafka implements AitCommonConfigBase {
   broadcastType: 'kafka';
   /** kafka config */
   kafka: {
@@ -27,4 +33,5 @@ export class AitCommonConfigKafka {
     /** kafka consumer config overrides. reference: https://kafka.js.org/docs/consuming */
     consumerConfig?: ConsumerConfig;
   };
+  autologUser?: boolean;
 }

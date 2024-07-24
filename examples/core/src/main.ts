@@ -1,3 +1,8 @@
+import { AuditTrailInterceptor } from '@ait/nestjs-audit-trail';
+import {
+  AitRequestContextInterceptor,
+  ErrorMessageInterface,
+} from '@ait/nestjs-base';
 import {
   BadRequestException,
   HttpStatus,
@@ -5,11 +10,9 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { ErrorMessageInterface } from '@ait/nestjs-base';
-import { camelToSnake } from './utils/general.utils';
 import mongoose from 'mongoose';
-import { AuditTrailInterceptor } from '@ait/nestjs-audit-trail';
+import { AppModule } from './app.module';
+import { camelToSnake } from './utils/general.utils';
 
 const logger = new Logger('main');
 
@@ -20,7 +23,10 @@ async function bootstrap() {
   if (process.env.ENABLE_CORS) {
     app.enableCors();
   }
-  app.useGlobalInterceptors(app.get(AuditTrailInterceptor));
+  app.useGlobalInterceptors(
+    app.get(AuditTrailInterceptor),
+    app.get(AitRequestContextInterceptor),
+  );
 
   mongoose.set(
     'debug',

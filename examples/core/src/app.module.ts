@@ -1,12 +1,5 @@
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { BullModule } from '@nestjs/bull';
-import { LoginModule } from './login/login.module';
-import { UsersModule } from './users/users.module';
 import { EmailModule } from '@ait/nest-notification';
-import { DevtoolsModule } from '@nestjs/devtools-integration';
+import { AitAuditTrailModule } from '@ait/nestjs-audit-trail';
 import {
   AitCommonModule,
   AitDatabaseModule,
@@ -15,11 +8,18 @@ import {
   AitResponseModule,
   AitStorageModule,
 } from '@ait/nestjs-base';
-import languages from './message/message.constant';
-import { AitAuditTrailModule } from '@ait/nestjs-audit-trail';
-import { AuditTrailModule } from './audit-trail/audit-trail.module';
+import { BullModule } from '@nestjs/bull';
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { DevtoolsModule } from '@nestjs/devtools-integration';
 import { MongooseModule } from '@nestjs/mongoose';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { AuditTrailModule } from './audit-trail/audit-trail.module';
+import { LoginModule } from './login/login.module';
 import { MembersModule } from './members/members.module';
+import languages from './message/message.constant';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -70,6 +70,7 @@ import { MembersModule } from './members/members.module';
         brokers: [process.env.KAFKA_HOST],
         serviceName: process.env.PROJECT_NAME + '_' + process.env.SERVICE_NAME,
       },
+      autologUser: true,
     }),
     AitStorageModule.register({
       driver: process.env.STORAGE_DRIVER as any,
