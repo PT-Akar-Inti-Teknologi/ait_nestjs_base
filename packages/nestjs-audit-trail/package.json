@@ -1,6 +1,6 @@
 {
   "name": "@ait/nestjs-audit-trail",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "",
   "author": "AIT",
   "license": "UNLICENSED",
@@ -22,7 +22,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@ait/nestjs-base": "^3.0.7",
+    "@ait/nestjs-base": "^3.1.0",
     "@nestjs/axios": "^3.0.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.2.3",

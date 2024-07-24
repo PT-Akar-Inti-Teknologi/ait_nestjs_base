@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.7...@ait/nestjs-base@3.1.0) (2024-07-24)
+
+
+### Features
+
+* autolog user subscriber & request context interceptor ([979cac3](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/979cac303fb01e9bee99059a335557f7d29601bd))
+
+
+
+
+
 ## [3.0.7](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.6...@ait/nestjs-base@3.0.7) (2024-07-22)
 
 
