@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.1.0...@ait/nestjs-base@3.1.1) (2024-07-26)
+
+
+### Bug Fixes
+
+* GenericSeeder avoid reserved name in postgres ([1c23708](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/1c23708a6814d2fbbb798e0da0ff245587ef0a4a))
+
+
+
+
+
 # [3.1.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.7...@ait/nestjs-base@3.1.0) (2024-07-24)
 
 

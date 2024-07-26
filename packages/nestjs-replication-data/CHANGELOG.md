@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.9](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.8...@ait/nestjs-replication-data@3.0.9) (2024-07-26)
+
+**Note:** Version bump only for package @ait/nestjs-replication-data
+
+
+
+
+
 ## [3.0.8](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.7...@ait/nestjs-replication-data@3.0.8) (2024-07-24)
 
 **Note:** Version bump only for package @ait/nestjs-replication-data
