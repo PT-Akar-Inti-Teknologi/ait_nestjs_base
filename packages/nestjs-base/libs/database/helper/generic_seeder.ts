@@ -1,5 +1,5 @@
-import { get } from 'lodash';
 import { Inject, Logger, OnApplicationBootstrap, Type } from '@nestjs/common';
+import { get } from 'lodash';
 import {
   DataSource,
   DeepPartial,
@@ -59,7 +59,9 @@ export abstract class GenericSeeder<E extends object>
    * @return {SelectQueryBuilder<E>}
    */
   protected buildClause(builder: SelectQueryBuilder<E>): SelectQueryBuilder<E> {
-    const combineColumn = this.lockedFields.join(' || ');
+    const combineColumn = this.lockedFields
+      .map((column) => `"${column.toString()}"`)
+      .join(' || ');
 
     const combineValues = this.getData().map((d) =>
       this.lockedFields.map((c) => get(d, c)).join(''),
