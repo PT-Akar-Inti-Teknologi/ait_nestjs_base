@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.1.1...@ait/nestjs-base@3.2.0) (2024-07-30)
+
+
+### Features
+
+* add pkFieldName to BaseService ([9942a61](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/9942a6126ce24ba8e54c18e52dd57874a7b7c249))
+
+
+
+
+
 ## [3.1.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.1.0...@ait/nestjs-base@3.1.1) (2024-07-26)
 
 
