@@ -1,4 +1,4 @@
-import { ResponseService } from '../../response/response.service';
+import { BadRequestException, HttpStatus, Logger } from '@nestjs/common';
 import {
   Brackets,
   DeleteResult,
@@ -6,13 +6,13 @@ import {
   SelectQueryBuilder,
   WhereExpressionBuilder,
 } from 'typeorm';
-import { BadRequestException, HttpStatus, Logger } from '@nestjs/common';
-import { MessageService } from '../../message/message.service';
 import { MainPagingDTO } from '../../common/dto/main-paging.dto';
+import { MessageService } from '../../message/message.service';
 import {
   ListPaginationInterface,
   PaginationInterface,
 } from '../../response/response.interface';
+import { ResponseService } from '../../response/response.service';
 
 /** Query AND/OR filter */
 export type BaseFilterLogicalOperator = 'AND' | 'OR';
@@ -59,6 +59,7 @@ export class BaseService<
   protected searchByFields: string[] = ['name'];
   protected defaultSort = 'created_at';
   protected defaultOrder: 'ASC' | 'DESC' = 'DESC';
+  protected pkFieldName = 'id';
 
   /**
    * filter from key in MainPagingDTO to table fields and its relationship.
@@ -100,15 +101,15 @@ export class BaseService<
   /**
    * Update an entity in the database
    * @param updateDTO - The DTO containing the data to be updated
-   * @param id - The id of the entity to be updated
+   * @param pk - The primary key of the entity to be updated
    * @returns - The updated entity
    */
   public async update(
     updateDTO: UpdateDTO,
-    id: string,
+    pk: string,
   ): Promise<EntityDocument> {
     try {
-      const record: EntityDocument = await this.getAndValidateById(id);
+      const record: EntityDocument = await this.getAndValidateById(pk);
 
       Object.assign(record, {
         ...updateDTO,
@@ -123,12 +124,12 @@ export class BaseService<
 
   /**
    * Delete an entity from the database
-   * @param id - The id of the entity to be deleted
+   * @param pk - The primary key of the entity to be deleted
    * @returns - Result of the delete operation
    */
-  public async delete(id: string): Promise<DeleteResult> {
+  public async delete(pk: string): Promise<DeleteResult> {
     try {
-      const entity = await this.getAndValidateById(id);
+      const entity = await this.getAndValidateById(pk);
       await this.repository.softRemove(entity);
       return {
         generatedMaps: [],
@@ -417,14 +418,14 @@ export class BaseService<
 
   /**
    * Fetch an entity from the database and validate its existence
-   * @param id - The id of the entity to be fetched
+   * @param pk - The primary key of the entity to be fetched
    * @returns - The fetched entity
    */
-  async getAndValidateById(id: string): Promise<EntityDocument> {
+  async getAndValidateById(pk: string): Promise<EntityDocument> {
     try {
       const recordEntityDocument = await this.repository
         .createQueryBuilder(this.tableAlias)
-        .where(`${this.tableAlias}.id = :id`, { id })
+        .where(`${this.tableAlias}.${this.pkFieldName} = :pk`, { pk })
         .getOne();
       if (!recordEntityDocument) {
         throw new BadRequestException(
@@ -432,7 +433,7 @@ export class BaseService<
             HttpStatus.BAD_REQUEST,
             [
               this.messageService.getErrorMessage(
-                `${this.tableAlias}_id`,
+                `${this.tableAlias}_${this.pkFieldName}`,
                 'general.general.id_not_found',
               ),
             ],
@@ -487,10 +488,10 @@ export class BaseService<
 
   /**
    * Generate query to fetch detailed entity from the database
-   * @param id - The id of the entity to be fetched
+   * @param pk - The primary key of the entity to be fetched
    * @returns - Query builder
    */
-  getDetailByIdQuery(id: string): SelectQueryBuilder<EntityDocument> {
+  getDetailByIdQuery(pk: string): SelectQueryBuilder<EntityDocument> {
     const queryBuilder = this.repository.createQueryBuilder(this.tableAlias);
 
     if (this.relations && this.relations.length > 0) {
@@ -507,7 +508,7 @@ export class BaseService<
         queryBuilder.leftJoinAndSelect(`${tabel}.${joinTable}`, alias);
       });
     }
-    queryBuilder.where(`${this.tableAlias}.id = :id`, { id });
+    queryBuilder.where(`${this.tableAlias}.${this.pkFieldName} = :pk`, { pk });
     return queryBuilder;
   }
 
@@ -528,12 +529,12 @@ export class BaseService<
 
   /**
    * Fetch detailed entity from the database and validate its existence
-   * @param id - The id of the entity to be fetched
+   * @param pk - The primary key of the entity to be fetched
    * @returns - The fetched detailed entity
    */
-  async getDetailAndValidateById(id: string): Promise<EntityDocument> {
+  async getDetailAndValidateById(pk: string): Promise<EntityDocument> {
     try {
-      const queryBuilder = this.getDetailByIdQuery(id);
+      const queryBuilder = this.getDetailByIdQuery(pk);
 
       const recordEntityDocument = await queryBuilder.getOne();
 
