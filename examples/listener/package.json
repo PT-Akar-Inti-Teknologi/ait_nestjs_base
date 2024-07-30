@@ -26,8 +26,6 @@
     "@ait/nestjs-base": "^3.0.0",
     "@ait/nestjs-replication-data": "^3.0.0",
     "@alexy4744/nestjs-nats-jetstream-transporter": "^1.0.2",
-    "@aws-sdk/client-s3": "^3.353.0",
-    "@aws-sdk/s3-request-presigner": "^3.353.0",
     "@codebrew/nestjs-storage": "^0.1.4",
     "@google-cloud/storage": "6.12.0",
     "@nestjs/axios": "^3.0.0",

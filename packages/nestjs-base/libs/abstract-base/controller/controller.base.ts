@@ -1,6 +1,3 @@
-import { BaseService } from '../service/service.base';
-import { MessageService } from '../../message/message.service';
-import { ResponseService } from '../../response/response.service';
 import {
   Body,
   Delete,
@@ -11,14 +8,17 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
+import { ClassConstructor, plainToClass } from 'class-transformer';
 import { DeleteResult } from 'typeorm';
+import { IUser, IUserType } from '../../auth/guard/interface/user.interface';
 import { MainPagingDTO } from '../../common/dto/main-paging.dto';
+import { MessageService } from '../../message/message.service';
 import {
   ResponseSuccessPaginationInterface,
   ResponseSuccessSingleInterface,
 } from '../../response/response.interface';
-import { IUser } from '../../auth/guard/interface/user.interface';
-import { ClassConstructor, plainToClass } from 'class-transformer';
+import { ResponseService } from '../../response/response.service';
+import { BaseService } from '../service/service.base';
 
 /**
  * Base class for providing CRUD (Create, Read, Update, Delete) operations over HTTP (GET, POST, PUT, DELETE).
@@ -31,6 +31,7 @@ export abstract class BaseController<
   UpdateDTO,
   EntityDocument,
   PagingDTO extends MainPagingDTO = MainPagingDTO,
+  EnumUserType extends string = IUserType,
 > {
   public readonly logger;
 
@@ -57,6 +58,8 @@ export abstract class BaseController<
   @Get()
   async findAll(
     @Query() mainPagingDTO: PagingDTO,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    user?: IUser<EnumUserType>,
   ): Promise<ResponseSuccessPaginationInterface> {
     if (!(mainPagingDTO instanceof MainPagingDTO)) {
       mainPagingDTO = plainToClass(this.pagingClass, mainPagingDTO as any);
@@ -92,7 +95,7 @@ export abstract class BaseController<
   async save(
     @Body() createDTO: CreateDTO,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    user?: IUser,
+    user?: IUser<EnumUserType>,
   ): Promise<ResponseSuccessSingleInterface> {
     const result: EntityDocument = await this.service.save(createDTO);
     return this.responseService.success(
@@ -112,7 +115,7 @@ export abstract class BaseController<
     @Param('id') id: string,
     @Body() updateDTO: UpdateDTO,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    user?: IUser,
+    user?: IUser<EnumUserType>,
   ): Promise<ResponseSuccessSingleInterface> {
     const result: EntityDocument = await this.service.update(updateDTO, id);
     return this.responseService.success(
@@ -129,6 +132,8 @@ export abstract class BaseController<
   @Delete('/:id')
   async delete(
     @Param('id') id: string,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    user?: IUser<EnumUserType>,
   ): Promise<ResponseSuccessSingleInterface> {
     const result: DeleteResult = await this.service.delete(id);
 

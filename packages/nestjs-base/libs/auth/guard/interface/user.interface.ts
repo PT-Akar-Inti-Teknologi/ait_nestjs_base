@@ -13,7 +13,7 @@ export enum ILevel {
 
 export interface IUser<
   UserType extends string = IUserType,
-  Level extends String = ILevel,
+  Level extends string = ILevel,
 > {
   id: string;
   user_type: UserType;
