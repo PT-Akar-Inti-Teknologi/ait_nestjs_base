@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.2.1...@ait/nestjs-base@3.2.2) (2024-07-31)
+
+
+### Bug Fixes
+
+* defaultSort defaultOrder for findAllQuery ([b7010b6](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/b7010b686855b2c021e7493b1e1ee27f408ae392))
+
+
+
+
+
 ## [3.2.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.2.0...@ait/nestjs-base@3.2.1) (2024-07-30)
 
 
