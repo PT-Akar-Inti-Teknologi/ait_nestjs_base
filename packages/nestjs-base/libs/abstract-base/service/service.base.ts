@@ -267,7 +267,10 @@ export class BaseService<
         }
         query.orderBy(`${prefix}${mainPagingDTO.sort}`, mainPagingDTO.order);
       } else {
-        query.orderBy(`${this.tableAlias}.created_at`, 'DESC');
+        query.orderBy(
+          `${this.tableAlias}.${this.defaultSort}`,
+          this.defaultOrder,
+        );
       }
       query.take(mainPagingDTO.size);
       query.skip(mainPagingDTO.page * mainPagingDTO.size);
