@@ -430,25 +430,24 @@ export class BaseService<
         .createQueryBuilder(this.tableAlias)
         .where(`${this.tableAlias}.${this.pkFieldName} = :pk`, { pk })
         .getOne();
-      if (!recordEntityDocument) {
-        throw new BadRequestException(
-          this.responseService.error(
-            HttpStatus.BAD_REQUEST,
-            [
-              this.messageService.getErrorMessage(
-                `${this.tableAlias}_${this.pkFieldName}`,
-                'general.general.id_not_found',
-              ),
-            ],
-            'Bad Request',
-          ),
-        );
+      if (recordEntityDocument) {
+        return recordEntityDocument;
       }
-      return recordEntityDocument;
     } catch (error: any) {
       Logger.error(error.message, '', this.constructor.name);
-      this.responseService.throwError(error);
     }
+    throw new BadRequestException(
+      this.responseService.error(
+        HttpStatus.BAD_REQUEST,
+        [
+          this.messageService.getErrorMessage(
+            `${this.tableAlias}_${this.pkFieldName}`,
+            'general.general.id_not_found',
+          ),
+        ],
+        'Bad Request',
+      ),
+    );
   }
 
   /**
@@ -541,14 +540,13 @@ export class BaseService<
 
       const recordEntityDocument = await queryBuilder.getOne();
 
-      if (!recordEntityDocument) {
-        this.throwGenericNotFound();
+      if (recordEntityDocument) {
+        return recordEntityDocument;
       }
-      return recordEntityDocument;
     } catch (error: any) {
       this.logger.error(error.message);
-      this.responseService.throwError(error);
     }
+    this.throwGenericNotFound();
   }
 
   /**
