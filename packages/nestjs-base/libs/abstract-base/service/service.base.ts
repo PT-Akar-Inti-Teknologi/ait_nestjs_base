@@ -90,8 +90,8 @@ export class BaseService<
    */
   public async save(createDTO: CreateDTO): Promise<EntityDocument> {
     try {
-      const entitySave: Partial<EntityDocument> = Object.assign({}, createDTO);
-      return this.repository.save(entitySave as EntityDocument);
+      const entitySave = { ...createDTO } as Partial<EntityDocument>;
+      return await this.repository.save(entitySave as EntityDocument);
     } catch (error: any) {
       this.logger.error(error.message);
       this.responseService.throwError(error);
@@ -108,14 +108,26 @@ export class BaseService<
     updateDTO: UpdateDTO,
     pk: string,
   ): Promise<EntityDocument> {
-    try {
-      const record: EntityDocument = await this.getAndValidateById(pk);
+    const record: EntityDocument = await this.getAndValidateById(pk);
+    return this.updateRecord(updateDTO, record);
+  }
 
+  /**
+   * Update an entity in the database
+   * @param updateDTO - The DTO containing the data to be updated
+   * @param record - the entity to be updated
+   * @returns - The updated entity
+   */
+  public async updateRecord(
+    updateDTO: UpdateDTO,
+    record: EntityDocument,
+  ): Promise<EntityDocument> {
+    try {
       Object.assign(record, {
         ...updateDTO,
       });
 
-      return this.repository.save(record);
+      return await this.repository.save(record);
     } catch (error: any) {
       this.logger.error(error.message);
       this.responseService.throwError(error);
@@ -128,9 +140,18 @@ export class BaseService<
    * @returns - Result of the delete operation
    */
   public async delete(pk: string): Promise<DeleteResult> {
+    const entity = await this.getAndValidateById(pk);
+    return this.deleteRecord(entity);
+  }
+
+  /**
+   * Delete an entity from the database
+   * @param record - the entity to be deleted
+   * @returns - Result of the delete operation
+   */
+  public async deleteRecord(record: EntityDocument): Promise<DeleteResult> {
     try {
-      const entity = await this.getAndValidateById(pk);
-      await this.repository.softRemove(entity);
+      await this.repository.softRemove(record);
       return {
         generatedMaps: [],
         raw: [],
