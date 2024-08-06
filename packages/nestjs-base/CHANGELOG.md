@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.3](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.2.2...@ait/nestjs-base@3.2.3) (2024-08-06)
+
+
+### Bug Fixes
+
+* base service always throw not found even on db error ([c30f9de](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/c30f9de161deed7e1aca49e52e2ab144f17303c2))
+* enable empty relation on findDetailAll ([7ce1d17](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/7ce1d172bce8a1926e6c8be3578985ed1c5c0287))
+
+
+
+
+
 ## [3.2.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.2.1...@ait/nestjs-base@3.2.2) (2024-07-31)
 
 
