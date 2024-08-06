@@ -379,7 +379,7 @@ export class BaseService<
     queryBuilder: SelectQueryBuilder<EntityDocument>,
     relations?: string[],
   ) {
-    if (!relations || !relations.length) {
+    if (!relations) {
       relations = this.relations;
     }
 
