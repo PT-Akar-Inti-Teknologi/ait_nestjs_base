@@ -24,7 +24,7 @@ export class AitAuthModule {
     if (!config.superadmin_role) {
       config.superadmin_role = IUserType.Superadmin;
     }
-    if (!config.superadmin_bypass) {
+    if (config.superadmin_bypass === undefined) {
       config.superadmin_bypass = true;
     }
     return {
