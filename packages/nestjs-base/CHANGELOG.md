@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.2.3...@ait/nestjs-base@3.3.0) (2024-08-19)
+
+
+### Features
+
+* add SuperadminBypass to bypass superadmin access by condition ([efecefa](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/efecefa92ffca192d8536f234640bab5730b231f))
+
+
+
+
+
 ## [3.2.3](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.2.2...@ait/nestjs-base@3.2.3) (2024-08-06)
 
 
