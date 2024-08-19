@@ -37,4 +37,6 @@ export class AitAuthConfig {
   };
   /** superadmin role */
   superadmin_role?: string;
+  /** superadmin bypass checking by default, default true */
+  superadmin_bypass?: boolean;
 }

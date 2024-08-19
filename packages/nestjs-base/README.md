@@ -89,6 +89,8 @@ AitAuthModule.register({
   },
   /** optional, default to IUserType.Superadmin when not filled */
   superadmin_role: IUserType.Superadmin
+  /** optional, default to true. if true, will bypass permission checking when logged in as superadmin_role. can be overriden with `@SuperadminBypass(boolean)` decorator */
+  superadmin_bypass: true
 }),
 ```
 

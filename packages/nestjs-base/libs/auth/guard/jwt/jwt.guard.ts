@@ -1,4 +1,3 @@
-import { AuthGuard } from '@nestjs/passport';
 import {
   ExecutionContext,
   ForbiddenException,
@@ -9,11 +8,12 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { IUser } from '../interface/user.interface';
+import { AuthGuard } from '@nestjs/passport';
 import { TokenExpiredError } from 'jsonwebtoken';
-import { ResponseService } from '../../../response/response.service';
 import { MessageService } from '../../../message/message.service';
+import { ResponseService } from '../../../response/response.service';
 import { AitAuthConfig } from '../interface/auth-config.interface';
+import { IUser } from '../interface/user.interface';
 
 @Injectable()
 export class JwtGuard extends AuthGuard('jwt') {
@@ -29,9 +29,14 @@ export class JwtGuard extends AuthGuard('jwt') {
   private user_type_and_levels: string[];
   private permission: string;
   private superadminType: string;
+  private superadminBypass: boolean;
 
   canActivate(context: ExecutionContext) {
     this.superadminType = this.config.superadmin_role;
+    this.superadminBypass =
+      this.reflector.get<boolean>('superadmin_bypass', context.getHandler()) ??
+      this.config.superadmin_bypass;
+
     this.user_type_and_levels =
       this.reflector.get<string[]>(
         'user_type_and_levels',
@@ -59,28 +64,9 @@ export class JwtGuard extends AuthGuard('jwt') {
     }
     const loggedInUser: IUser = user;
 
-    if (!loggedInUser) {
-      let error_message = this.messageService.getErrorMessage(
-        'token',
-        'auth.token.invalid_token',
-      );
-      if (info instanceof TokenExpiredError) {
-        error_message = this.messageService.getErrorMessage(
-          'token',
-          'auth.token.expired_token',
-        );
-      }
+    this.checkIsLoggedIn(loggedInUser, info, logger);
 
-      logger.error('AuthJwtGuardError.Unauthorize', '', this.constructor.name);
-      throw new UnauthorizedException(
-        this.responseService.error(
-          HttpStatus.UNAUTHORIZED,
-          [error_message],
-          'Unauthorize',
-        ),
-      );
-    }
-    if (loggedInUser.user_type == this.superadminType) {
+    if (this.checkSuperadmin(loggedInUser)) {
       console.log(
         '=================================SUPERADMIN=================================\n',
         new Date(Date.now()).toLocaleString(),
@@ -90,8 +76,19 @@ export class JwtGuard extends AuthGuard('jwt') {
       );
       return user;
     }
+
+    this.checkPermission(loggedInUser, logger);
+    return user;
+  }
+
+  private checkSuperadmin(loggedInUser: IUser): boolean {
+    return (
+      this.superadminBypass && loggedInUser.user_type == this.superadminType
+    );
+  }
+
+  private checkPermission(loggedInUser: IUser, logger: Logger) {
     if (
-      //pengecekan user_type_and_level
       (this.user_type_and_levels.length &&
         !this.user_type_and_levels.includes(loggedInUser.user_type + '.*') &&
         !this.user_type_and_levels.includes(
@@ -117,6 +114,29 @@ export class JwtGuard extends AuthGuard('jwt') {
         ),
       );
     }
-    return user;
+  }
+
+  private checkIsLoggedIn(loggedInUser: IUser, info: Error, logger: Logger) {
+    if (!loggedInUser) {
+      let error_message = this.messageService.getErrorMessage(
+        'token',
+        'auth.token.invalid_token',
+      );
+      if (info instanceof TokenExpiredError) {
+        error_message = this.messageService.getErrorMessage(
+          'token',
+          'auth.token.expired_token',
+        );
+      }
+
+      logger.error('AuthJwtGuardError.Unauthorize', '', this.constructor.name);
+      throw new UnauthorizedException(
+        this.responseService.error(
+          HttpStatus.UNAUTHORIZED,
+          [error_message],
+          'Unauthorize',
+        ),
+      );
+    }
   }
 }
