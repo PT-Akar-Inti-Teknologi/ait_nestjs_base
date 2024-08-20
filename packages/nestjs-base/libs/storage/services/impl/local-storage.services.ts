@@ -1,14 +1,14 @@
+import { Logger } from '@nestjs/common';
 import fs from 'fs';
 import path from 'path';
-import { v4 } from 'uuid';
 import { Readable } from 'stream';
-import { Logger } from '@nestjs/common';
+import { v4 } from 'uuid';
+import { StorageConfigLocal } from '../../interfaces/storage-config.interface';
 import {
   IFile,
   IStorageRepository,
   StorageResponse,
 } from '../../interfaces/storage-repository.interface';
-import { StorageConfigLocal } from '../../interfaces/storage-config.interface';
 
 /**
  * Local storage files
@@ -30,7 +30,7 @@ export class LocalStorageServices implements IStorageRepository {
     dir = path.resolve(dir);
 
     if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
+      fs.mkdirSync(dir, { recursive: true });
     }
   }
 
