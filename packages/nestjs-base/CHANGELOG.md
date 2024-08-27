@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.3.2...@ait/nestjs-base@3.4.0) (2024-08-27)
+
+
+### Features
+
+* StorageService add move file ([cbb31e6](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/cbb31e6b601caad58460033ec42373f33c99d3f1))
+
+
+
+
+
 ## [3.3.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.3.1...@ait/nestjs-base@3.3.2) (2024-08-20)
 
 
