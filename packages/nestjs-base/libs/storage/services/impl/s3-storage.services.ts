@@ -1,22 +1,23 @@
-import * as node_path from 'path';
-import { Readable } from 'stream';
-import { InternalServerErrorException, Logger } from '@nestjs/common';
 import {
-  S3Client,
-  PutObjectCommand,
-  GetObjectCommand,
+  CopyObjectCommand,
   DeleteObjectCommand,
+  GetObjectCommand,
   HeadObjectCommand,
-  ListObjectsV2Command,
   HeadObjectCommandOutput,
+  ListObjectsV2Command,
+  PutObjectCommand,
+  S3Client,
 } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
+import { InternalServerErrorException, Logger } from '@nestjs/common';
+import * as node_path from 'path';
+import { Readable } from 'stream';
+import { StorageConfigS3 } from '../../interfaces/storage-config.interface';
 import {
   IFile,
   IStorageRepository,
   StorageResponse,
 } from '../../interfaces/storage-repository.interface';
-import { StorageConfigS3 } from '../../interfaces/storage-config.interface';
 
 export class S3StorageServices implements IStorageRepository {
   private S3_BUCKET: string;
@@ -167,6 +168,32 @@ export class S3StorageServices implements IStorageRepository {
       this._log.error(`ERROR S3 get presign url: ${error}`);
       throw error;
     }
+  }
+
+  async moveFile(fromKey: string, toKey: string): Promise<boolean> {
+    const copyCommand = new CopyObjectCommand({
+      Bucket: this.S3_BUCKET,
+      CopySource: encodeURI(`${this.S3_BUCKET}/${fromKey}`),
+      Key: toKey,
+    });
+
+    try {
+      const copyData = await this._s3client.send(copyCommand);
+      console.log('Object copied successfully:', copyData);
+
+      // Delete the original file
+      const deleteCommand = new DeleteObjectCommand({
+        Bucket: this.S3_BUCKET,
+        Key: fromKey,
+      });
+
+      await this._s3client.send(deleteCommand);
+      console.log('Original object deleted successfully');
+      return true;
+    } catch (err) {
+      console.error('Error:', err);
+    }
+    return false;
   }
 
   async deleteFile(key: string): Promise<boolean> {

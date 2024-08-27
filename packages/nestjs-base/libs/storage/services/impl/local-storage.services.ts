@@ -88,6 +88,23 @@ export class LocalStorageServices implements IStorageRepository {
     return false;
   }
 
+  async moveFile(fromKey: string, toKey: string): Promise<boolean> {
+    try {
+      fs.copyFileSync(
+        path.resolve(path.join(this.BUCKET, fromKey)),
+        path.resolve(path.join(this.BUCKET, toKey)),
+      );
+
+      fs.unlinkSync(path.resolve(path.join(this.BUCKET, fromKey)));
+
+      return true;
+    } catch (e) {
+      this.log.error(`ERROR delete file: ${e}`);
+    }
+
+    return false;
+  }
+
   async deleteFileByDirectory(prefix: string): Promise<void> {
     fs.rmSync(path.resolve(path.join(this.BUCKET, prefix)), {
       recursive: true,

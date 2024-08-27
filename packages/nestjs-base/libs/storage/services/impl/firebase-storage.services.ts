@@ -1,14 +1,14 @@
-import path from 'path';
-import { v4 } from 'uuid';
+import { Bucket, Storage } from '@google-cloud/storage';
 import { Logger } from '@nestjs/common';
-import { Readable, PassThrough } from 'stream';
-import { Storage, Bucket } from '@google-cloud/storage';
+import path from 'path';
+import { PassThrough, Readable } from 'stream';
+import { v4 } from 'uuid';
+import { StorageConfigFirebase } from '../../interfaces/storage-config.interface';
 import {
   IFile,
   IStorageRepository,
   StorageResponse,
 } from '../../interfaces/storage-repository.interface';
-import { StorageConfigFirebase } from '../../interfaces/storage-config.interface';
 
 /**
  * Firebase/Google cloud storage
@@ -85,6 +85,18 @@ export class FirebaseStorageServices implements IStorageRepository {
   async deleteFile(key: string): Promise<boolean> {
     try {
       await this.bucket.file(key).delete();
+
+      return true;
+    } catch (e) {
+      this.log.error(`ERROR delete file: ${e}`);
+    }
+
+    return false;
+  }
+
+  async moveFile(fromKey: string, toKey: string): Promise<boolean> {
+    try {
+      await this.bucket.file(fromKey).move(toKey);
 
       return true;
     } catch (e) {

@@ -1,20 +1,20 @@
-import { Readable } from 'stream';
 import { Injectable } from '@nestjs/common';
+import { Readable } from 'stream';
 
-import { S3StorageServices } from './impl/s3-storage.services';
-import { LocalStorageServices } from './impl/local-storage.services';
-import { FirebaseStorageServices } from './impl/firebase-storage.services';
-import {
-  IFile,
-  IStorageRepository,
-  StorageResponse,
-} from '../interfaces/storage-repository.interface';
 import {
   StorageConfig,
   StorageConfigFirebase,
   StorageConfigLocal,
   StorageConfigS3,
 } from '../interfaces/storage-config.interface';
+import {
+  IFile,
+  IStorageRepository,
+  StorageResponse,
+} from '../interfaces/storage-repository.interface';
+import { FirebaseStorageServices } from './impl/firebase-storage.services';
+import { LocalStorageServices } from './impl/local-storage.services';
+import { S3StorageServices } from './impl/s3-storage.services';
 
 /**
  * Wrapper for various storage implementation
@@ -91,5 +91,9 @@ export class StorageServices implements IStorageRepository {
 
   public deleteFileByDirectory(prefix: string): Promise<void> {
     return this.storageImpl.deleteFileByDirectory(prefix);
+  }
+
+  public moveFile(fromKey: string, toKey: string): Promise<boolean> {
+    return this.storageImpl.moveFile(fromKey, toKey);
   }
 }
