@@ -6,7 +6,10 @@ import {
   SelectQueryBuilder,
   WhereExpressionBuilder,
 } from 'typeorm';
-import { MainPagingDTO } from '../../common/dto/main-paging.dto';
+import {
+  MainPagingDTO,
+  MainPagingDTOMapper,
+} from '../../common/dto/main-paging.dto';
 import { MessageService } from '../../message/message.service';
 import {
   ListPaginationInterface,
@@ -60,6 +63,14 @@ export class BaseService<
   protected defaultSort = 'created_at';
   protected defaultOrder: 'ASC' | 'DESC' = 'DESC';
   protected pkFieldName = 'id';
+  protected paginationBase = 0;
+  protected paginationMap: MainPagingDTOMapper<PagingDTO> = {
+    page: 'page',
+    size: 'size',
+    search: 'search',
+    sort: 'sort',
+    order: 'order',
+  };
 
   /**
    * filter from key in MainPagingDTO to table fields and its relationship.
@@ -175,11 +186,10 @@ export class BaseService<
     try {
       const result = await query.getManyAndCount();
 
-      const pagination: PaginationInterface = {
-        page: mainPagingDTO.page,
-        total: result[1],
-        size: mainPagingDTO.size,
-      };
+      const pagination: PaginationInterface = this.buildPagination(
+        mainPagingDTO,
+        result,
+      );
       return {
         content: result[0],
         pagination,
@@ -188,6 +198,17 @@ export class BaseService<
       this.logger.error(error.message);
       this.responseService.throwError(error);
     }
+  }
+
+  private buildPagination(
+    mainPagingDTO: PagingDTO,
+    result: [EntityDocument[], number],
+  ): PaginationInterface {
+    return {
+      page: mainPagingDTO[this.paginationMap.page as string],
+      total: result[1],
+      size: mainPagingDTO[this.paginationMap.size as string],
+    };
   }
 
   /**
@@ -269,32 +290,42 @@ export class BaseService<
     try {
       const query = this.repository.createQueryBuilder(this.tableAlias);
 
-      if (mainPagingDTO.search) {
+      if (mainPagingDTO[this.paginationMap.search as string]) {
         query.where(
           new Brackets((qb) => {
             for (const fieldSearch of this.searchByFields) {
               qb.orWhere(`${fieldSearch} ilike :search`, {
-                search: `%${mainPagingDTO.search}%`,
+                search: `%${mainPagingDTO[this.paginationMap.search as string]}%`,
               });
             }
           }),
         );
       }
       this.filterAllQuery(mainPagingDTO, this.filterByFields, query);
-      if (mainPagingDTO.order && mainPagingDTO.sort) {
+      if (
+        mainPagingDTO[this.paginationMap.order as string] &&
+        mainPagingDTO[this.paginationMap.sort as string]
+      ) {
         let prefix = '';
-        if (!mainPagingDTO.sort.includes('.')) {
+        if (!mainPagingDTO[this.paginationMap.sort as string].includes('.')) {
           prefix = `${this.tableAlias}.`;
         }
-        query.orderBy(`${prefix}${mainPagingDTO.sort}`, mainPagingDTO.order);
+        query.orderBy(
+          `${prefix}${mainPagingDTO[this.paginationMap.sort as string]}`,
+          mainPagingDTO[this.paginationMap.order as string],
+        );
       } else {
         query.orderBy(
           `${this.tableAlias}.${this.defaultSort}`,
           this.defaultOrder,
         );
       }
-      query.take(mainPagingDTO.size);
-      query.skip(mainPagingDTO.page * mainPagingDTO.size);
+      query.take(mainPagingDTO[this.paginationMap.size as string]);
+      query.skip(
+        (mainPagingDTO[this.paginationMap.page as string] -
+          this.paginationBase) *
+          mainPagingDTO[this.paginationMap.size as string],
+      );
 
       return query;
     } catch (error: any) {
@@ -328,9 +359,9 @@ export class BaseService<
       const result = await query.getManyAndCount();
 
       const pagination: PaginationInterface = {
-        page: mainPagingDTO.page,
+        page: mainPagingDTO[this.paginationMap.page as string],
         total: result[1],
-        size: mainPagingDTO.size,
+        size: mainPagingDTO[this.paginationMap.size as string],
       };
       return {
         content: result[0],
@@ -343,7 +374,7 @@ export class BaseService<
   }
 
   /**
-   * use `this.searchByFields` to add search query if `mainPagingDTO.search` exists
+   * use `this.searchByFields` to add search query if `mainPagingDTO[this.paginationMap.search as string]` exists
    * @param queryBuilder - query builder
    * @param {PagingDTO} mainPagingDTO - The mainPagingDTO parameter is an object that contains
    */
@@ -351,17 +382,17 @@ export class BaseService<
     queryBuilder: SelectQueryBuilder<EntityDocument>,
     mainPagingDTO: PagingDTO,
   ) {
-    if (mainPagingDTO.search) {
+    if (mainPagingDTO[this.paginationMap.search as string]) {
       queryBuilder.where(
         new Brackets((qb) => {
           qb.where(`${this.searchByFields[0]} ilike :search`, {
-            search: `%${mainPagingDTO.search}%`,
+            search: `%${mainPagingDTO[this.paginationMap.search as string]}%`,
           });
           if (this.searchByFields && this.searchByFields.length > 1) {
             for (let i = 1; i < this.searchByFields.length; i++) {
               const field = this.searchByFields[i];
               qb.orWhere(`${field} ilike :search`, {
-                search: `%${mainPagingDTO.search}%`,
+                search: `%${mainPagingDTO[this.paginationMap.search as string]}%`,
               });
             }
           }
@@ -418,20 +449,30 @@ export class BaseService<
 
       this.searchAllQuery(query, mainPagingDTO);
       this.filterAllQuery(mainPagingDTO, this.filterByFields, query);
-      if (mainPagingDTO.order && mainPagingDTO.sort) {
+      if (
+        mainPagingDTO[this.paginationMap.order as string] &&
+        mainPagingDTO[this.paginationMap.sort as string]
+      ) {
         let prefix = '';
-        if (!mainPagingDTO.sort.includes('.')) {
+        if (!mainPagingDTO[this.paginationMap.sort as string].includes('.')) {
           prefix = `${this.tableAlias}.`;
         }
-        query.orderBy(`${prefix}${mainPagingDTO.sort}`, mainPagingDTO.order);
+        query.orderBy(
+          `${prefix}${mainPagingDTO[this.paginationMap.sort as string]}`,
+          mainPagingDTO[this.paginationMap.order as string],
+        );
       } else {
         query.orderBy(
           `${this.tableAlias}.${this.defaultSort}`,
           this.defaultOrder,
         );
       }
-      query.take(mainPagingDTO.size);
-      query.skip(mainPagingDTO.page * mainPagingDTO.size);
+      query.take(mainPagingDTO[this.paginationMap.size as string]);
+      query.skip(
+        (mainPagingDTO[this.paginationMap.page as string] -
+          this.paginationBase) *
+          mainPagingDTO[this.paginationMap.size as string],
+      );
 
       return query;
     } catch (error: any) {

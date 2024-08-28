@@ -28,4 +28,6 @@ export interface IStorageRepository {
   deleteFileByDirectory(prefix: string): Promise<void>;
 
   moveFile(fromKey: string, toKey: string): Promise<boolean>;
+
+  isFileExist(key: string): Promise<boolean>;
 }

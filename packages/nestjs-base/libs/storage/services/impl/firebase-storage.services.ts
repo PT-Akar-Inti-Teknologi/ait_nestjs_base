@@ -106,6 +106,10 @@ export class FirebaseStorageServices implements IStorageRepository {
     return false;
   }
 
+  async isFileExist(key: string): Promise<boolean> {
+    return (await this.bucket.file(key).exists())[0];
+  }
+
   async deleteFileByDirectory(prefix: string): Promise<void> {
     await this.bucket.deleteFiles({ prefix });
   }

@@ -243,6 +243,10 @@ export class S3StorageServices implements IStorageRepository {
     }
   }
 
+  async isFileExist(key: string): Promise<boolean> {
+    return !!(await this.getObjectHeaderMetadata(key));
+  }
+
   private parseFileName(url: string): string {
     return node_path.basename(url);
   }

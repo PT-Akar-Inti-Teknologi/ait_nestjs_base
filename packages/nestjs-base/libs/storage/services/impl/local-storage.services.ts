@@ -105,6 +105,10 @@ export class LocalStorageServices implements IStorageRepository {
     return false;
   }
 
+  async isFileExist(key: string): Promise<boolean> {
+    return fs.existsSync(key);
+  }
+
   async deleteFileByDirectory(prefix: string): Promise<void> {
     fs.rmSync(path.resolve(path.join(this.BUCKET, prefix)), {
       recursive: true,

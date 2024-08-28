@@ -25,3 +25,11 @@ export class MainPagingDTO {
   @IsIn(['ASC', 'DESC'])
   order: 'ASC' | 'DESC';
 }
+
+export interface MainPagingDTOMapper<DTO extends MainPagingDTO> {
+  page: keyof DTO;
+  size: keyof DTO;
+  search: keyof DTO;
+  sort: keyof DTO;
+  order: keyof DTO;
+}

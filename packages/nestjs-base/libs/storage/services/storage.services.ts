@@ -96,4 +96,8 @@ export class StorageServices implements IStorageRepository {
   public moveFile(fromKey: string, toKey: string): Promise<boolean> {
     return this.storageImpl.moveFile(fromKey, toKey);
   }
+
+  public isFileExist(key: string): Promise<boolean> {
+    return this.storageImpl.isFileExist(key);
+  }
 }
