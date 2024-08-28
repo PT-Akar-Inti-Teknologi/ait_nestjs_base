@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.4.0...@ait/nestjs-base@3.5.0) (2024-08-28)
+
+
+### Features
+
+* extract buildPagination, map pagination param, add ([2b8b1fd](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/2b8b1fd81ef1b51b1e2a7d369dbe4382cd97fc15))
+
+
+
+
+
 # [3.4.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.3.2...@ait/nestjs-base@3.4.0) (2024-08-27)
 
 
