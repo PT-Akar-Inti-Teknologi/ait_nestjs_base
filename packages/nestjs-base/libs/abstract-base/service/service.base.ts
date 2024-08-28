@@ -200,7 +200,7 @@ export class BaseService<
     }
   }
 
-  private buildPagination(
+  protected buildPagination(
     mainPagingDTO: PagingDTO,
     result: [EntityDocument[], number],
   ): PaginationInterface {
