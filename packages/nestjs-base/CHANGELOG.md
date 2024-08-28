@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.5.0...@ait/nestjs-base@3.5.1) (2024-08-28)
+
+
+### Bug Fixes
+
+* expose buildPagination ([0f7f5e2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/0f7f5e2cb8c8f7071bd0c0260c6401c3e66a34ad))
+
+
+
+
+
 # [3.5.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.4.0...@ait/nestjs-base@3.5.0) (2024-08-28)
 
 
