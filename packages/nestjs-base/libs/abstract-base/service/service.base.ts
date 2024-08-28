@@ -358,11 +358,10 @@ export class BaseService<
     try {
       const result = await query.getManyAndCount();
 
-      const pagination: PaginationInterface = {
-        page: mainPagingDTO[this.paginationMap.page as string],
-        total: result[1],
-        size: mainPagingDTO[this.paginationMap.size as string],
-      };
+      const pagination: PaginationInterface = this.buildPagination(
+        mainPagingDTO,
+        result,
+      );
       return {
         content: result[0],
         pagination,
