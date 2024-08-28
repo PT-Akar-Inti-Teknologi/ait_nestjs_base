@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.5.1...@ait/nestjs-base@3.5.2) (2024-08-28)
+
+
+### Bug Fixes
+
+* buildPagination for getManyAndCount ([d410659](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/d41065997655327e3a641810024fa29aa58d0c58))
+
+
+
+
+
 ## [3.5.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.5.0...@ait/nestjs-base@3.5.1) (2024-08-28)
 
 
