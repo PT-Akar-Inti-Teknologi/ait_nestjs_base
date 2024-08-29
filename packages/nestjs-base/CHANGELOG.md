@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.6.1...@ait/nestjs-base@3.6.2) (2024-08-29)
+
+
+### Bug Fixes
+
+* presignedUrl firebase return empty string if not available ([a50c4cf](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/a50c4cf66d7913f31ec3fb4819189a50a527f592))
+
+
+
+
+
 ## [3.6.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.6.0...@ait/nestjs-base@3.6.1) (2024-08-29)
 
 
