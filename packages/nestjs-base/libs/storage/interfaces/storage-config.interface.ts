@@ -6,6 +6,9 @@ type MappedClass<Type> = {
 
 export abstract class StorageConfig {
   driver: string;
+
+  /** presign url ttl in seconds */
+  presignTtl?: number;
 }
 
 export type StorageConfigImpls =

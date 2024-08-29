@@ -88,6 +88,21 @@ export class LocalStorageServices implements IStorageRepository {
     return false;
   }
 
+  async copyFile(fromKey: string, toKey: string): Promise<boolean> {
+    try {
+      fs.copyFileSync(
+        path.resolve(path.join(this.BUCKET, fromKey)),
+        path.resolve(path.join(this.BUCKET, toKey)),
+      );
+
+      return true;
+    } catch (e) {
+      this.log.error(`ERROR copy file: ${e}`);
+    }
+
+    return false;
+  }
+
   async moveFile(fromKey: string, toKey: string): Promise<boolean> {
     try {
       fs.copyFileSync(
@@ -99,7 +114,7 @@ export class LocalStorageServices implements IStorageRepository {
 
       return true;
     } catch (e) {
-      this.log.error(`ERROR delete file: ${e}`);
+      this.log.error(`ERROR move file: ${e}`);
     }
 
     return false;

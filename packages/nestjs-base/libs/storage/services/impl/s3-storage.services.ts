@@ -22,7 +22,7 @@ import {
 export class S3StorageServices implements IStorageRepository {
   private S3_BUCKET: string;
   private S3_ROOT_FOLDER: string;
-  private PRESIGNED_URL_TTL = 7200; // expires 1 hour
+  private presignTtl: number; // ttl in seconds
 
   private _s3client: S3Client;
   private _log = new Logger(S3StorageServices.name);
@@ -38,6 +38,7 @@ export class S3StorageServices implements IStorageRepository {
 
     this.S3_BUCKET = this.config.s3Bucket;
     this.S3_ROOT_FOLDER = this.config.s3RootFolder ?? 'dev-test';
+    this.presignTtl = this.config.presignTtl ?? 7200;
   }
 
   getRootFolderName(): string {
@@ -147,7 +148,7 @@ export class S3StorageServices implements IStorageRepository {
 
     try {
       const presignedUrl = await getSignedUrl(this._s3client, command, {
-        expiresIn: this.PRESIGNED_URL_TTL,
+        expiresIn: this.presignTtl,
       });
 
       let _presignUrlString = presignedUrl;
@@ -168,6 +169,23 @@ export class S3StorageServices implements IStorageRepository {
       this._log.error(`ERROR S3 get presign url: ${error}`);
       throw error;
     }
+  }
+
+  async copyFile(fromKey: string, toKey: string): Promise<boolean> {
+    const copyCommand = new CopyObjectCommand({
+      Bucket: this.S3_BUCKET,
+      CopySource: encodeURI(`${this.S3_BUCKET}/${fromKey}`),
+      Key: toKey,
+    });
+
+    try {
+      const copyData = await this._s3client.send(copyCommand);
+      console.log('Object copied successfully:', copyData);
+      return true;
+    } catch (err) {
+      console.error('Error:', err);
+    }
+    return false;
   }
 
   async moveFile(fromKey: string, toKey: string): Promise<boolean> {

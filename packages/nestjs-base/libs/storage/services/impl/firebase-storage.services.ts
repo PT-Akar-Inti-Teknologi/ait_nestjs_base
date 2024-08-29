@@ -20,12 +20,13 @@ import {
 export class FirebaseStorageServices implements IStorageRepository {
   private readonly bucket: Bucket;
   private readonly log = new Logger(FirebaseStorageServices.name);
-  private readonly expireDays = 7;
+  private presignTtl: number; // ttl in seconds
 
   constructor(config: StorageConfigFirebase) {
     this.bucket = new Storage(config.firebaseInitOptions).bucket(
       config.firebaseBucket,
     );
+    this.presignTtl = config.presignTtl ?? 7200;
   }
 
   public getRootFolderName(): string {
@@ -74,7 +75,7 @@ export class FirebaseStorageServices implements IStorageRepository {
 
   async getPresignedUrl(key: string): Promise<string> {
     const expires = new Date();
-    expires.setDate(expires.getDate() + this.expireDays);
+    expires.setSeconds(expires.getSeconds() + this.presignTtl);
 
     return this.bucket
       .file(key)
@@ -88,7 +89,19 @@ export class FirebaseStorageServices implements IStorageRepository {
 
       return true;
     } catch (e) {
-      this.log.error(`ERROR delete file: ${e}`);
+      this.log.error(`ERROR copy file: ${e}`);
+    }
+
+    return false;
+  }
+
+  async copyFile(fromKey: string, toKey: string): Promise<boolean> {
+    try {
+      await this.bucket.file(fromKey).copy(toKey);
+
+      return true;
+    } catch (e) {
+      this.log.error(`ERROR move file: ${e}`);
     }
 
     return false;
@@ -100,7 +113,7 @@ export class FirebaseStorageServices implements IStorageRepository {
 
       return true;
     } catch (e) {
-      this.log.error(`ERROR delete file: ${e}`);
+      this.log.error(`ERROR move file: ${e}`);
     }
 
     return false;
