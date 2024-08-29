@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.5.2...@ait/nestjs-base@3.6.0) (2024-08-29)
+
+
+### Features
+
+* **storage:** copy file + custom ttl config ([649a6cf](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/649a6cf30cebf8bbf33e78a839c1f9b3d85ddc26))
+
+
+
+
+
 ## [3.5.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.5.1...@ait/nestjs-base@3.5.2) (2024-08-28)
 
 
