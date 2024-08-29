@@ -74,6 +74,8 @@ export class FirebaseStorageServices implements IStorageRepository {
   }
 
   async getPresignedUrl(key: string): Promise<string> {
+    if (!key) return '';
+
     const expires = new Date();
     expires.setSeconds(expires.getSeconds() + this.presignTtl);
 
