@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.6.0...@ait/nestjs-base@3.6.1) (2024-08-29)
+
+
+### Bug Fixes
+
+* enable copyFile in storage service ([4fc8aa7](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/4fc8aa7377d9416f24b0744e6e418cc62942083b))
+
+
+
+
+
 # [3.6.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.5.2...@ait/nestjs-base@3.6.0) (2024-08-29)
 
 
