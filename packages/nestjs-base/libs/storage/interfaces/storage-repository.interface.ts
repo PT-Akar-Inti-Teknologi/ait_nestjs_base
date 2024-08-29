@@ -27,6 +27,8 @@ export interface IStorageRepository {
 
   deleteFileByDirectory(prefix: string): Promise<void>;
 
+  copyFile(fromKey: string, toKey: string): Promise<boolean>;
+
   moveFile(fromKey: string, toKey: string): Promise<boolean>;
 
   isFileExist(key: string): Promise<boolean>;
