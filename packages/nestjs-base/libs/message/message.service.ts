@@ -3,15 +3,19 @@ import { ErrorMessageInterface } from '../response/response.interface';
 
 @Injectable()
 export class MessageService {
-  getRaw(key: string): Record<string, string> | string {
+  getRaw(
+    key: string,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    args?: Record<string, any>,
+  ): Record<string, string> | string {
     return {
       message: key,
       code: '',
     };
   }
 
-  get(key: string): string {
-    const selectedMessage = this.getRaw(key);
+  get(key: string, args?: Record<string, any>): string {
+    const selectedMessage = this.getRaw(key, args);
 
     if (selectedMessage['message']) {
       return selectedMessage['message'];
@@ -20,8 +24,12 @@ export class MessageService {
     return selectedMessage as string;
   }
 
-  getErrorMessage(field: string, key: string): ErrorMessageInterface {
-    const selectedMessage = this.getRaw(key);
+  getErrorMessage(
+    field: string,
+    key: string,
+    args?: Record<string, any>,
+  ): ErrorMessageInterface {
+    const selectedMessage = this.getRaw(key, args);
 
     if (!selectedMessage['message']) {
       return {

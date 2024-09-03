@@ -1,8 +1,8 @@
-import { get } from 'lodash';
 import { Injectable } from '@nestjs/common';
-import { MessageService } from '../message.service';
+import { get } from 'lodash';
 import { AitMessageConfig, AitMessageConfigLocal } from '../interfaces';
 import defaultLanguages from '../message.constant';
+import { MessageService } from '../message.service';
 
 @Injectable()
 export class MessageLocalService extends MessageService {
