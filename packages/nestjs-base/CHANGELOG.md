@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.6.2...@ait/nestjs-base@3.7.0) (2024-09-03)
+
+
+### Features
+
+* enable translation for MessageService, only for i18n version ([27bc344](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/27bc344be1bd39171f6fe69514c92a3906f3ffd4))
+
+
+
+
+
 ## [3.6.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.6.1...@ait/nestjs-base@3.6.2) (2024-08-29)
 
 
