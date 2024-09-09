@@ -1,10 +1,10 @@
+import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 import { AxiosResponse } from 'axios';
-import { catchError, map } from 'rxjs/operators';
 import { lastValueFrom, of } from 'rxjs';
-import { HttpService } from '@nestjs/axios';
-import { AitCommonBroadcastListener } from './interfaces';
+import { catchError, map } from 'rxjs/operators';
 import { ResponseService } from '../response';
+import { AitCommonBroadcastListener } from './interfaces';
 
 @Injectable()
 export class CommonService {
@@ -21,9 +21,6 @@ export class CommonService {
     const post_response = this.httpService
       .post(url, body, { headers: headers })
       .pipe(
-        map((axiosResponse: AxiosResponse) => {
-          return axiosResponse.data;
-        }),
         catchError((err) => {
           Logger.error(url, '', this.constructor.name);
           console.log(err?.response?.data);
@@ -40,9 +37,6 @@ export class CommonService {
 
   async getHttp(url: string): Promise<AxiosResponse<any>> {
     const get_response = this.httpService.get(url).pipe(
-      map((axiosResponse: AxiosResponse) => {
-        return axiosResponse.data;
-      }),
       catchError((err) => {
         Logger.error(url, '', this.constructor.name);
         console.log(err?.response?.data);
