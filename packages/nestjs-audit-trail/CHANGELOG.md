@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.25](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-audit-trail@3.0.24...@ait/nestjs-audit-trail@3.0.25) (2024-09-09)
+
+**Note:** Version bump only for package @ait/nestjs-audit-trail
+
+
+
+
+
 ## [3.0.24](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-audit-trail@3.0.23...@ait/nestjs-audit-trail@3.0.24) (2024-09-03)
 
 **Note:** Version bump only for package @ait/nestjs-audit-trail
