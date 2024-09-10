@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.9.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.9.0...@ait/nestjs-base@3.9.1) (2024-09-10)
+
+
+### Bug Fixes
+
+* **auth:** optional aud payload ([88e5639](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/88e5639d18f8d34adac436783ff045c077337270))
+
+
+
+
+
 # [3.9.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.8.1...@ait/nestjs-base@3.9.0) (2024-09-10)
 
 
