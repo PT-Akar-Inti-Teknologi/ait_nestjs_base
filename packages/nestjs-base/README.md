@@ -329,6 +329,15 @@ app.useGlobalInterceptors(
 
 you can use it by calling `AitRequestContext.currentContext?.context` or `AitRequestContext.currentUser`
 
+Note:
+if you have multiple JWT provider, you need to set UserCondition by calling `AitRequestContext.setUserCondition`, example:
+
+```ts
+  AitRequestContext.setUserCondition((user: IUserExtended) =>
+    Object.values(EnumUserType).includes(user.user_type),
+  );
+```
+
 #### Auto Log created_by_id, updated_by_id, deleted_by_id
 
 - extend entity using AitBaseEntity
