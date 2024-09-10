@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.7.1...@ait/nestjs-base@3.8.0) (2024-09-10)
+
+
+### Features
+
+* add userCondition to separate auto-log CMS user and other user type ([6eb5612](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/6eb561262f547f8973969fbeb1d9d8ec9642f849))
+
+
+
+
+
 ## [3.7.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.7.0...@ait/nestjs-base@3.7.1) (2024-09-09)
 
 
