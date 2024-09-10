@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.8.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.8.0...@ait/nestjs-base@3.8.1) (2024-09-10)
+
+
+### Bug Fixes
+
+* **AitRequestContext:** enable any IUser type ([e0a7a1d](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/e0a7a1d53c436f7dd1b80eb1a22b2b2044d3a50e))
+
+
+
+
+
 # [3.8.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.7.1...@ait/nestjs-base@3.8.0) (2024-09-10)
 
 
