@@ -4,11 +4,11 @@ import { JwtService } from '@nestjs/jwt';
 import { AxiosResponse } from 'axios';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { MessageService } from '../message/message.service';
 import { ErrorMessageInterface } from '../response/response.interface';
 import { ResponseService } from '../response/response.service';
-import { IUser } from './guard/interface/user.interface';
-import { MessageService } from '../message/message.service';
 import { AitAuthConfig } from './guard/interface/auth-config.interface';
+import { IUser } from './guard/interface/user.interface';
 
 @Injectable()
 export class AuthService {
@@ -53,14 +53,26 @@ export class AuthService {
     );
   }
 
-  async createAccessToken(payload: Record<string, any>): Promise<string> {
-    return this.jwtSign(payload, this.aitAuthConfig.jwtExpirationTime);
+  async createAccessToken(
+    payload: Record<string, any>,
+    audience: string[] = ['access_token'],
+  ): Promise<string> {
+    return this.jwtSign(
+      payload,
+      this.aitAuthConfig.jwtExpirationTime,
+      audience,
+    );
   }
 
   async createAccessRefreshToken(
     payload: Record<string, any>,
+    audience: string[] = ['refresh_token'],
   ): Promise<string> {
-    return this.jwtSign(payload, this.aitAuthConfig.refreshJwtExpirationTime);
+    return this.jwtSign(
+      payload,
+      this.aitAuthConfig.refreshJwtExpirationTime,
+      audience,
+    );
   }
 
   async validateAccessToken(token: string): Promise<Record<string, any>> {
@@ -81,9 +93,11 @@ export class AuthService {
   async jwtSign(
     payload: Record<string, any>,
     expiredIn: string,
+    audience: string[] = [],
   ): Promise<string> {
     return this.jwtService.sign(payload, {
       expiresIn: expiredIn,
+      audience: audience,
     });
   }
 

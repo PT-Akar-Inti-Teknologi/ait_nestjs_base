@@ -15,6 +15,7 @@ export interface IUser<
   UserType extends string = IUserType,
   Level extends string = ILevel,
 > {
+  aud: string[];
   id: string;
   user_type: UserType;
   role_id: string;

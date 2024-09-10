@@ -18,18 +18,19 @@ import { IUser } from '../interface/user.interface';
 @Injectable()
 export class JwtGuard extends AuthGuard('jwt') {
   constructor(
-    private readonly responseService: ResponseService,
-    private readonly messageService: MessageService,
-    private reflector: Reflector,
-    private readonly config: AitAuthConfig,
+    protected readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
+    protected reflector: Reflector,
+    protected readonly config: AitAuthConfig,
   ) {
     super();
   }
 
-  private user_type_and_levels: string[];
-  private permission: string;
-  private superadminType: string;
-  private superadminBypass: boolean;
+  protected user_type_and_levels: string[];
+  protected permission: string;
+  protected superadminType: string;
+  protected superadminBypass: boolean;
+  protected audiences: string[] = [];
 
   canActivate(context: ExecutionContext) {
     this.superadminType = this.config.superadmin_role;
@@ -65,6 +66,7 @@ export class JwtGuard extends AuthGuard('jwt') {
     const loggedInUser: IUser = user;
 
     this.checkIsLoggedIn(loggedInUser, info, logger);
+    this.checkAudience(loggedInUser.aud, logger);
 
     if (this.checkSuperadmin(loggedInUser)) {
       console.log(
@@ -81,13 +83,13 @@ export class JwtGuard extends AuthGuard('jwt') {
     return user;
   }
 
-  private checkSuperadmin(loggedInUser: IUser): boolean {
+  protected checkSuperadmin(loggedInUser: IUser): boolean {
     return (
       this.superadminBypass && loggedInUser.user_type == this.superadminType
     );
   }
 
-  private checkPermission(loggedInUser: IUser, logger: Logger) {
+  protected checkPermission(loggedInUser: IUser, logger: Logger) {
     if (
       (this.user_type_and_levels.length &&
         !this.user_type_and_levels.includes(loggedInUser.user_type + '.*') &&
@@ -116,7 +118,7 @@ export class JwtGuard extends AuthGuard('jwt') {
     }
   }
 
-  private checkIsLoggedIn(loggedInUser: IUser, info: Error, logger: Logger) {
+  protected checkIsLoggedIn(loggedInUser: IUser, info: Error, logger: Logger) {
     if (!loggedInUser) {
       let error_message = this.messageService.getErrorMessage(
         'token',
@@ -128,6 +130,27 @@ export class JwtGuard extends AuthGuard('jwt') {
           'auth.token.expired_token',
         );
       }
+
+      logger.error('AuthJwtGuardError.Unauthorize', '', this.constructor.name);
+      throw new UnauthorizedException(
+        this.responseService.error(
+          HttpStatus.UNAUTHORIZED,
+          [error_message],
+          'Unauthorize',
+        ),
+      );
+    }
+  }
+
+  protected checkAudience(audiences: string[], logger: Logger) {
+    if (
+      !!this.audiences.length &&
+      this.audiences.every((value) => !audiences?.includes(value))
+    ) {
+      const error_message = this.messageService.getErrorMessage(
+        'token',
+        'auth.token.invalid_token',
+      );
 
       logger.error('AuthJwtGuardError.Unauthorize', '', this.constructor.name);
       throw new UnauthorizedException(
