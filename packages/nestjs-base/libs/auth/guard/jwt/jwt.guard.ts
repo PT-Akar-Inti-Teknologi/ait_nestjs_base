@@ -66,7 +66,7 @@ export class JwtGuard extends AuthGuard('jwt') {
     const loggedInUser: IUser = user;
 
     this.checkIsLoggedIn(loggedInUser, info, logger);
-    this.checkAudience(loggedInUser.aud, logger);
+    this.checkAudience(loggedInUser?.aud, logger);
 
     if (this.checkSuperadmin(loggedInUser)) {
       console.log(
@@ -142,7 +142,7 @@ export class JwtGuard extends AuthGuard('jwt') {
     }
   }
 
-  protected checkAudience(audiences: string[], logger: Logger) {
+  protected checkAudience(audiences: string[] | undefined, logger: Logger) {
     if (
       !!this.audiences.length &&
       this.audiences.every((value) => !audiences?.includes(value))
