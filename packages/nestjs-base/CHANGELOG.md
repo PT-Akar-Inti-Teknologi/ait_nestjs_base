@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.9.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.8.1...@ait/nestjs-base@3.9.0) (2024-09-10)
+
+
+### Features
+
+* **auth:** add audience checking in JWT (v2) ([bc292be](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/bc292be327dd4bedb8f9bd9d66302273de2033ec))
+
+
+
+
+
 ## [3.8.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.8.0...@ait/nestjs-base@3.8.1) (2024-09-10)
 
 
