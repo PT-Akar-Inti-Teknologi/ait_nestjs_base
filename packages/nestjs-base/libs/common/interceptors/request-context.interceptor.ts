@@ -16,7 +16,7 @@ const als = new AsyncLocalStorage<AitRequestContext>();
 export class AitRequestContext {
   private context: ExecutionContext | undefined;
 
-  private static userCondition: (user: IUser) => boolean = () => true;
+  private static userCondition: (user: IUser<any, any>) => boolean = () => true;
 
   /**
    * Static to get AitRequestContext per request anywhere
@@ -25,7 +25,9 @@ export class AitRequestContext {
     return als.getStore();
   }
 
-  public static setUserCondition(userCondition: (user: IUser) => boolean) {
+  public static setUserCondition(
+    userCondition: (user: IUser<any, any>) => boolean,
+  ) {
     this.userCondition = userCondition;
   }
 
