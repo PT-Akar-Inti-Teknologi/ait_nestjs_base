@@ -30,11 +30,13 @@ export class AitAutoLogSubscriber implements EntitySubscriberInterface {
 
   beforeInsert(event: InsertEvent<any>): void | Promise<any> {
     const entity: AitBaseEntity = event.entity;
+    if (!entity) return;
     entity.created_by_id = AitRequestContext.currentUser?.id;
   }
 
   beforeUpdate(event: UpdateEvent<any>): void | Promise<any> {
     const entity: AitBaseEntity = event.entity as AitBaseEntity;
+    if (!entity) return;
     entity.updated_by_id = AitRequestContext.currentUser?.id;
   }
 
