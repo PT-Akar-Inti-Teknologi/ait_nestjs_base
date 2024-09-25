@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.9.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.9.1...@ait/nestjs-base@3.9.2) (2024-09-25)
+
+
+### Bug Fixes
+
+* autolog null entity ([9581e8f](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/9581e8f8806f58f3458b546cd4e9c1076615a036))
+
+
+
+
+
 ## [3.9.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.9.0...@ait/nestjs-base@3.9.1) (2024-09-10)
 
 
