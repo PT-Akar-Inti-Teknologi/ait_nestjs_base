@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.10.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.9.2...@ait/nestjs-base@3.10.0) (2024-10-24)
+
+
+### Features
+
+* **validator:** adding custom validators & transformers to nestjs-base ([b123243](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/b12324328933d53a42ef07fcb45d19e2d6436c08))
+
+
+
+
+
 ## [3.9.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.9.1...@ait/nestjs-base@3.9.2) (2024-09-25)
 
 
