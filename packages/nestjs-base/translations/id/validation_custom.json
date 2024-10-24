@@ -1,0 +1,13 @@
+{
+  "IS_VALID_DATE": "{property} harus tanggal yang valid",
+  "CONTAINS_NUMBER": "{property} harus berisi angka",
+  "CONTAINS_SPECIAL_CHARACTERS": "{property} harus berisi simbol",
+  "PASSWORD": "{property} harus berisi minimal 1 angka dan 1 simbol",
+  "MUST_NOT_BE_FILLED": "{property} tidak boleh diisi",
+  "IS_TIME": "{property} harus berformat waktu, antara 00:00 - 23:59",
+  "ARRAY_NESTED_UNIQUE": "{property}.{constraints.0} harus unik dalam form ini",
+  "FILE_TYPE": "{property} harus bertipe: {constraints.0}",
+  "FILE_MAX_SIZE": "Ukuran {property} maksimal 1MB",
+  "DATE_MINIMUM_TODAY": "{property} harus diisi minimal hari ini",
+  "DATE_NEWER_THAN_FIELD": "{property} harus lebih besar dari {constraints.0}"
+}

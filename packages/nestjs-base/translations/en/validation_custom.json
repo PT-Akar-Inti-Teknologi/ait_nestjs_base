@@ -1,0 +1,13 @@
+{
+  "IS_VALID_DATE": "{property} must be valid date",
+  "CONTAINS_NUMBER": "{property} must contains numbers",
+  "CONTAINS_SPECIAL_CHARACTERS": "{property} must contains special characters",
+  "PASSWORD": "{property} must contains minimum 1 number and 1 special characters",
+  "MUST_NOT_BE_FILLED": "{property} must not be filled",
+  "IS_TIME": "{property} must be time formatted, between 00:00 - 23:59",
+  "ARRAY_NESTED_UNIQUE": "{property}.{constraints.0} must be unique in this form",
+  "FILE_TYPE": "{property} must be: {constraints.0}",
+  "FILE_MAX_SIZE": "{property} size max {constraints.0}",
+  "DATE_MINIMUM_TODAY": "{property} should be filled at least today",
+  "DATE_NEWER_OR_SAME_WITH_FIELD": "{property} should be newer or same with {constraints.0}"
+}
