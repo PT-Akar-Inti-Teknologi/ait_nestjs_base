@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.10.0...@ait/nestjs-base@3.10.1) (2024-10-24)
+
+
+### Bug Fixes
+
+* **common:** include transformers to barrel export ([12ae276](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/12ae2762a8b4ea664dc9798315d0fc43838c12d4))
+
+
+
+
+
 # [3.10.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.9.2...@ait/nestjs-base@3.10.0) (2024-10-24)
 
 
