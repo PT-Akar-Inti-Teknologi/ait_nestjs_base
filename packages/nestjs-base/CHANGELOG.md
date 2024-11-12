@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.11.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.10.1...@ait/nestjs-base@3.11.0) (2024-11-12)
+
+
+### Features
+
+* add s3 endpoint & bucket path style option to support s3 compatible server ([44262e8](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/commit/44262e878f7ae79eb05a1a797e8c07e9eb4de2ca))
+
+
+
+
+
 ## [3.10.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.10.0...@ait/nestjs-base@3.10.1) (2024-10-24)
 
 
