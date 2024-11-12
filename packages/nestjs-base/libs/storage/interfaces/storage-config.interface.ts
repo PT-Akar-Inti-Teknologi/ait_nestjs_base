@@ -45,6 +45,10 @@ export class StorageConfigS3 extends StorageConfig {
   s3Bucket: string;
   /** s3 root folder to use, will use dev-test if not specified */
   s3RootFolder?: string;
+  /** s3 endpoint, only for compatible mode (OSS, firebase, digitalocean, etc, minIO) */
+  s3Endpoint?: string;
+  /** for compatible mode that doesn't support subdomain bucket style (example: minIO). default to false in s3 config */
+  s3BucketPathStyle?: boolean;
 }
 
 export class StorageConfigLocal extends StorageConfig {

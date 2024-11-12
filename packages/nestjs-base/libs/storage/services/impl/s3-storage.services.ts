@@ -34,6 +34,8 @@ export class S3StorageServices implements IStorageRepository {
         secretAccessKey: this.config.s3Secret,
       },
       region: this.config.s3Region,
+      forcePathStyle: this.config.s3BucketPathStyle,
+      endpoint: this.config.s3Endpoint,
     });
 
     this.S3_BUCKET = this.config.s3Bucket;
