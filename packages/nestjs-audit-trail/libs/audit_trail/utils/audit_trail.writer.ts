@@ -4,7 +4,7 @@ import {
   Event,
   MessageService,
   ResponseService,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import { DataSource, EventSubscriber, ObjectLiteral } from 'typeorm';
 import { AuditTrailContext } from '../audit-trail.interceptor';
 

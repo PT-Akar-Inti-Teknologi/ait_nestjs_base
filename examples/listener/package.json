@@ -23,8 +23,8 @@
   },
   "dependencies": {
     "@ait/nest-notification": "https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-notification.git",
-    "@ait/nestjs-base": "^3.0.0",
-    "@ait/nestjs-replication-data": "^3.0.0",
+    "@pt-akar-inti-teknologi/nestjs-base": "^3.0.0",
+    "@pt-akar-inti-teknologi/nestjs-replication-data": "^3.0.0",
     "@alexy4744/nestjs-nats-jetstream-transporter": "^1.0.2",
     "@codebrew/nestjs-storage": "^0.1.4",
     "@google-cloud/storage": "6.12.0",

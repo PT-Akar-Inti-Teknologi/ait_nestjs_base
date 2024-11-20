@@ -1,11 +1,11 @@
-import { AitBaseEntity } from '@ait/nestjs-base';
+import { AitBaseEntity } from '@pt-akar-inti-teknologi/nestjs-base';
 import { RolesDocument } from 'src/user-role/entities/roles.entity';
 import {
-  Column,
-  Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
+    Column,
+    Entity,
+    JoinColumn,
+    ManyToOne,
+    PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Entity({ name: 'users' })

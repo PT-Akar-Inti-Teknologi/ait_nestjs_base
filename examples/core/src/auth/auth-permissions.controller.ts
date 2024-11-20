@@ -7,7 +7,7 @@ import { DeletePermissionDTO } from 'src/auth/dto/delete-permission.dto';
 import {
   ResponseService,
   ResponseSuccessSingleInterface,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 
 @Controller('api/v1/internal/core/auth-permissions')
 export class AuthPermissionController {

@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
-import { MessageService, ResponseService } from '@ait/nestjs-base';
+import { MessageService, ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { AuditTrailChildService } from './audit-trail-child.service';
-import { GetAuditTrailDTO } from '@ait/nestjs-audit-trail';
+import { GetAuditTrailDTO } from '@pt-akar-inti-teknologi/nestjs-audit-trail';
 @Controller('api/v1/core/audit-trail')
 export class AuditTrailController {
   constructor(

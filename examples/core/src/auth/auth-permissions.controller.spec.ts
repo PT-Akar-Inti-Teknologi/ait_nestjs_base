@@ -2,8 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AuthPermissionController } from './auth-permissions.controller';
 import { AuthPermissionsService } from './auth-permissions.service';
 import { DeleteResult } from 'typeorm';
-import { ResponseService } from '@ait/nestjs-base';
-import { MessageService } from '@ait/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { SavePermissionDTO } from 'src/auth/dto/save-permission.dto';
 import { DeletePermissionDTO } from 'src/auth/dto/delete-permission.dto';
 

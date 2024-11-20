@@ -1,4 +1,4 @@
-import { MainPagingDTO } from '@ait/nestjs-base';
+import { MainPagingDTO } from '@pt-akar-inti-teknologi/nestjs-base';
 import { Type } from 'class-transformer';
 import { IsOptional, IsISO8601, IsArray } from 'class-validator';
 

@@ -6,7 +6,7 @@ import {
   InternalServiceBase,
   ResponseService,
   MessageService,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import { DataSource } from 'typeorm';
 import { ModuleRef } from '@nestjs/core';
 import { MemberDocument } from './entities/member.entity';

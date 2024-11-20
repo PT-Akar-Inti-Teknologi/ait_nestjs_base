@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { LoginController } from './login.controller';
 import { LoginService } from './login.service';
-import { MessageService, ResponseService } from '@ait/nestjs-base';
+import { MessageService, ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { LoginDTO } from './dto/login.dto';
 
 describe('LoginController', () => {

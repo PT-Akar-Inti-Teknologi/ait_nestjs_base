@@ -3,7 +3,7 @@ import { Controller } from '@nestjs/common';
 import { InternalService } from './internal.service';
 import { BASE_PATH, EntityName } from './internal.constant';
 import { BaseEntityInternal } from './entities/base.entity';
-import { CommonService, InternalControllerBase } from '@ait/nestjs-base';
+import { CommonService, InternalControllerBase } from '@pt-akar-inti-teknologi/nestjs-base';
 
 /**
  * Internal api to sync replication data

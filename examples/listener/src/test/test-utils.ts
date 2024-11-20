@@ -9,8 +9,8 @@ import {
   TypeOrmOptionsFactory,
 } from '@nestjs/typeorm';
 
-import { MessageService } from '@ait/nestjs-base';
-import { ResponseService } from '@ait/nestjs-base';
+import { MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 
 export function createMockRepository<T>(): [
   jest.Mocked<Repository<T>>,

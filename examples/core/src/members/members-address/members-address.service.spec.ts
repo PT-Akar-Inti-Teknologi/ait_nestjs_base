@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MembersAddressService } from './members-address.service';
-import { MessageService } from '@ait/nestjs-base';
-import { ResponseService } from '@ait/nestjs-base';
+import { MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { MemberAddressDocument } from '../entities/member-address.entity';
 import { Repository } from 'typeorm';

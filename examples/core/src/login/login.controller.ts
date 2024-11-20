@@ -8,7 +8,7 @@ import {
   ResponseSuccessSingleInterface,
   User,
   UserType,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 
 @Controller('api/v1/core/login')
 export class LoginController {

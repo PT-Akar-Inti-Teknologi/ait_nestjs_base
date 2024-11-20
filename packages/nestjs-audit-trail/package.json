@@ -1,5 +1,5 @@
 {
-  "name": "@ait/nestjs-audit-trail",
+  "name": "@pt-akar-inti-teknologi/nestjs-audit-trail",
   "version": "3.0.33",
   "description": "",
   "author": "AIT",
@@ -22,7 +22,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@ait/nestjs-base": "^3.11.0",
+    "@pt-akar-inti-teknologi/nestjs-base": "^3.11.0",
     "@nestjs/axios": "^3.0.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.2.3",
@@ -93,9 +93,9 @@
     ]
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.jetbrains.space/akarinti/p/main/npm/"
+    "registry": "https://npm.pkg.github.com"
   },
+  "repository": "https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base",
   "files": [
     "dist/**"
   ]

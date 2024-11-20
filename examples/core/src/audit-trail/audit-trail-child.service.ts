@@ -3,7 +3,7 @@ import {
   ListPaginationInterface,
   MessageService,
   ResponseService,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import {
@@ -11,7 +11,7 @@ import {
   AuditTrailDocument,
   AuditTrailService,
   GetAuditTrailDTO,
-} from '@ait/nestjs-audit-trail';
+} from '@pt-akar-inti-teknologi/nestjs-audit-trail';
 import { UsersService } from 'src/users/users.service';
 import { isUUID } from 'src/utils/general.utils';
 import { logger } from 'nestjs-i18n';

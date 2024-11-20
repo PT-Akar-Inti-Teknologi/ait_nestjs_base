@@ -3,255 +3,255 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [3.0.33](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.32...@ait/nestjs-replication-data@3.0.33) (2024-11-12)
+## [3.0.33](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.32...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.33) (2024-11-12)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.32](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.31...@ait/nestjs-replication-data@3.0.32) (2024-10-24)
+## [3.0.32](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.31...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.32) (2024-10-24)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.31](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.30...@ait/nestjs-replication-data@3.0.31) (2024-10-24)
+## [3.0.31](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.30...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.31) (2024-10-24)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.30](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.29...@ait/nestjs-replication-data@3.0.30) (2024-09-25)
+## [3.0.30](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.29...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.30) (2024-09-25)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.29](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.28...@ait/nestjs-replication-data@3.0.29) (2024-09-10)
+## [3.0.29](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.28...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.29) (2024-09-10)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.28](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.27...@ait/nestjs-replication-data@3.0.28) (2024-09-10)
+## [3.0.28](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.27...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.28) (2024-09-10)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.27](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.26...@ait/nestjs-replication-data@3.0.27) (2024-09-10)
+## [3.0.27](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.26...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.27) (2024-09-10)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.26](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.25...@ait/nestjs-replication-data@3.0.26) (2024-09-10)
+## [3.0.26](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.25...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.26) (2024-09-10)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.25](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.24...@ait/nestjs-replication-data@3.0.25) (2024-09-09)
+## [3.0.25](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.24...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.25) (2024-09-09)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.24](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.23...@ait/nestjs-replication-data@3.0.24) (2024-09-03)
+## [3.0.24](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.23...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.24) (2024-09-03)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.23](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.22...@ait/nestjs-replication-data@3.0.23) (2024-08-29)
+## [3.0.23](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.22...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.23) (2024-08-29)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.22](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.21...@ait/nestjs-replication-data@3.0.22) (2024-08-29)
+## [3.0.22](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.21...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.22) (2024-08-29)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.21](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.20...@ait/nestjs-replication-data@3.0.21) (2024-08-29)
+## [3.0.21](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.20...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.21) (2024-08-29)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.20](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.19...@ait/nestjs-replication-data@3.0.20) (2024-08-28)
+## [3.0.20](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.19...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.20) (2024-08-28)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.19](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.18...@ait/nestjs-replication-data@3.0.19) (2024-08-28)
+## [3.0.19](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.18...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.19) (2024-08-28)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.18](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.17...@ait/nestjs-replication-data@3.0.18) (2024-08-28)
+## [3.0.18](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.17...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.18) (2024-08-28)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.17](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.16...@ait/nestjs-replication-data@3.0.17) (2024-08-27)
+## [3.0.17](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.16...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.17) (2024-08-27)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.16](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.15...@ait/nestjs-replication-data@3.0.16) (2024-08-20)
+## [3.0.16](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.15...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.16) (2024-08-20)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.15](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.14...@ait/nestjs-replication-data@3.0.15) (2024-08-19)
+## [3.0.15](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.14...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.15) (2024-08-19)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.14](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.13...@ait/nestjs-replication-data@3.0.14) (2024-08-19)
+## [3.0.14](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.13...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.14) (2024-08-19)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.13](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.12...@ait/nestjs-replication-data@3.0.13) (2024-08-06)
+## [3.0.13](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.12...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.13) (2024-08-06)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.12](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.11...@ait/nestjs-replication-data@3.0.12) (2024-07-31)
+## [3.0.12](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.11...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.12) (2024-07-31)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.11](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.10...@ait/nestjs-replication-data@3.0.11) (2024-07-30)
+## [3.0.11](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.10...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.11) (2024-07-30)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.10](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.9...@ait/nestjs-replication-data@3.0.10) (2024-07-30)
+## [3.0.10](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.9...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.10) (2024-07-30)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.9](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.8...@ait/nestjs-replication-data@3.0.9) (2024-07-26)
+## [3.0.9](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.8...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.9) (2024-07-26)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.8](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.7...@ait/nestjs-replication-data@3.0.8) (2024-07-24)
+## [3.0.8](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.7...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.8) (2024-07-24)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.7](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.6...@ait/nestjs-replication-data@3.0.7) (2024-07-22)
+## [3.0.7](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.6...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.7) (2024-07-22)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.6](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.5...@ait/nestjs-replication-data@3.0.6) (2024-07-22)
+## [3.0.6](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.5...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.6) (2024-07-22)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.5](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.4...@ait/nestjs-replication-data@3.0.5) (2024-07-22)
+## [3.0.5](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.4...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.5) (2024-07-22)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.4](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.3...@ait/nestjs-replication-data@3.0.4) (2024-07-22)
+## [3.0.4](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.3...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.4) (2024-07-22)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.3](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.2...@ait/nestjs-replication-data@3.0.3) (2024-07-22)
+## [3.0.3](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.2...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.3) (2024-07-22)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [3.0.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.1...@ait/nestjs-replication-data@3.0.2) (2024-07-19)
+## [3.0.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.1...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.2) (2024-07-19)
 
 
 ### Bug Fixes
@@ -262,7 +262,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.0.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@3.0.0...@ait/nestjs-replication-data@3.0.1) (2024-07-19)
+## [3.0.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@3.0.0...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.1) (2024-07-19)
 
 
 ### Bug Fixes
@@ -273,7 +273,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.0.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@2.0.3...@ait/nestjs-replication-data@3.0.0) (2024-07-19)
+# [3.0.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@2.0.3...@pt-akar-inti-teknologi/nestjs-replication-data@3.0.0) (2024-07-19)
 
 
 ### Code Refactoring
@@ -289,31 +289,31 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [2.0.3](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@2.0.2...@ait/nestjs-replication-data@2.0.3) (2024-02-19)
+## [2.0.3](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@2.0.2...@pt-akar-inti-teknologi/nestjs-replication-data@2.0.3) (2024-02-19)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
-
-
-
-
-
-## [2.0.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@2.0.1...@ait/nestjs-replication-data@2.0.2) (2024-02-06)
-
-**Note:** Version bump only for package @ait/nestjs-replication-data
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
 
 
-## [2.0.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@2.0.0...@ait/nestjs-replication-data@2.0.1) (2024-01-29)
+## [2.0.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@2.0.1...@pt-akar-inti-teknologi/nestjs-replication-data@2.0.2) (2024-02-06)
 
-**Note:** Version bump only for package @ait/nestjs-replication-data
-
-
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
 
 
 
-# [2.0.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-replication-data@1.1.0...@ait/nestjs-replication-data@2.0.0) (2024-01-29)
+
+
+## [2.0.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@2.0.0...@pt-akar-inti-teknologi/nestjs-replication-data@2.0.1) (2024-01-29)
+
+**Note:** Version bump only for package @pt-akar-inti-teknologi/nestjs-replication-data
+
+
+
+
+
+# [2.0.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-replication-data@1.1.0...@pt-akar-inti-teknologi/nestjs-replication-data@2.0.0) (2024-01-29)
 
 
 ### Code Refactoring

@@ -26,8 +26,8 @@ This will affect CHANGELOG.md for each package when publishing and version incre
 ### How to add dependency from the same workspace
 1. Open package.json
 2. add workspace package name with available constraint to be able to use it.
-   - for example, we have @ait/nestjs-base at v1.1.0
-   - you can add the dependencies as `"@ait/nestjs-base": "^1.1.0"`
+   - for example, we have @pt-akar-inti-teknologi/nestjs-base at v1.1.0
+   - you can add the dependencies as `"@pt-akar-inti-teknologi/nestjs-base": "^1.1.0"`
    - lower minor/patch version also works if using `^`. 
    - in this repo our rule is to have the same version for easier version management
 3. Package that is being used must be built first (dist directory exist), use `yarn bootstrap` to do it. or `yarn build` at individual level of package

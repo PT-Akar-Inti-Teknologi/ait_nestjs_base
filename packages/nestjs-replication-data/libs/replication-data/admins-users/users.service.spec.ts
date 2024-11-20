@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { maskPwd } from '@ait/nestjs-base';
+import { maskPwd } from '@pt-akar-inti-teknologi/nestjs-base';
 import { AdminsUserDocument } from './entities/user.entity';
 import { AdminsUsersService } from './admins-users.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { ResponseService } from '@ait/nestjs-base';
-import { MessageService } from '@ait/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { SaveAdminsUserDTO } from './dto/save-admins-user.dto';
 import { DeleteAdminsUserDTO } from './dto/delete-admins-user.dto';
 

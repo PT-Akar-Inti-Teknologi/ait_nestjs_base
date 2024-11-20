@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuditTrailController } from './audit-trail.controller';
 import { AuditTrailChildService } from './audit-trail-child.service';
-import { MessageService, ResponseService } from '@ait/nestjs-base';
+import { MessageService, ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 
 describe('AuditTrailController', () => {
   let controller: AuditTrailController;

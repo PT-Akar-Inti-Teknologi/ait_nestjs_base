@@ -13,14 +13,14 @@ This library contains schema and interceptor needed to add Audit trail functiona
 5. Click add context, choose Project, akarinti
 6. Find Package Repositories, make sure "Read package repositories" is active, then save
 7. click create, copy the token, save it somewhere safe.
-8. run `npm set //npm.pkg.jetbrains.space/akarinti/p/main/npm/:_authToken=<YOURTOKENHERE>`, replace `<YOURTOKENHERE>` with the token provided in no. 7
-9. run `npm set "@ait:registry=https://npm.pkg.jetbrains.space/akarinti/p/main/npm/"`
+8. run `npm set //npm.pkg.github.com/:_authToken=<YOURTOKENHERE>`, replace `<YOURTOKENHERE>` with the token provided in no. 7
+9. run `npm set "@pt-akar-inti-teknologi:registry=https://npm.pkg.github.com"`
 
 ### Add to package.json
 Make sure you have run [Authenticate Jetbrains Space](#authenticate-jetbrains-space), then run this command:
 
 ```
-yarn add @ait/nestjs-audit-trail
+yarn add @pt-akar-inti-teknologi/nestjs-audit-trail
 ```
 
 ## How to Use

@@ -6,7 +6,7 @@ import { MemberDocument } from './entities/member.entity';
 import { HttpModule } from '@nestjs/axios';
 import { MemberAddressDocument } from './entities/member-address.entity';
 import { MembersAddressModule } from './members-address/members-address.module';
-import { ImageValidationService } from '@ait/nestjs-base';
+import { ImageValidationService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { MembersAddressService } from './members-address/members-address.service';
 
 @Module({

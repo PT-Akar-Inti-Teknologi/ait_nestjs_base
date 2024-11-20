@@ -1,5 +1,10 @@
 import { EmailModule } from '@ait/nest-notification';
-import { AitAuditTrailModule } from '@ait/nestjs-audit-trail';
+import { BullModule } from '@nestjs/bull';
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { DevtoolsModule } from '@nestjs/devtools-integration';
+import { MongooseModule } from '@nestjs/mongoose';
+import { AitAuditTrailModule } from '@pt-akar-inti-teknologi/nestjs-audit-trail';
 import {
   AitCommonModule,
   AitDatabaseModule,
@@ -7,12 +12,7 @@ import {
   AitMessageModule,
   AitResponseModule,
   AitStorageModule,
-} from '@ait/nestjs-base';
-import { BullModule } from '@nestjs/bull';
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
-import { DevtoolsModule } from '@nestjs/devtools-integration';
-import { MongooseModule } from '@nestjs/mongoose';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuditTrailModule } from './audit-trail/audit-trail.module';

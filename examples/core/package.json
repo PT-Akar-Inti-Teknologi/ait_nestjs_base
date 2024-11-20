@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "@ait/nest-notification": "https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-notification.git",
-    "@ait/nestjs-audit-trail": "^3.0.0",
-    "@ait/nestjs-base": "^3.0.0",
+    "@pt-akar-inti-teknologi/nestjs-audit-trail": "^3.0.0",
+    "@pt-akar-inti-teknologi/nestjs-base": "^3.0.0",
     "@alexy4744/nestjs-nats-jetstream-transporter": "^1.0.2",
     "@nestjs/axios": "^3.0.0",
     "@nestjs/bull": "^10.1.1",

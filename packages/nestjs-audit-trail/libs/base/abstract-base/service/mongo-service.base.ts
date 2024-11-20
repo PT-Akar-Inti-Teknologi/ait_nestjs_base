@@ -5,7 +5,7 @@ import {
   MessageService,
   ListPaginationInterface,
   PaginationInterface,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import mongoose, { FilterQuery, Model } from 'mongoose';
 
 /** Query AND/OR filter */

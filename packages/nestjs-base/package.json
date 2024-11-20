@@ -1,5 +1,5 @@
 {
-  "name": "@ait/nestjs-base",
+  "name": "@pt-akar-inti-teknologi/nestjs-base",
   "version": "3.11.0",
   "description": "",
   "author": "AIT",
@@ -96,9 +96,9 @@
     ]
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.jetbrains.space/akarinti/p/main/npm/"
+    "registry": "https://npm.pkg.github.com"
   },
+  "repository": "https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base",
   "files": [
     "dist/**"
   ]

@@ -3,7 +3,7 @@ import {
   AuditTrail,
   AuditTrailDocument,
 } from './entities/audit_trail_request.entity';
-import { MessageService, ResponseService } from '@ait/nestjs-base';
+import { MessageService, ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { MongoBaseService } from '../base/abstract-base/service/mongo-service.base';

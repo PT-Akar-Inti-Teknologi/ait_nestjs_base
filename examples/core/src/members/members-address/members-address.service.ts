@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { BaseService, MessageService, ResponseService } from '@ait/nestjs-base';
+import { BaseService, MessageService, ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import {

@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { HashService, MessageService, ResponseService } from '@ait/nestjs-base';
+import { HashService, MessageService, ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 
 @Injectable()
 export class ImageValidationService {

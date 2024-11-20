@@ -1,6 +1,6 @@
 import { Transform } from 'class-transformer';
 import { IsArray, IsBoolean, IsOptional } from 'class-validator';
-import { MainPagingDTO } from '@ait/nestjs-base';
+import { MainPagingDTO } from '@pt-akar-inti-teknologi/nestjs-base';
 
 export class GetUserDTO extends MainPagingDTO {
   @IsOptional()

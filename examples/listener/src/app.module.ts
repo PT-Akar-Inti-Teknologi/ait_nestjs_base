@@ -1,29 +1,29 @@
-import { Module } from '@nestjs/common';
 import { BullModule } from '@nestjs/bull';
+import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 // import { HashModule } from './hash/hash.module'
-import { HttpModule } from '@nestjs/axios';
-import {
-  AitCommonModule,
-  AitAuthModule,
-  AitMessageModule,
-  AitDatabaseModule,
-  AitResponseModule,
-  AitStorageModule,
-} from '@ait/nestjs-base';
-import {
-  AitReplicationDataModule,
-  AuthPermissionsService,
-  JwtStrategy,
-  PermissionDocument,
-} from '@ait/nestjs-replication-data';
-import { InternalModule } from './internal/internal.module';
 import { EmailModule } from '@ait/nest-notification';
+import { HttpModule } from '@nestjs/axios';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import {
+    AitAuthModule,
+    AitCommonModule,
+    AitDatabaseModule,
+    AitMessageModule,
+    AitResponseModule,
+    AitStorageModule,
+} from '@pt-akar-inti-teknologi/nestjs-base';
+import {
+    AitReplicationDataModule,
+    AuthPermissionsService,
+    JwtStrategy,
+    PermissionDocument,
+} from '@pt-akar-inti-teknologi/nestjs-replication-data';
 import { AcceptLanguageResolver } from 'nestjs-i18n';
 import path from 'path';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { InternalModule } from './internal/internal.module';
 
 @Module({
   imports: [

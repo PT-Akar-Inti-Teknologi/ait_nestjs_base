@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MembersService } from './members.service';
-import { MessageService } from '@ait/nestjs-base';
-import { ResponseService } from '@ait/nestjs-base';
+import { MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { MemberDocument } from './entities/member.entity';
 import {
@@ -15,10 +15,10 @@ import { CreateMemberDTO } from './dto/create-member.dto';
 import { UpdateMemberDTO } from './dto/update-member.dto';
 import { MemberAddressDocument } from './entities/member-address.entity';
 import { MembersAddressService } from './members-address/members-address.service';
-import { CommonService } from '@ait/nestjs-base';
+import { CommonService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { PostalCodesService } from 'src/regions/postal-codes/postal-codes.service';
 import { GetMemberDTO } from './dto/member.dto';
-import { StorageServices } from '@ait/nestjs-base';
+import { StorageServices } from '@pt-akar-inti-teknologi/nestjs-base';
 
 describe('MembersService', () => {
   let service: MembersService;

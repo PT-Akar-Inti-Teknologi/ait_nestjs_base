@@ -6,13 +6,13 @@ import { UserDocument } from './entities/user.entity';
 import { DeleteResult } from 'typeorm';
 import { UpdateUserDTO } from './dto/update-user.dto';
 import { GetUserDTO } from './dto/get-user.dto';
-import { ResponseService } from '@ait/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { DeleteUserDTO } from './dto/delete-user.dto';
 import { VerificationTokenDTO } from './dto/verification-token.dto';
-import { IUser } from '@ait/nestjs-base';
+import { IUser } from '@pt-akar-inti-teknologi/nestjs-base';
 import { ResetPasswordDTO } from './dto/reset-password.dto';
 import { ForgotPasswordDTO } from './dto/forgot-password.dto';
-import { MessageService } from '@ait/nestjs-base';
+import { MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
 
 describe('UsersController', () => {
   let controller: UsersController;

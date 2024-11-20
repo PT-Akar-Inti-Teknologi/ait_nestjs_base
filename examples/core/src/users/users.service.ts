@@ -1,41 +1,41 @@
-import {
-  BadRequestException,
-  HttpStatus,
-  Inject,
-  Injectable,
-  Logger,
-  forwardRef,
-} from '@nestjs/common';
-import {
-  MessageService,
-  ResponseService,
-  HashService,
-  AuthService,
-  IUser,
-  IUserType,
-  CommonService,
-} from '@ait/nestjs-base';
-import { CreateUserDTO } from './dto/create-user.dto';
-import { DeleteUserDTO } from './dto/delete-user.dto';
-import { GetUserDTO } from './dto/get-user.dto';
-import { UpdateUserDTO } from './dto/update-user.dto';
-import { UserDocument } from './entities/user.entity';
-import { UserRolesService } from 'src/user-role/user-roles.service';
 import { EmailService } from '@ait/nest-notification';
-import { InjectRepository } from '@nestjs/typeorm';
-import { randomUUID } from 'crypto';
-import { generateHtml } from 'src/utils/email-html';
-import { SentMessageInfo } from 'nodemailer';
-import { VerificationTokenDTO } from './dto/verification-token.dto';
-import { ResetPasswordDTO } from './dto/reset-password.dto';
-import { ForgotPasswordDTO } from './dto/forgot-password.dto';
 import {
-  generateMessageChangeActiveEmail,
-  generateMessageUrlForgotPasswordVerification,
-  generateMessageUrlVerification,
-  removeAllFieldPassword,
+    BadRequestException,
+    HttpStatus,
+    Inject,
+    Injectable,
+    Logger,
+    forwardRef,
+} from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import {
+    AuthService,
+    CommonService,
+    HashService,
+    IUser,
+    IUserType,
+    MessageService,
+    ResponseService,
+} from '@pt-akar-inti-teknologi/nestjs-base';
+import { randomUUID } from 'crypto';
+import { SentMessageInfo } from 'nodemailer';
+import { UserRolesService } from 'src/user-role/user-roles.service';
+import { generateHtml } from 'src/utils/email-html';
+import {
+    generateMessageChangeActiveEmail,
+    generateMessageUrlForgotPasswordVerification,
+    generateMessageUrlVerification,
+    removeAllFieldPassword,
 } from 'src/utils/general.utils';
 import { Repository, UpdateResult } from 'typeorm';
+import { CreateUserDTO } from './dto/create-user.dto';
+import { DeleteUserDTO } from './dto/delete-user.dto';
+import { ForgotPasswordDTO } from './dto/forgot-password.dto';
+import { GetUserDTO } from './dto/get-user.dto';
+import { ResetPasswordDTO } from './dto/reset-password.dto';
+import { UpdateUserDTO } from './dto/update-user.dto';
+import { VerificationTokenDTO } from './dto/verification-token.dto';
+import { UserDocument } from './entities/user.entity';
 
 @Injectable()
 export class UsersService {

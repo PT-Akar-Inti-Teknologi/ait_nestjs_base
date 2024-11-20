@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { DeleteResult, Repository, SelectQueryBuilder } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ResponseService, MessageService, BaseService } from '@ait/nestjs-base';
+import { ResponseService, MessageService, BaseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { RolesDocument } from './entities/roles.entity';
 import { UpdateUserRolesDTO } from './dto/update-user-roles.dto';
 import { SavePermissionDTO } from 'src/auth/dto/save-permission.dto';

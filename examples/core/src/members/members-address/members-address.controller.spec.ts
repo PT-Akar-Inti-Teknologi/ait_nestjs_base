@@ -5,12 +5,12 @@ import {
   CreateMembersAddressDTO,
   UpdateMembersAddressDTO,
 } from './dto/members-address.dto';
-import { MessageService } from '@ait/nestjs-base';
-import { ResponseService } from '@ait/nestjs-base';
-import { ListPaginationInterface } from '@ait/nestjs-base';
+import { MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { ListPaginationInterface } from '@pt-akar-inti-teknologi/nestjs-base';
 import { DeleteResult } from 'typeorm';
 import { MemberAddressDocument } from '../entities/member-address.entity';
-import { MainPagingDTO } from '@ait/nestjs-base';
+import { MainPagingDTO } from '@pt-akar-inti-teknologi/nestjs-base';
 
 describe('MembersAddressController', () => {
   let controller: MembersAddressController;

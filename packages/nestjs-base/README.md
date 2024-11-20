@@ -27,15 +27,15 @@ yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0
 5. Click add context, choose Project, akarinti
 6. Find Package Repositories, make sure "Read package repositories" is active, then save
 7. click create, copy the token, save it somewhere safe.
-8. run `npm set //npm.pkg.jetbrains.space/akarinti/p/main/npm/:_authToken=<YOURTOKENHERE>`, replace `<YOURTOKENHERE>` with the token provided in no. 7
-9. run `npm set "@ait:registry=https://npm.pkg.jetbrains.space/akarinti/p/main/npm/"`
+8. run `npm set //npm.pkg.github.com/:_authToken=<YOURTOKENHERE>`, replace `<YOURTOKENHERE>` with the token provided in no. 7
+9. run `npm set "@pt-akar-inti-teknologi:registry=https://npm.pkg.github.com"`
 
 ### Add to package.json
 
 Make sure you have run [Authenticate Jetbrains Space](#authenticate-jetbrains-space), then run this command:
 
 ```
-yarn add @ait/nestjs-base
+yarn add @pt-akar-inti-teknologi/nestjs-base
 ```
 
 ## How to Use
@@ -49,7 +49,7 @@ Register modules that were used by your project in app.module.ts, then available
 - follow usage notes of each module, especially about AitMessageModule and AitDatabaseModule
 - use vscode/IDE with regex search and replace, will use vscode syntax as guide.
 - delete Base folder
-- find: `'.*Base/(.*)'`, replace with `'@ait/nestjs-base'`
+- find: `'.*Base/(.*)'`, replace with `'@pt-akar-inti-teknologi/nestjs-base'`
 - remove `MessageService` from module providers, by find and replace with these parameter:
   1. MessageService imports:
      - find: `import \{ MessageService \}.*;\n`
@@ -64,7 +64,7 @@ Register modules that were used by your project in app.module.ts, then available
      - replace:
      - files to include: `*module.ts`
 - remote `ResponseService` from module providers, same as `MessageService`, just change the search parameters
-- for `AdminsUserDocument` and `AdminsUsersService`, Permission/Replication please update import path to [@ait/nestjs-replication-data](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data)
+- for `AdminsUserDocument` and `AdminsUsersService`, Permission/Replication please update import path to [@pt-akar-inti-teknologi/nestjs-replication-data](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data)
 
 ## Available Modules
 
@@ -81,7 +81,7 @@ AitAuthModule.register({
   jwtSecretKey: process.env.AUTH_JWTSECRETKEY,
   jwtExpirationTime: process.env.AUTH_JWTEXPIRATIONTIME,
   refreshJwtExpirationTime: process.env.AUTH_REFRESHJWTEXPIRATIONTIME,
-  /** use [@ait/nestjs-replication-data](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data) or other strategy you want */
+  /** use [@pt-akar-inti-teknologi/nestjs-replication-data](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data) or other strategy you want */
   jwtStrategy: {
     strategy: JwtStrategy,
     imports: [TypeOrmModule.forFeature([PermissionDocument])],
@@ -160,7 +160,7 @@ AitMessageModule.register({
 - Manually get translations for service error, inject your service using `MessageService`, it's available globally once AitMessageModule already setup. then use `get` or `getErrorMessage`
 - Automatically translate DTO validation (only for useNestI18n mode). replace all your class-validator decorator reference using one provided by this service. for example.
   - Previous: `import { IsArray } from 'class-validator';`
-  - After: `import { IsArray } from '@ait/nestjs-base';`
+  - After: `import { IsArray } from '@pt-akar-inti-teknologi/nestjs-base';`
 - To use DTO validation translation, you should copy validation.json from translations folder provided [here](translations/) to your `src/i18n` folder.
 
 ## AitDatabaseModule

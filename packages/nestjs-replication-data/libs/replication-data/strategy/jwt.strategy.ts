@@ -1,9 +1,9 @@
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { PassportStrategy } from '@nestjs/passport';
 import { Injectable } from '@nestjs/common';
-import { IUser } from '@ait/nestjs-base';
+import { IUser } from '@pt-akar-inti-teknologi/nestjs-base';
 import { AuthPermissionsService } from '../permissions/auth-permissions.service';
-import { AitAuthConfig } from '@ait/nestjs-base';
+import { AitAuthConfig } from '@pt-akar-inti-teknologi/nestjs-base';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {

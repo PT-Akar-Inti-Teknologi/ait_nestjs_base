@@ -1,15 +1,15 @@
-import { forwardRef, Module } from '@nestjs/common';
-import { LoginService } from './login.service';
-import { LoginController } from './login.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { ConfigService } from '@nestjs/config';
+import { EmailService } from '@ait/nest-notification';
 import { HttpModule } from '@nestjs/axios';
+import { forwardRef, Module } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from 'src/auth/auth.module';
-import { UserDocument } from 'src/users/entities/user.entity';
 import { RolesDocument } from 'src/user-role/entities/roles.entity';
 import { UserRolesService } from 'src/user-role/user-roles.service';
-import { EmailService } from '@ait/nest-notification';
+import { UserDocument } from 'src/users/entities/user.entity';
 import { UsersModule } from 'src/users/users.module';
+import { LoginController } from './login.controller';
+import { LoginService } from './login.service';
 
 @Module({
   imports: [

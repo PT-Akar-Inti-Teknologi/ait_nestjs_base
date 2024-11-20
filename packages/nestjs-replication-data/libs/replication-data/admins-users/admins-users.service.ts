@@ -3,9 +3,9 @@ import { Repository } from 'typeorm';
 import { SaveAdminsUserDTO } from './dto/save-admins-user.dto';
 import { AdminsUserDocument } from './entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { BaseService } from '@ait/nestjs-base';
-import { ResponseService } from '@ait/nestjs-base';
-import { MessageService } from '@ait/nestjs-base';
+import { BaseService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { SavePermissionDTO } from '../permissions/dto/save-permission.dto';
 import { AuthPermissionsService } from '../permissions/auth-permissions.service';
 

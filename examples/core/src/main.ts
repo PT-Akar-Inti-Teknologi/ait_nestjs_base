@@ -1,8 +1,3 @@
-import { AuditTrailInterceptor } from '@ait/nestjs-audit-trail';
-import {
-  AitRequestContextInterceptor,
-  ErrorMessageInterface,
-} from '@ait/nestjs-base';
 import {
   BadRequestException,
   HttpStatus,
@@ -10,6 +5,11 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { AuditTrailInterceptor } from '@pt-akar-inti-teknologi/nestjs-audit-trail';
+import {
+  AitRequestContextInterceptor,
+  ErrorMessageInterface,
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import mongoose from 'mongoose';
 import { AppModule } from './app.module';
 import { camelToSnake } from './utils/general.utils';

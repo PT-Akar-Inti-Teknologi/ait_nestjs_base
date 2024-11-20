@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [3.11.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.10.1...@ait/nestjs-base@3.11.0) (2024-11-12)
+# [3.11.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.10.1...@pt-akar-inti-teknologi/nestjs-base@3.11.0) (2024-11-12)
 
 
 ### Features
@@ -14,7 +14,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.10.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.10.0...@ait/nestjs-base@3.10.1) (2024-10-24)
+## [3.10.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.10.0...@pt-akar-inti-teknologi/nestjs-base@3.10.1) (2024-10-24)
 
 
 ### Bug Fixes
@@ -25,7 +25,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.10.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.9.2...@ait/nestjs-base@3.10.0) (2024-10-24)
+# [3.10.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.9.2...@pt-akar-inti-teknologi/nestjs-base@3.10.0) (2024-10-24)
 
 
 ### Features
@@ -36,7 +36,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.9.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.9.1...@ait/nestjs-base@3.9.2) (2024-09-25)
+## [3.9.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.9.1...@pt-akar-inti-teknologi/nestjs-base@3.9.2) (2024-09-25)
 
 
 ### Bug Fixes
@@ -47,7 +47,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.9.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.9.0...@ait/nestjs-base@3.9.1) (2024-09-10)
+## [3.9.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.9.0...@pt-akar-inti-teknologi/nestjs-base@3.9.1) (2024-09-10)
 
 
 ### Bug Fixes
@@ -58,7 +58,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.9.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.8.1...@ait/nestjs-base@3.9.0) (2024-09-10)
+# [3.9.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.8.1...@pt-akar-inti-teknologi/nestjs-base@3.9.0) (2024-09-10)
 
 
 ### Features
@@ -69,7 +69,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.8.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.8.0...@ait/nestjs-base@3.8.1) (2024-09-10)
+## [3.8.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.8.0...@pt-akar-inti-teknologi/nestjs-base@3.8.1) (2024-09-10)
 
 
 ### Bug Fixes
@@ -80,7 +80,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.8.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.7.1...@ait/nestjs-base@3.8.0) (2024-09-10)
+# [3.8.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.7.1...@pt-akar-inti-teknologi/nestjs-base@3.8.0) (2024-09-10)
 
 
 ### Features
@@ -91,7 +91,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.7.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.7.0...@ait/nestjs-base@3.7.1) (2024-09-09)
+## [3.7.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.7.0...@pt-akar-inti-teknologi/nestjs-base@3.7.1) (2024-09-09)
 
 
 ### Bug Fixes
@@ -102,7 +102,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.7.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.6.2...@ait/nestjs-base@3.7.0) (2024-09-03)
+# [3.7.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.6.2...@pt-akar-inti-teknologi/nestjs-base@3.7.0) (2024-09-03)
 
 
 ### Features
@@ -113,7 +113,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.6.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.6.1...@ait/nestjs-base@3.6.2) (2024-08-29)
+## [3.6.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.6.1...@pt-akar-inti-teknologi/nestjs-base@3.6.2) (2024-08-29)
 
 
 ### Bug Fixes
@@ -124,7 +124,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.6.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.6.0...@ait/nestjs-base@3.6.1) (2024-08-29)
+## [3.6.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.6.0...@pt-akar-inti-teknologi/nestjs-base@3.6.1) (2024-08-29)
 
 
 ### Bug Fixes
@@ -135,7 +135,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.6.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.5.2...@ait/nestjs-base@3.6.0) (2024-08-29)
+# [3.6.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.5.2...@pt-akar-inti-teknologi/nestjs-base@3.6.0) (2024-08-29)
 
 
 ### Features
@@ -146,7 +146,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.5.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.5.1...@ait/nestjs-base@3.5.2) (2024-08-28)
+## [3.5.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.5.1...@pt-akar-inti-teknologi/nestjs-base@3.5.2) (2024-08-28)
 
 
 ### Bug Fixes
@@ -157,7 +157,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.5.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.5.0...@ait/nestjs-base@3.5.1) (2024-08-28)
+## [3.5.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.5.0...@pt-akar-inti-teknologi/nestjs-base@3.5.1) (2024-08-28)
 
 
 ### Bug Fixes
@@ -168,7 +168,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.5.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.4.0...@ait/nestjs-base@3.5.0) (2024-08-28)
+# [3.5.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.4.0...@pt-akar-inti-teknologi/nestjs-base@3.5.0) (2024-08-28)
 
 
 ### Features
@@ -179,7 +179,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.4.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.3.2...@ait/nestjs-base@3.4.0) (2024-08-27)
+# [3.4.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.3.2...@pt-akar-inti-teknologi/nestjs-base@3.4.0) (2024-08-27)
 
 
 ### Features
@@ -190,7 +190,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.3.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.3.1...@ait/nestjs-base@3.3.2) (2024-08-20)
+## [3.3.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.3.1...@pt-akar-inti-teknologi/nestjs-base@3.3.2) (2024-08-20)
 
 
 ### Bug Fixes
@@ -201,7 +201,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.3.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.3.0...@ait/nestjs-base@3.3.1) (2024-08-19)
+## [3.3.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.3.0...@pt-akar-inti-teknologi/nestjs-base@3.3.1) (2024-08-19)
 
 
 ### Bug Fixes
@@ -212,7 +212,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.3.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.2.3...@ait/nestjs-base@3.3.0) (2024-08-19)
+# [3.3.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.2.3...@pt-akar-inti-teknologi/nestjs-base@3.3.0) (2024-08-19)
 
 
 ### Features
@@ -223,7 +223,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.2.3](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.2.2...@ait/nestjs-base@3.2.3) (2024-08-06)
+## [3.2.3](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.2.2...@pt-akar-inti-teknologi/nestjs-base@3.2.3) (2024-08-06)
 
 
 ### Bug Fixes
@@ -235,7 +235,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.2.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.2.1...@ait/nestjs-base@3.2.2) (2024-07-31)
+## [3.2.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.2.1...@pt-akar-inti-teknologi/nestjs-base@3.2.2) (2024-07-31)
 
 
 ### Bug Fixes
@@ -246,7 +246,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.2.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.2.0...@ait/nestjs-base@3.2.1) (2024-07-30)
+## [3.2.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.2.0...@pt-akar-inti-teknologi/nestjs-base@3.2.1) (2024-07-30)
 
 
 ### Bug Fixes
@@ -257,7 +257,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.2.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.1.1...@ait/nestjs-base@3.2.0) (2024-07-30)
+# [3.2.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.1.1...@pt-akar-inti-teknologi/nestjs-base@3.2.0) (2024-07-30)
 
 
 ### Features
@@ -268,7 +268,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.1.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.1.0...@ait/nestjs-base@3.1.1) (2024-07-26)
+## [3.1.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.1.0...@pt-akar-inti-teknologi/nestjs-base@3.1.1) (2024-07-26)
 
 
 ### Bug Fixes
@@ -279,7 +279,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.1.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.7...@ait/nestjs-base@3.1.0) (2024-07-24)
+# [3.1.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.0.7...@pt-akar-inti-teknologi/nestjs-base@3.1.0) (2024-07-24)
 
 
 ### Features
@@ -290,7 +290,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.0.7](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.6...@ait/nestjs-base@3.0.7) (2024-07-22)
+## [3.0.7](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.0.6...@pt-akar-inti-teknologi/nestjs-base@3.0.7) (2024-07-22)
 
 
 ### Bug Fixes
@@ -301,7 +301,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.0.6](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.5...@ait/nestjs-base@3.0.6) (2024-07-22)
+## [3.0.6](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.0.5...@pt-akar-inti-teknologi/nestjs-base@3.0.6) (2024-07-22)
 
 
 ### Bug Fixes
@@ -312,7 +312,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.0.5](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.4...@ait/nestjs-base@3.0.5) (2024-07-22)
+## [3.0.5](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.0.4...@pt-akar-inti-teknologi/nestjs-base@3.0.5) (2024-07-22)
 
 
 ### Bug Fixes
@@ -323,7 +323,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.0.4](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.3...@ait/nestjs-base@3.0.4) (2024-07-22)
+## [3.0.4](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.0.3...@pt-akar-inti-teknologi/nestjs-base@3.0.4) (2024-07-22)
 
 
 ### Bug Fixes
@@ -334,7 +334,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.0.3](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.2...@ait/nestjs-base@3.0.3) (2024-07-22)
+## [3.0.3](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.0.2...@pt-akar-inti-teknologi/nestjs-base@3.0.3) (2024-07-22)
 
 
 ### Bug Fixes
@@ -345,7 +345,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.0.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.1...@ait/nestjs-base@3.0.2) (2024-07-19)
+## [3.0.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.0.1...@pt-akar-inti-teknologi/nestjs-base@3.0.2) (2024-07-19)
 
 
 ### Bug Fixes
@@ -356,7 +356,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [3.0.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@3.0.0...@ait/nestjs-base@3.0.1) (2024-07-19)
+## [3.0.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@3.0.0...@pt-akar-inti-teknologi/nestjs-base@3.0.1) (2024-07-19)
 
 
 ### Bug Fixes
@@ -367,7 +367,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.0.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@2.1.0...@ait/nestjs-base@3.0.0) (2024-07-19)
+# [3.0.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@2.1.0...@pt-akar-inti-teknologi/nestjs-base@3.0.0) (2024-07-19)
 
 
 ### Code Refactoring
@@ -383,7 +383,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [2.1.0](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@2.0.2...@ait/nestjs-base@2.1.0) (2024-02-19)
+# [2.1.0](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@2.0.2...@pt-akar-inti-teknologi/nestjs-base@2.1.0) (2024-02-19)
 
 
 ### Features
@@ -394,7 +394,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [2.0.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@2.0.1...@ait/nestjs-base@2.0.2) (2024-02-06)
+## [2.0.2](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@2.0.1...@pt-akar-inti-teknologi/nestjs-base@2.0.2) (2024-02-06)
 
 
 ### Bug Fixes
@@ -405,7 +405,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [2.0.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@2.0.0...@ait/nestjs-base@2.0.1) (2024-01-29)
+## [2.0.1](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@2.0.0...@pt-akar-inti-teknologi/nestjs-base@2.0.1) (2024-01-29)
 
 
 ### Bug Fixes
@@ -416,7 +416,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [2.0.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@ait/nestjs-base@1.1.0...@ait/nestjs-base@2.0.0) (2024-01-29)
+# [2.0.0](https://github.com-ait/PT-Akar-Inti-Teknologi/ait_nestjs_base/compare/@pt-akar-inti-teknologi/nestjs-base@1.1.0...@pt-akar-inti-teknologi/nestjs-base@2.0.0) (2024-01-29)
 
 
 ### Code Refactoring

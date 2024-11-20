@@ -1,22 +1,19 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { UsersService } from './users.service';
-import { CommonService, MessageService } from '@ait/nestjs-base';
-import { ResponseService } from '@ait/nestjs-base';
-import { getRepositoryToken } from '@nestjs/typeorm';
-import { UserDocument } from './entities/user.entity';
-import { Repository, SelectQueryBuilder, UpdateResult } from 'typeorm';
-import { createMockRepository } from 'src/test/test-utils';
-import { CreateUserDTO } from './dto/create-user.dto';
-import { UpdateUserDTO } from './dto/update-user.dto';
-import { HashService } from '@ait/nestjs-base';
 import { EmailService } from '@ait/nest-notification';
-import { AuthService } from '@ait/nestjs-base';
+import { Test, TestingModule } from '@nestjs/testing';
+import { getRepositoryToken } from '@nestjs/typeorm';
+import { AuthService, CommonService, HashService, MessageService, ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { createMockRepository } from 'src/test/test-utils';
 import { UserRolesService } from 'src/user-role/user-roles.service';
-import { GetUserDTO } from './dto/get-user.dto';
+import { Repository, SelectQueryBuilder } from 'typeorm';
+import { CreateUserDTO } from './dto/create-user.dto';
 import { DeleteUserDTO } from './dto/delete-user.dto';
 import { ForgotPasswordDTO } from './dto/forgot-password.dto';
-import { VerificationTokenDTO } from './dto/verification-token.dto';
+import { GetUserDTO } from './dto/get-user.dto';
 import { ResetPasswordDTO } from './dto/reset-password.dto';
+import { UpdateUserDTO } from './dto/update-user.dto';
+import { VerificationTokenDTO } from './dto/verification-token.dto';
+import { UserDocument } from './entities/user.entity';
+import { UsersService } from './users.service';
 
 describe('UsersService', () => {
   let service: UsersService;
