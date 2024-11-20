@@ -17,20 +17,19 @@ yarn add https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-base.git#tags/v1.0
 yarn add https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data.git#tags/v1.0.1
 ```
 
-### Authenticate Jetbrains Space
+### Authenticate Github NPM Package
 
-1. Ask AIT Team Devops to invite you to AIT jetbrains space. if already have access, skip to point no 3
-2. Go to your email, find the invitation either in inbox or spam, click it. Proceed to register
-3. Click your profile icon, then tap preferences. Click on authentication, personal tokens.
-4. Click new personal token
-5. Click add context, choose Project, akarinti
-6. Find Package Repositories, make sure "Read package repositories" is active, then save
-7. click create, copy the token, save it somewhere safe.
-8. run `npm set //npm.pkg.github.com/:_authToken=<YOURTOKENHERE>`, replace `<YOURTOKENHERE>` with the token provided in no. 7
-9. run `npm set "@pt-akar-inti-teknologi:registry=https://npm.pkg.github.com"`
+1. Go to https://github.com/settings/tokens
+2. Generate new token > Generate new token (classic)
+3. give proper name, make sure to check read:packages
+4. no expiration
+5. Click generate token
+6. copy generated token
+7. run `npm set //npm.pkg.github.com/:_authToken=<YOURTOKENHERE>`, replace `<YOURTOKENHERE>` with the token provided in no. 6
+8. run `npm set "@pt-akar-inti-teknologi:registry=https://npm.pkg.github.com"`
 
 ### Add to package.json
-Make sure you have run [Authenticate Jetbrains Space](#authenticate-jetbrains-space), then run this command:
+Make sure you have run [Authenticate Github NPM Package](#authenticate-github-npm-package), then run this command:
 
 - Install [AIT base module](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base) (min. version 1.0.10), also follow the setup guide:
 ```
