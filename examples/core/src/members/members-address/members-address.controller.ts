@@ -23,7 +23,7 @@ import {
   ResponseService,
   ResponseSuccessPaginationInterface,
   ResponseSuccessSingleInterface,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 
 @Controller('api/v1/core/members-addresses')
 export class MembersAddressController extends BaseController<

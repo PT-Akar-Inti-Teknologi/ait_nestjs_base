@@ -9,9 +9,9 @@ import { Repository, UpdateResult } from 'typeorm';
 import { PermissionDocument } from './entities/permission.entity';
 import { UpdatePermissionDTO } from './dto/update-permission.dto';
 import { SavePermissionDTO } from './dto/save-permission.dto';
-import { MessageService } from '@ait/nestjs-base';
-import { ResponseService } from '@ait/nestjs-base';
-import { MainPagingDTO } from '@ait/nestjs-base';
+import { MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { MainPagingDTO } from '@pt-akar-inti-teknologi/nestjs-base';
 
 @Injectable()
 export class AuthPermissionsService {

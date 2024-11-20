@@ -22,9 +22,9 @@
     "test:e2e": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@ait/nest-notification": "https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-notification.git",
-    "@ait/nestjs-base": "^1.1.0",
-    "@ait/nestjs-replication-data": "^1.1.0",
+    "@pt-akar-inti-teknologi/nest-notification": "https://github.com/PT-Akar-Inti-Teknologi/ait-nestjs-notification.git",
+    "@pt-akar-inti-teknologi/nestjs-base": "^1.1.0",
+    "@pt-akar-inti-teknologi/nestjs-replication-data": "^1.1.0",
     "@alexy4744/nestjs-nats-jetstream-transporter": "^1.0.2",
     "@aws-sdk/client-s3": "^3.353.0",
     "@aws-sdk/s3-request-presigner": "^3.353.0",

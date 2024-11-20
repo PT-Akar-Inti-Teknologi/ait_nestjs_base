@@ -65,7 +65,7 @@
 - @nestjs/jwt (10.0.3+): parse/validate jwt
 - @nestjs/typeorm (9.0.1+): Database ORM access
 - moment: date/time formatter/parser
-- @ait/nest-notification: email/sms service
+- @pt-akar-inti-teknologi/nest-notification: email/sms service
 
 ### Third-Party
 - Storage: Firebase / AWS S3

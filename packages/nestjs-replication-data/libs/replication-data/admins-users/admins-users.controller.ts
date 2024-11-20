@@ -7,8 +7,8 @@ import {
   OnModuleInit,
 } from '@nestjs/common';
 import { AdminsUsersService } from './admins-users.service';
-import { CommonService, ResponseService } from '@ait/nestjs-base';
-import { ResponseSuccessSingleInterface } from '@ait/nestjs-base';
+import { CommonService, ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { ResponseSuccessSingleInterface } from '@pt-akar-inti-teknologi/nestjs-base';
 import { SaveAdminsUserDTO } from './dto/save-admins-user.dto';
 import { DeleteAdminsUserDTO } from './dto/delete-admins-user.dto';
 

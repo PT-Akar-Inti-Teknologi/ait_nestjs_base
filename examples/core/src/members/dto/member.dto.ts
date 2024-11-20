@@ -6,7 +6,7 @@ import {
   IsBoolean,
   IsISO8601,
 } from 'class-validator';
-import { MainPagingDTO } from '@ait/nestjs-base';
+import { MainPagingDTO } from '@pt-akar-inti-teknologi/nestjs-base';
 
 export class GetMemberPhotoDTO {
   @IsNotEmpty()

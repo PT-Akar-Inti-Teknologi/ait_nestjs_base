@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AuthService, HashService, MessageService } from '@ait/nestjs-base';
-import { ResponseService } from '@ait/nestjs-base';
+import { AuthService, HashService, MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { LoginService } from './login.service';
 import { UsersService } from 'src/users/users.service';
 import { LoginDTO } from './dto/login.dto';

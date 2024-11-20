@@ -16,7 +16,7 @@ import {
   CommonService,
   ResponseService,
   ResponseSuccessSingleInterface,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 
 @Controller()
 export class AuthPermissionController implements OnModuleInit {

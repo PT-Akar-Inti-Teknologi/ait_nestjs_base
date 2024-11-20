@@ -1,7 +1,7 @@
 import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ResponseService } from '@ait/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { ModuleGroupDocument } from '../entities/module-group.entity';
 import { dataModuleGroups } from './module-groups.data';
 import { dataModulePermissions } from './module-permissions.data';

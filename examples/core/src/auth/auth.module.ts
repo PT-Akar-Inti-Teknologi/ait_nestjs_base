@@ -4,7 +4,7 @@ import { JwtStrategy } from './guard/jwt/jwt.strategy';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PermissionDocument } from './entities/permission.entity';
 import { AuthPermissionsService } from './auth-permissions.service';
-import { AitAuthModule } from '@ait/nestjs-base';
+import { AitAuthModule } from '@pt-akar-inti-teknologi/nestjs-base';
 
 @Module({
   imports: [

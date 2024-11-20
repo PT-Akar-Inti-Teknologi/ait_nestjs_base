@@ -8,13 +8,13 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, UpdateResult } from 'typeorm';
 import { PermissionDocument } from 'src/auth/entities/permission.entity';
 import { SavePermissionDTO } from 'src/auth/dto/save-permission.dto';
-import { MainPagingDTO } from '@ait/nestjs-base';
+import { MainPagingDTO } from '@pt-akar-inti-teknologi/nestjs-base';
 import { UpdatePermissionDTO } from 'src/auth/dto/update-permission.dto';
 import {
   CommonService,
   MessageService,
   ResponseService,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 
 @Injectable()
 export class AuthPermissionsService {

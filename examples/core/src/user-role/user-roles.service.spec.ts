@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UserRolesService } from './user-roles.service';
-import { MessageService } from '@ait/nestjs-base';
-import { ResponseService } from '@ait/nestjs-base';
+import { MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository, SelectQueryBuilder, UpdateResult } from 'typeorm';
 import { createMockRepository } from 'src/test/test-utils';

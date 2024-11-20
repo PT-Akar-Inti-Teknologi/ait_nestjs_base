@@ -9,7 +9,7 @@ import {
   PaginationInterface,
   ResponseService,
   StorageServices,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import { CreateMemberDTO } from './dto/create-member.dto';
 import { UpdateMemberDTO } from './dto/update-member.dto';
 import { MemberDocument } from './entities/member.entity';

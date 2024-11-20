@@ -20,7 +20,7 @@ import {
   MessageService,
   Permission,
   ResponseService,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import { ModulesService } from './modules.service';
 import { RolesDocument } from './entities/roles.entity';
 import { GetUserRolesDTO } from './dto/get-user-roles.dto';

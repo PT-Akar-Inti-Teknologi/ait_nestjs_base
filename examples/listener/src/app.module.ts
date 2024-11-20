@@ -12,15 +12,15 @@ import {
   AitDatabaseModule,
   AitResponseModule,
   AitStorageModule,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import {
   AitReplicationDataModule,
   AuthPermissionsService,
   JwtStrategy,
   PermissionDocument,
-} from '@ait/nestjs-replication-data';
+} from '@pt-akar-inti-teknologi/nestjs-replication-data';
 import { InternalModule } from './internal/internal.module';
-import { EmailModule } from '@ait/nest-notification';
+import { EmailModule } from '@pt-akar-inti-teknologi/nest-notification';
 import { AcceptLanguageResolver } from 'nestjs-i18n';
 import path from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';

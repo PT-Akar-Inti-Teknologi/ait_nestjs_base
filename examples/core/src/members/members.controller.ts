@@ -29,7 +29,7 @@ import {
   ResponseSuccessSingleInterface,
   User,
   UserType,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import { MemberDocument } from './entities/member.entity';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { GetMemberDTO, GetMemberPhotoDTO } from './dto/member.dto';

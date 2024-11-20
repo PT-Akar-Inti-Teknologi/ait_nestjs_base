@@ -1,13 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthPermissionsService } from './auth-permissions.service';
-import { CommonService, MessageService } from '@ait/nestjs-base';
-import { ResponseService } from '@ait/nestjs-base';
+import { CommonService, MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { PermissionDocument } from 'src/auth/entities/permission.entity';
 import { Repository, SelectQueryBuilder } from 'typeorm';
 import { createMockRepository } from 'src/test/test-utils';
 import { SavePermissionDTO } from 'src/auth/dto/save-permission.dto';
-import { MainPagingDTO } from '@ait/nestjs-base';
+import { MainPagingDTO } from '@pt-akar-inti-teknologi/nestjs-base';
 import { UpdatePermissionDTO } from './dto/update-permission.dto';
 
 describe('AuthPermissionsService', () => {

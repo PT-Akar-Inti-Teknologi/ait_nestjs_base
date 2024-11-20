@@ -13,7 +13,7 @@ import {
   HashService,
   IUser,
   IUserType,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 
 @Injectable()
 export class LoginService {

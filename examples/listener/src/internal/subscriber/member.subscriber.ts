@@ -7,7 +7,7 @@ import {
   BaseSubscriber,
   Event,
   BaseSubscriberEventType,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 
 import { MemberDocument } from '../entities/member.entity';
 

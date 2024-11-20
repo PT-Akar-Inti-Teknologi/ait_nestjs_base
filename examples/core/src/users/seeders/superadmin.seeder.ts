@@ -1,7 +1,7 @@
 import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ResponseService } from '@ait/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { UserDocument } from 'src/users/entities/user.entity';
 import { dataSuperAdmins } from './superadmins.data';
 

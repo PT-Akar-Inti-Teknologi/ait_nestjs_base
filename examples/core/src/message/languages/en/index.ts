@@ -2,7 +2,7 @@ import general from './general';
 import http from './http';
 import request from './request';
 import auth from './auth';
-import response from '@ait/nestjs-base';
+import response from '@pt-akar-inti-teknologi/nestjs-base';
 import file from './file';
 import login from './login';
 import message from './message';

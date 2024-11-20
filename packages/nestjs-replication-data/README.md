@@ -26,19 +26,19 @@ yarn add https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_replication_data.g
 5. Click add context, choose Project, akarinti
 6. Find Package Repositories, make sure "Read package repositories" is active, then save
 7. click create, copy the token, save it somewhere safe.
-8. run `npm set //npm.pkg.jetbrains.space/akarinti/p/main/npm/:_authToken=<YOURTOKENHERE>`, replace `<YOURTOKENHERE>` with the token provided in no. 7
-9. run `npm set "@ait:registry=https://npm.pkg.jetbrains.space/akarinti/p/main/npm/"`
+8. run `npm set //npm.pkg.github.com/:_authToken=<YOURTOKENHERE>`, replace `<YOURTOKENHERE>` with the token provided in no. 7
+9. run `npm set "@pt-akar-inti-teknologi:registry=https://npm.pkg.github.com"`
 
 ### Add to package.json
 Make sure you have run [Authenticate Jetbrains Space](#authenticate-jetbrains-space), then run this command:
 
 - Install [AIT base module](https://github.com/PT-Akar-Inti-Teknologi/ait_nestjs_base) (min. version 1.0.10), also follow the setup guide:
 ```
-yarn add @ait/nestjs-base
+yarn add @pt-akar-inti-teknologi/nestjs-base
 ```
 - Install this module:
 ```
-yarn add @ait/nestjs-replication-data
+yarn add @pt-akar-inti-teknologi/nestjs-replication-data
 ```
 
 ## How to Use
@@ -51,7 +51,7 @@ Register modules that were used by your project in app.module.ts, then available
 
 Module that provide admin user and permission replication functionality to current microservice. It will define 2 controller that can be accessed using `${apiPrefix}/auth-permissions` and `${apiPrefix}/admins/users`
 
-Note: this module is separated, and can be imported using @ait/nestjs-base/replication
+Note: this module is separated, and can be imported using @pt-akar-inti-teknologi/nestjs-base/replication
 
 ### Setup AitReplicationDataModule
 

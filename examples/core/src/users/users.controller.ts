@@ -19,7 +19,7 @@ import {
   ResponseService,
   ResponseSuccessSingleInterface,
   User,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import { GetUserDTO } from './dto/get-user.dto';
 import { DeleteUserDTO } from './dto/delete-user.dto';
 import { VerificationTokenDTO } from './dto/verification-token.dto';

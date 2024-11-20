@@ -1,5 +1,5 @@
 import { Global, Module } from '@nestjs/common';
-import { AuditTrail, AuditTrailSchema } from '@ait/nestjs-audit-trail';
+import { AuditTrail, AuditTrailSchema } from '@pt-akar-inti-teknologi/nestjs-audit-trail';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from 'src/users/users.module';
 import { AuditTrailChildService } from './audit-trail-child.service';

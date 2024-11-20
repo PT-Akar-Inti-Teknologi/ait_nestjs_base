@@ -8,7 +8,7 @@ import { AuthModule } from 'src/auth/auth.module';
 import { UserDocument } from 'src/users/entities/user.entity';
 import { RolesDocument } from 'src/user-role/entities/roles.entity';
 import { UserRolesService } from 'src/user-role/user-roles.service';
-import { EmailService } from '@ait/nest-notification';
+import { EmailService } from '@pt-akar-inti-teknologi/nest-notification';
 import { UsersModule } from 'src/users/users.module';
 
 @Module({

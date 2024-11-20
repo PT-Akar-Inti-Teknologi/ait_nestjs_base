@@ -6,10 +6,10 @@ import {
 } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { ErrorMessageInterface } from '@ait/nestjs-base';
+import { ErrorMessageInterface } from '@pt-akar-inti-teknologi/nestjs-base';
 import { camelToSnake } from './utils/general.utils';
 import mongoose from 'mongoose';
-import { AuditTrailInterceptor } from '@ait/nestjs-audit-trail';
+import { AuditTrailInterceptor } from '@pt-akar-inti-teknologi/nestjs-audit-trail';
 
 const logger = new Logger('main');
 

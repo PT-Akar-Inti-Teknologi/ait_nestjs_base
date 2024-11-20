@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ModulePermissionsDocument } from './entities/module-permissions.entity';
-import { BaseService, MessageService, ResponseService } from '@ait/nestjs-base';
+import { BaseService, MessageService, ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 
 @Injectable()
 export class ModulesService extends BaseService<

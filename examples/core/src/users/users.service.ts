@@ -14,14 +14,14 @@ import {
   IUser,
   IUserType,
   CommonService,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import { CreateUserDTO } from './dto/create-user.dto';
 import { DeleteUserDTO } from './dto/delete-user.dto';
 import { GetUserDTO } from './dto/get-user.dto';
 import { UpdateUserDTO } from './dto/update-user.dto';
 import { UserDocument } from './entities/user.entity';
 import { UserRolesService } from 'src/user-role/user-roles.service';
-import { EmailService } from '@ait/nest-notification';
+import { EmailService } from '@pt-akar-inti-teknologi/nest-notification';
 import { InjectRepository } from '@nestjs/typeorm';
 import { randomUUID } from 'crypto';
 import { generateHtml } from 'src/utils/email-html';

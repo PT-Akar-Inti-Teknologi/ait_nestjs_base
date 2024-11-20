@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UserRolesController } from './user-roles.controller';
 import { UserRolesService } from './user-roles.service';
-import { ResponseService } from '@ait/nestjs-base';
-import { MessageService } from '@ait/nestjs-base';
+import { ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
+import { MessageService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { RolesDocument } from './entities/roles.entity';
 import { ModulesService } from './modules.service';
 import { ModulePermissionsDocument } from './entities/module-permissions.entity';

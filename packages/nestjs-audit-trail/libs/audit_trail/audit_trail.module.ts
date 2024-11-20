@@ -14,7 +14,7 @@ import {
 import { AuditTrailInterceptor } from './audit-trail.interceptor';
 import { AuditTrailWriter } from './utils/audit_trail.writer';
 import { DataSource } from 'typeorm';
-import { MessageService, ResponseService } from '@ait/nestjs-base';
+import { MessageService, ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { AitAuditTrailConfig } from './interfaces/audit_trail_config.interface';
 
 @Global()

@@ -5,7 +5,7 @@ import { AppService } from './app.service';
 import { BullModule } from '@nestjs/bull';
 import { LoginModule } from './login/login.module';
 import { UsersModule } from './users/users.module';
-import { EmailModule } from '@ait/nest-notification';
+import { EmailModule } from '@pt-akar-inti-teknologi/nest-notification';
 import { DevtoolsModule } from '@nestjs/devtools-integration';
 import {
   AitCommonModule,
@@ -14,9 +14,9 @@ import {
   AitMessageModule,
   AitResponseModule,
   AitStorageModule,
-} from '@ait/nestjs-base';
+} from '@pt-akar-inti-teknologi/nestjs-base';
 import languages from './message/message.constant';
-import { AitAuditTrailModule } from '@ait/nestjs-audit-trail';
+import { AitAuditTrailModule } from '@pt-akar-inti-teknologi/nestjs-audit-trail';
 import { AuditTrailModule } from './audit-trail/audit-trail.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MembersModule } from './members/members.module';

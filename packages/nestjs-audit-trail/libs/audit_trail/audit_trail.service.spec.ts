@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuditTrailService } from './audit_trail.service';
-import { MessageService, ResponseService } from '@ait/nestjs-base';
+import { MessageService, ResponseService } from '@pt-akar-inti-teknologi/nestjs-base';
 import { AitAuditTrailConfig } from './interfaces/audit_trail_config.interface';
 import { getModelToken } from '@nestjs/mongoose';
 import { AuditTrail } from './entities';
