@@ -124,8 +124,8 @@ for example:
 export class AuditTrailController {
   constructor(
     private readonly auditTrailService: AuditTrailService,
-    private readonly responseService: ResponseService,
-    private readonly messageService: MessageService,
+    protected readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
   ) {}
 
   @Get()

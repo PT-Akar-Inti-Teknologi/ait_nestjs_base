@@ -33,8 +33,8 @@ export class MembersAddressController extends BaseController<
 > {
   constructor(
     private readonly membersAddressService: MembersAddressService,
-    private readonly responseService: ResponseService,
-    private readonly messageService: MessageService,
+    protected readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
   ) {
     super(
       membersAddressService,
@@ -50,14 +50,14 @@ export class MembersAddressController extends BaseController<
   async findAll(
     @Query() mainPagingDTO: MainPagingDTO,
   ): Promise<ResponseSuccessPaginationInterface> {
-    return this.baseFindAll(mainPagingDTO);
+    return this.findAll(mainPagingDTO);
   }
 
   @Get('/:id')
   @Permission('members.read')
   @AuthJwtGuard()
   async show(@Param('id') id: string): Promise<ResponseSuccessSingleInterface> {
-    return this.baseShow(id);
+    return this.show(id);
   }
 
   @Post()
@@ -66,7 +66,7 @@ export class MembersAddressController extends BaseController<
   async save(
     @Body() createDTO: CreateMembersAddressDTO,
   ): Promise<ResponseSuccessSingleInterface> {
-    return this.baseSave(createDTO);
+    return this.save(createDTO);
   }
 
   @Put('/:id')
@@ -76,7 +76,7 @@ export class MembersAddressController extends BaseController<
     @Param('id') id: string,
     @Body() updateDTO: UpdateMembersAddressDTO,
   ): Promise<ResponseSuccessSingleInterface> {
-    return this.baseUpdate(updateDTO, id);
+    return this.update(id, updateDTO);
   }
 
   @Delete('/:id')
@@ -85,6 +85,6 @@ export class MembersAddressController extends BaseController<
   async delete(
     @Param('id') id: string,
   ): Promise<ResponseSuccessSingleInterface> {
-    return this.baseDelete(id);
+    return this.delete(id);
   }
 }

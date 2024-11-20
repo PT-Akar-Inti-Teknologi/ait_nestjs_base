@@ -18,8 +18,8 @@ export class AuthPermissionsService {
   constructor(
     @InjectRepository(PermissionDocument)
     private readonly permissionRepository: Repository<PermissionDocument>,
-    private readonly messageService: MessageService,
-    private readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
+    protected readonly responseService: ResponseService,
   ) {}
 
   async save(

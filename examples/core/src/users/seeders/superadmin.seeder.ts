@@ -10,7 +10,7 @@ export class SuperAdminSeeder implements OnApplicationBootstrap {
   constructor(
     @InjectRepository(UserDocument)
     public userRepository: Repository<UserDocument>,
-    private readonly responseService: ResponseService,
+    protected readonly responseService: ResponseService,
   ) {}
   onApplicationBootstrap() {
     this.initSuperAdmins();

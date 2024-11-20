@@ -46,8 +46,8 @@ export class MembersController extends BaseController<
 > {
   constructor(
     private readonly membersService: MembersService,
-    private readonly responseService: ResponseService,
-    private readonly messageService: MessageService,
+    protected readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
   ) {
     super(
       membersService,
@@ -78,14 +78,14 @@ export class MembersController extends BaseController<
   async myProfile(
     @User() user: IUser,
   ): Promise<ResponseSuccessSingleInterface> {
-    return this.baseShow(user.id);
+    return this.show(user.id);
   }
 
   @Get('/:id')
   @Permission('members.read')
   @AuthJwtGuard()
   async show(@Param('id') id: string): Promise<ResponseSuccessSingleInterface> {
-    return this.baseShow(id);
+    return this.show(id);
   }
 
   @Post()
@@ -94,7 +94,7 @@ export class MembersController extends BaseController<
   async save(
     @Body() createDTO: CreateMemberDTO,
   ): Promise<ResponseSuccessSingleInterface> {
-    return this.baseSave(createDTO);
+    return this.save(createDTO);
   }
 
   @Put('/:id')
@@ -104,7 +104,7 @@ export class MembersController extends BaseController<
     @Param('id') id: string,
     @Body() updateDTO: UpdateMemberDTO,
   ): Promise<ResponseSuccessSingleInterface> {
-    return this.baseUpdate(updateDTO, id);
+    return this.update(id, updateDTO);
   }
 
   @Delete('/:id')
@@ -113,7 +113,7 @@ export class MembersController extends BaseController<
   async delete(
     @Param('id') id: string,
   ): Promise<ResponseSuccessSingleInterface> {
-    return this.baseDelete(id);
+    return this.delete(id);
   }
 
   @Post('upload-photo')

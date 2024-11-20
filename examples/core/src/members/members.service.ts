@@ -32,8 +32,8 @@ export class MembersService extends BaseService<
     @InjectRepository(MemberAddressDocument)
     public memberAddressRepository: Repository<MemberAddressDocument>,
     private readonly memberAddressService: MembersAddressService,
-    private readonly responseService: ResponseService,
-    private readonly messageService: MessageService,
+    protected readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
     @InjectEntityManager() private entityManager: EntityManager,
     private readonly commonService: CommonService,
     private readonly fileStorageService: StorageServices,

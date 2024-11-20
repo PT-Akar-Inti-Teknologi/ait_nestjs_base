@@ -36,8 +36,8 @@ export class UserRolesService extends BaseService<
     private readonly authPermissionService: AuthPermissionsService,
     @Inject(forwardRef(() => UsersService))
     private readonly usersService: UsersService,
-    private readonly responseService: ResponseService,
-    private readonly messageService: MessageService,
+    protected readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
   ) {
     super(repository, responseService, messageService, UserRolesService.name);
 

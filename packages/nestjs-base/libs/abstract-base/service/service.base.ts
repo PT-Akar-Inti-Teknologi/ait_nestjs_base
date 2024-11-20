@@ -75,53 +75,11 @@ export class BaseService<
 
   protected constructor(
     public repository: Repository<EntityDocument>,
-    private readonly baseResponseService: ResponseService,
-    private readonly baseMessageService: MessageService,
-    private readonly className: string,
+    protected readonly responseService: ResponseService,
+    protected readonly messageService: MessageService,
+    protected readonly className: string,
   ) {
     this.logger = new Logger(`${className}.${BaseService.name}`);
-  }
-
-  /**
-   * Save an entity in the database. This method can be overridden in child classes.
-   * @param createDTO - The DTO containing the data to be saved
-   * @returns - The saved entity
-   */
-  public async save(createDTO: CreateDTO): Promise<EntityDocument> {
-    return this.baseSave(createDTO);
-  }
-
-  /**
-   * Update an entity in the database. This method can be overridden in child classes.
-   * @param updateDTO - The DTO containing the data to be updated
-   * @param id - The id of the entity to be updated
-   * @returns - The updated entity
-   */
-  public async update(
-    updateDTO: UpdateDTO,
-    id: string,
-  ): Promise<EntityDocument> {
-    return this.baseUpdate(updateDTO, id);
-  }
-
-  /**
-   * Delete an entity from the database. This method can be overridden in child classes.
-   * @param id - The id of the entity to be deleted
-   * @returns - Result of the delete operation
-   */
-  public async delete(id: string): Promise<DeleteResult> {
-    return this.baseDelete(id);
-  }
-
-  /**
-   * Find all entities in the database. This method can be overridden in child classes.
-   * @param mainPagingDTO - The DTO containing pagination data
-   * @returns - The list of entities and pagination details
-   */
-  async findAll(
-    mainPagingDTO: PagingDTO,
-  ): Promise<ListPaginationInterface<EntityDocument>> {
-    return this.baseFindAll(mainPagingDTO);
   }
 
   /**
@@ -129,13 +87,13 @@ export class BaseService<
    * @param createDTO - The DTO containing the data to be saved
    * @returns - The saved entity
    */
-  public async baseSave(createDTO: CreateDTO): Promise<EntityDocument> {
+  public async save(createDTO: CreateDTO): Promise<EntityDocument> {
     try {
       const entitySave: Partial<EntityDocument> = Object.assign({}, createDTO);
       return this.repository.save(entitySave as EntityDocument);
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -145,7 +103,7 @@ export class BaseService<
    * @param id - The id of the entity to be updated
    * @returns - The updated entity
    */
-  public async baseUpdate(
+  public async update(
     updateDTO: UpdateDTO,
     id: string,
   ): Promise<EntityDocument> {
@@ -159,7 +117,7 @@ export class BaseService<
       return this.repository.save(record);
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -168,7 +126,7 @@ export class BaseService<
    * @param id - The id of the entity to be deleted
    * @returns - Result of the delete operation
    */
-  public async baseDelete(id: string): Promise<DeleteResult> {
+  public async delete(id: string): Promise<DeleteResult> {
     try {
       const entity = await this.getAndValidateById(id);
       await this.repository.softRemove(entity);
@@ -179,7 +137,7 @@ export class BaseService<
       } as any;
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -188,10 +146,10 @@ export class BaseService<
    * @param mainPagingDTO - The DTO containing pagination data
    * @returns - The list of entities and pagination details
    */
-  async baseFindAll(
+  async findAll(
     mainPagingDTO: PagingDTO,
   ): Promise<ListPaginationInterface<EntityDocument>> {
-    const query = await this.baseFindAllQuery(mainPagingDTO);
+    const query = await this.findAllQuery(mainPagingDTO);
     try {
       const result = await query.getManyAndCount();
 
@@ -206,7 +164,7 @@ export class BaseService<
       };
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -216,7 +174,7 @@ export class BaseService<
    * @param filterQuery - item that's need to be filtered
    * @param queryBuilder - query builder
    */
-  baseFilterQuery(
+  filterQuery(
     mainPagingDTO: PagingDTO,
     filterQuery: BaseFilterInterfaceSingle<PagingDTO>,
     queryBuilder: SelectQueryBuilder<EntityDocument> | WhereExpressionBuilder,
@@ -260,7 +218,7 @@ export class BaseService<
    * @param filterQueries - items that's need to be filtered
    * @param queryBuilder - query builder
    */
-  baseFilterAllQuery(
+  filterAllQuery(
     mainPagingDTO: PagingDTO,
     filterQueries: BaseFilterInterface<PagingDTO>[],
     queryBuilder: SelectQueryBuilder<EntityDocument> | WhereExpressionBuilder,
@@ -269,11 +227,11 @@ export class BaseService<
       if (Array.isArray(filterQuery)) {
         queryBuilder.andWhere(
           new Brackets((qb) => {
-            this.baseFilterAllQuery(mainPagingDTO, filterQuery, qb);
+            this.filterAllQuery(mainPagingDTO, filterQuery, qb);
           }),
         );
       } else {
-        this.baseFilterQuery(mainPagingDTO, filterQuery, queryBuilder);
+        this.filterQuery(mainPagingDTO, filterQuery, queryBuilder);
       }
     }
   }
@@ -283,7 +241,7 @@ export class BaseService<
    * @param mainPagingDTO - The DTO containing pagination data
    * @returns - The list of entities and pagination details
    */
-  async baseFindAllQuery(
+  async findAllQuery(
     mainPagingDTO: PagingDTO,
   ): Promise<SelectQueryBuilder<EntityDocument>> {
     try {
@@ -300,7 +258,7 @@ export class BaseService<
           }),
         );
       }
-      this.baseFilterAllQuery(mainPagingDTO, this.filterByFields, query);
+      this.filterAllQuery(mainPagingDTO, this.filterByFields, query);
       if (mainPagingDTO.order && mainPagingDTO.sort) {
         let prefix = '';
         if (!mainPagingDTO.sort.includes('.')) {
@@ -316,7 +274,7 @@ export class BaseService<
       return query;
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -329,15 +287,15 @@ export class BaseService<
    * and "pagination". The "content" property is an array of EntityDocument objects, while the
    * "pagination" property is an object with three properties: "page", "total", and "size".
    */
-  async baseFindDetailAll(
+  async findDetailAll(
     mainPagingDTO: PagingDTO,
     relations?: string[],
   ): Promise<ListPaginationInterface<EntityDocument>> {
-    const query = await this.baseFindDetailAllQuery(mainPagingDTO, relations);
-    return this.baseGetManyAndCount(mainPagingDTO, query);
+    const query = await this.findDetailAllQuery(mainPagingDTO, relations);
+    return this.getManyAndCount(mainPagingDTO, query);
   }
 
-  async baseGetManyAndCount(
+  async getManyAndCount(
     mainPagingDTO: PagingDTO,
     query: SelectQueryBuilder<EntityDocument>,
   ) {
@@ -355,7 +313,7 @@ export class BaseService<
       };
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -364,7 +322,7 @@ export class BaseService<
    * @param queryBuilder - query builder
    * @param {PagingDTO} mainPagingDTO - The mainPagingDTO parameter is an object that contains
    */
-  baseSearchAllQuery(
+  searchAllQuery(
     queryBuilder: SelectQueryBuilder<EntityDocument>,
     mainPagingDTO: PagingDTO,
   ) {
@@ -392,7 +350,7 @@ export class BaseService<
    * @param queryBuilder - query builder
    * @param {string[]} relations - optional parameter to override `this.relations`
    */
-  baseAddJoinQuery(
+  addJoinQuery(
     queryBuilder: SelectQueryBuilder<EntityDocument>,
     relations?: string[],
   ) {
@@ -425,16 +383,16 @@ export class BaseService<
    * and "pagination". The "content" property is an array of EntityDocument objects, while the
    * "pagination" property is an object with three properties: "page", "total", and "size".
    */
-  baseFindDetailAllQuery(
+  findDetailAllQuery(
     mainPagingDTO: PagingDTO,
     relations?: string[],
   ): SelectQueryBuilder<EntityDocument> {
     try {
       const query = this.repository.createQueryBuilder(this.tableAlias);
-      this.baseAddJoinQuery(query, relations);
+      this.addJoinQuery(query, relations);
 
-      this.baseSearchAllQuery(query, mainPagingDTO);
-      this.baseFilterAllQuery(mainPagingDTO, this.filterByFields, query);
+      this.searchAllQuery(query, mainPagingDTO);
+      this.filterAllQuery(mainPagingDTO, this.filterByFields, query);
       if (mainPagingDTO.order && mainPagingDTO.sort) {
         let prefix = '';
         if (!mainPagingDTO.sort.includes('.')) {
@@ -453,7 +411,7 @@ export class BaseService<
       return query;
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -470,10 +428,10 @@ export class BaseService<
         .getOne();
       if (!recordEntityDocument) {
         throw new BadRequestException(
-          this.baseResponseService.error(
+          this.responseService.error(
             HttpStatus.BAD_REQUEST,
             [
-              this.baseMessageService.getErrorMessage(
+              this.messageService.getErrorMessage(
                 `${this.tableAlias}_id`,
                 'general.general.id_not_found',
               ),
@@ -485,7 +443,7 @@ export class BaseService<
       return recordEntityDocument;
     } catch (error: any) {
       Logger.error(error.message, '', this.constructor.name);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -508,10 +466,10 @@ export class BaseService<
         .getOne();
       if (!recordEntityDocument) {
         throw new BadRequestException(
-          this.baseResponseService.error(
+          this.responseService.error(
             HttpStatus.BAD_REQUEST,
             [
-              this.baseMessageService.getErrorMessage(
+              this.messageService.getErrorMessage(
                 field,
                 'general.general.data_not_found',
               ),
@@ -523,7 +481,7 @@ export class BaseService<
       return recordEntityDocument;
     } catch (error: any) {
       Logger.error(error.message, '', this.constructor.name);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -555,10 +513,10 @@ export class BaseService<
 
   throwGenericNotFound() {
     throw new BadRequestException(
-      this.baseResponseService.error(
+      this.responseService.error(
         HttpStatus.BAD_REQUEST,
         [
-          this.baseMessageService.getErrorMessage(
+          this.messageService.getErrorMessage(
             'id',
             'general.general.id_not_found',
           ),
@@ -585,7 +543,7 @@ export class BaseService<
       return recordEntityDocument;
     } catch (error: any) {
       this.logger.error(error.message);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 
@@ -614,10 +572,10 @@ export class BaseService<
       const recordEntityDocument = await query.getOne();
       if (recordEntityDocument) {
         throw new BadRequestException(
-          this.baseResponseService.error(
+          this.responseService.error(
             HttpStatus.BAD_REQUEST,
             [
-              this.baseMessageService.getErrorMessage(
+              this.messageService.getErrorMessage(
                 field,
                 `general.general.${field}_exist`,
               ),
@@ -628,7 +586,7 @@ export class BaseService<
       }
     } catch (error: any) {
       Logger.error(error.message, '', this.constructor.name);
-      this.baseResponseService.throwError(error);
+      this.responseService.throwError(error);
     }
   }
 }
